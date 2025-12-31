@@ -1,0 +1,538 @@
+/* ---------------------------------------------------
+   ALAPSZÍNEK ÉS VÁLTOZÓK
+--------------------------------------------------- */
+:root {
+  --bg-main: #F7F5F2;
+  --bg-surface: #FFFFFF;
+  --bg-beige: #EFE3D5;
+
+  --text-main: #222326;
+  --text-muted: #5C5F63;
+
+  --accent-main: #819A88;
+  --accent-soft: #A1B4A6;
+
+  --border-subtle: #D4D7D0;
+
+  --radius-card: 16px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* ---------------------------------------------------
+   ALAP BEÁLLÍTÁSOK
+--------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ---------------------------------------------------
+   HEADER
+--------------------------------------------------- */
+.header {
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+/* Menü balra rendezve */
+.nav-left {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-desktop a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.nav-desktop a:hover {
+  color: var(--accent-main);
+}
+
+.nav-desktop {
+  display: none;
+}
+
+/* Mobile menu */
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  padding: 1rem;
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-mobile a {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+@media (min-width: 900px) {
+  .nav-desktop {
+    display: flex;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-mobile {
+    display: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------
+   HERO – új 3 oszlopos elrendezés
+--------------------------------------------------- */
+.hero-custom {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+.hero-left,
+.hero-center,
+.hero-right {
+  text-align: center;
+}
+
+.hero-profile {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-main-btn {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+.slogan-box {
+  background: var(--bg-beige);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 900px) {
+  .hero-custom {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .hero-left {
+    text-align: left;
+  }
+
+  .hero-right {
+    text-align: right;
+  }
+}
+
+/* ---------------------------------------------------
+   GOMBOK
+--------------------------------------------------- */
+.btn-primary,
+.btn-secondary {
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--accent-main);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-soft);
+}
+
+.btn-secondary {
+  border: 1px solid var(--accent-main);
+  color: var(--accent-main);
+}
+
+.btn-secondary:hover {
+  background: rgba(129, 154, 136, 0.08);
+}
+
+/* ---------------------------------------------------
+   AFFIRMATION
+--------------------------------------------------- */
+.affirmation {
+  background: var(--bg-beige);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* ---------------------------------------------------
+   SZOLGÁLTATÁSOK GRID
+--------------------------------------------------- */
+.services {
+  padding: 3rem 0;
+}
+
+.grid-3 {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  background: var(--bg-beige);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+  transition: 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+.service-card h3 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-detail p {
+  text-align: justify;
+}
+
+/* ---------------------------------------------------
+   BLOG KÁRTYÁK – új elrendezés
+--------------------------------------------------- */
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+.blog-card-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card-content {
+  padding: 1rem 1.2rem;
+}
+
+/* 👉 IDE JÖN A BLOG GRID DEFINÍCIÓ 👇 */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+/* ---------------------------------------------------
+   KAPCSOLAT
+--------------------------------------------------- */
+.contact {
+  padding: 3rem 0;
+}
+
+.contact-form {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Sorok */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Két oszlopos sor */
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Mezők */
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  font-size: 1rem;
+  background: white;
+  width: 100%;
+  font-family: inherit;
+}
+
+/* Placeholder stílus */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Gomb teljes szélességben */
+.form-submit {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* Mobil nézet: minden egymás alatt */
+@media (max-width: 700px) {
+  .two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------
+   SZOLGÁLTATÁS RÉSZLETEZŐ OLDAL – 2/3 – 1/3 layout
+--------------------------------------------------- */
+
+.two-columns {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .two-columns {
+    grid-template-columns: 2fr 1fr; /* 2/3 - 1/3 arány */
+  }
+}
+
+.info-box {
+  background: var(--bg-beige);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* ---------------------------------------------------
+   BLOG KÁRTYÁK – új elrendezés
+--------------------------------------------------- */
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Felső 3/4 rész – kép */
+.blog-card-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Alsó 1/4 rész – szöveg */
+.blog-card-content {
+  padding: 1rem 1.2rem;
+}
+
+.blog-card-content h3 {
+  margin: 0 0 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.blog-card-content p {
+  margin: 0;
+  color: var(--text-muted);
+}
+/* ---------------------------------------------------
+   BLOG BEJEGYZÉS TIPOGRÁFIA
+--------------------------------------------------- */
+
+.blog-post {
+  padding: 3rem 0;
+}
+
+.blog-post .container {
+  max-width: 750px; /* optimális olvasási szélesség */
+}
+
+.blog-post h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.blog-post-image {
+  width: 100%;
+  border-radius: 16px;
+  margin: 1.5rem 0 2rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.blog-post p {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 1.4rem;
+  color: var(--text-main);
+  text-align: justify;
+  text-justify: inter-word; /* szebb szóközök */
+}
+
+.blog-post h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.blog-post ul,
+.blog-post ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+  line-height: 1.7;
+}
+
+.blog-post li {
+  margin-bottom: 0.6rem;
+}
+
+.blog-post blockquote {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  background: var(--bg-beige);
+  border-left: 4px solid var(--accent-main);
+  border-radius: 12px;
+  font-style: italic;
+  color: var(--text-main);
+}
+
+.blog-post a {
+  color: var(--accent-main);
+  text-decoration: underline;
+}
+
+.blog-post a:hover {
+  color: var(--accent-soft);
+}
+
+.blog-post-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+

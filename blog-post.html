@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="blogpost_meta_title">Blog – Bejegyzés</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/typography.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-inner">
+
+    <nav class="nav-desktop nav-left">
+      <a href="index.html#about" data-key="nav_about">Rólam</a>
+      <a href="index.html#services" data-key="nav_services">Szolgáltatások</a>
+      <a href="blog.html" data-key="nav_blog">Blog</a>
+      <a href="index.html#contact" data-key="nav_contact">Kapcsolat</a>
+    </nav>
+
+    <!-- NYELVVÁLTÓ -->
+    <div class="lang-switcher">
+      <button data-lang="hu">HU</button>
+      <button data-lang="ro">RO</button>
+      <button data-lang="en">EN</button>
+    </div>
+
+    <button class="nav-toggle" id="menuBtn">☰</button>
+  </div>
+
+  <nav class="nav-mobile" id="mobileMenu">
+    <a href="index.html#about" data-key="nav_about">Rólam</a>
+    <a href="index.html#services" data-key="nav_services">Szolgáltatások</a>
+    <a href="blog.html" data-key="nav_blog">Blog</a>
+    <a href="index.html#contact" data-key="nav_contact">Kapcsolat</a>
+  </nav>
+</header>
+
+<!-- BLOG POST HEADER -->
+<section class="blog-post-header">
+  <div class="container">
+    <h1 id="postTitle">Bejegyzés címe</h1>
+    <img id="postImage" class="blog-post-image" src="" alt="">
+  </div>
+</section>
+
+<!-- BLOG POST CONTENT -->
+<section class="blog-post-content">
+  <div class="container">
+    <div id="postContent"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <span data-key="footer_text">© 2025 Jánosi Dalma – Minden jog fenntartva</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+// BLOG BEJEGYZÉS BETÖLTÉSE NYELV FÜGGVÉNYÉBEN
+function loadBlogPost() {
+  const postTitle = document.getElementById("postTitle");
+  const postContent = document.getElementById("postContent");
+  const postImage = document.getElementById("postImage"); // ← EZ HIÁNYZOTT
+  if (!postTitle || !postContent || !postImage) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  fetch("blog-posts.json")
+    .then(res => res.json())
+    .then(posts => {
+      const post = posts.find(p => p.id == id);
+
+      // Cím
+      postTitle.innerHTML = post.title[currentLang];
+
+      // Kép betöltése
+      postImage.src = post.image;
+      postImage.alt = post.title[currentLang];
+
+      // Tartalom
+      postContent.innerHTML = "";
+      post.content[currentLang].forEach(block => {
+        postContent.innerHTML += block;
+      });
+    });
+}
+
+
+// Indításkor betöltjük
+loadBlogPost();
+</script>
+
+</body>
+</html>

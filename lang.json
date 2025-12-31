@@ -1,0 +1,369 @@
+{
+  "meta_title": {
+    "hu": "Pszichoterápia – Jánosi Dalma",
+    "ro": "Psihoterapie – Jánosi Dalma",
+    "en": "Psychotherapy – Dalma Jánosi"
+  },
+
+  "nav_about": {
+    "hu": "Rólam",
+    "ro": "Despre mine",
+    "en": "About"
+  },
+  "nav_services": {
+    "hu": "Szolgáltatások",
+    "ro": "Servicii",
+    "en": "Services"
+  },
+  "nav_blog": {
+    "hu": "Blog",
+    "ro": "Blog",
+    "en": "Blog"
+  },
+  "nav_contact": {
+    "hu": "Kapcsolat",
+    "ro": "Contact",
+    "en": "Contact"
+  },
+
+  "hero_button": {
+    "hu": "Dolgozni akarok magamon",
+    "ro": "Vreau să lucrez cu mine",
+    "en": "I want to work on myself"
+  },
+
+  "hero_slogan": {
+    "hu": "\"A változás ott kezdődik, ahol teret adsz magadnak.\"",
+    "ro": "\"Schimbarea începe acolo unde îți oferi spațiu.\"",
+    "en": "\"Change begins where you give yourself space.\""
+  },
+
+  "affirmation_text": {
+    "hu": "Teljesen rendben van, ha segítséget kérsz. Nem kell mindent egyedül cipelned.",
+    "ro": "Este perfect în regulă să ceri ajutor. Nu trebuie să duci totul singur.",
+    "en": "It is completely okay to ask for help. You don’t have to carry everything alone."
+  },
+
+  "services_title": {
+    "hu": "Szolgáltatások",
+    "ro": "Servicii",
+    "en": "Services"
+  },
+
+  "service_more": {
+    "hu": "Bővebben",
+    "ro": "Detalii",
+    "en": "Learn more"
+  },
+
+  "contact_title": {
+    "hu": "Kapcsolat",
+    "ro": "Contact",
+    "en": "Contact"
+  },
+
+  "form_lastname": {
+    "hu": "Családnév",
+    "ro": "Nume de familie",
+    "en": "Last name"
+  },
+  "form_firstname": {
+    "hu": "Keresztnév",
+    "ro": "Prenume",
+    "en": "First name"
+  },
+  "form_phone": {
+    "hu": "Telefonszám (opcionális)",
+    "ro": "Număr de telefon (opțional)",
+    "en": "Phone number (optional)"
+  },
+  "form_email": {
+    "hu": "E-mail",
+    "ro": "E-mail",
+    "en": "Email"
+  },
+  "form_message": {
+    "hu": "Üzenet",
+    "ro": "Mesaj",
+    "en": "Message"
+  },
+  "form_submit": {
+    "hu": "Üzenet küldése",
+    "ro": "Trimite mesajul",
+    "en": "Send message"
+  },
+
+  "footer_text": {
+    "hu": "© 2025 Jánosi Dalma – Minden jog fenntartva",
+    "ro": "© 2025 Jánosi Dalma – Toate drepturile rezervate",
+    "en": "© 2025 Dalma Jánosi – All rights reserved"
+  },
+
+  "blog_meta_title": {
+    "hu": "Blog – Jánosi Dalma",
+    "ro": "Blog – Dalma Jánosi",
+    "en": "Blog – Dalma Jánosi"
+  },
+  "blog_title": {
+    "hu": "Blog",
+    "ro": "Blog",
+    "en": "Blog"
+  },
+  "blog_subtitle": {
+    "hu": "Gondolatok, útmutatók és finom nézőpontok a lelki egyensúly felé vezető úton.",
+    "ro": "Gânduri, perspective și ghidaje fine pe drumul către echilibrul interior.",
+    "en": "Thoughts, insights and gentle perspectives on the path toward emotional balance."
+  },
+  "blogpost_meta_title": {
+    "hu": "Blog – Bejegyzés",
+    "ro": "Blog – Articol",
+    "en": "Blog – Post"
+  },
+
+  "service_assess_adults_meta": {
+    "hu": "Klinikai felmérés felnőtteknek – Dr. Jánosi Dalma",
+    "ro": "Evaluare clinică pentru adulți – Dr. Jánosi Dalma",
+    "en": "Clinical assessment for adults – Dr. Dalma Jánosi"
+  },
+
+  "service_assess_adults_title": {
+    "hu": "Klinikai felmérés felnőtteknek",
+    "ro": "Evaluare clinică pentru adulți",
+    "en": "Clinical assessment for adults"
+  },
+
+  "service_assess_adults_p1": {
+    "hu": "A klinikai felmérés célja, hogy pontosabb képet kapjunk a jelenlegi nehézségekről...",
+    "ro": "Scopul evaluării clinice este de a obține o imagine mai clară asupra dificultăților...",
+    "en": "The purpose of the clinical assessment is to gain a clearer understanding of current difficulties..."
+  },
+
+  "service_assess_adults_p2": {
+    "hu": "A felmérés nem minősít, nem címkéz, hanem irányt mutat...",
+    "ro": "Evaluarea nu etichetează și nu judecă, ci oferă direcție...",
+    "en": "The assessment does not label or judge; it provides direction..."
+  },
+
+  "service_assess_adults_p3": {
+    "hu": "A visszajelzés során közösen áttekintjük az eredményeket...",
+    "ro": "În cadrul feedbackului analizăm împreună rezultatele...",
+    "en": "During the feedback session, we review the results together..."
+  },
+
+  "service_summary_title": {
+    "hu": "Összefoglaló",
+    "ro": "Rezumat",
+    "en": "Summary"
+  },
+
+  "service_label_service": {
+    "hu": "Szolgáltatás:",
+    "ro": "Serviciu:",
+    "en": "Service:"
+  },
+
+  "service_label_duration": {
+    "hu": "Időtartam:",
+    "ro": "Durată:",
+    "en": "Duration:"
+  },
+
+  "service_label_price": {
+    "hu": "Díj:",
+    "ro": "Preț:",
+    "en": "Price:"
+  },
+
+  "service_assess_adults_duration": {
+    "hu": "60–90 perc",
+    "ro": "60–90 minute",
+    "en": "60–90 minutes"
+  },
+
+  "service_assess_adults_price": {
+    "hu": "XX.XXX Ft / alkalom",
+    "ro": "XX.XXX Ft / ședință",
+    "en": "XX.XXX Ft / session"
+  },
+
+  
+  "service_group_meta": {
+  "hu": "Csoport pszichoterápia – Dr. Jánosi Dalma",
+  "ro": "Psihoterapie de grup – Dr. Jánosi Dalma",
+  "en": "Group psychotherapy – Dr. Dalma Jánosi"
+  },
+
+  "service_group_title": {
+  "hu": "Csoport pszichoterápia",
+  "ro": "Psihoterapie de grup",
+  "en": "Group psychotherapy"
+  },
+
+  "service_group_p1": {
+  "hu": "A csoportos pszichoterápia célja, hogy a résztvevők egy támogató, biztonságos közegben tapasztalhassák meg saját működésüket, érzéseiket és viselkedésüket másokéhoz viszonyítva. A csoport leképezi kicsiben a társadalmat és lehetőséget ad a visszajelzésre, az önreflexióra, a szociális készségek gyakorlására, valamint a kapcsolati minták felismerésére és módosítására. A folyamat során a résztvevők megtanulhatják a hatékony kommunikációt, a konfliktuskezelést, a stressz- és szorongáscsökkentő stratégiák alkalmazását, és erősödhet az érzelmi támogatottság érzése, ami hozzájárul a személyes növekedéshez és a hosszú távú változásokhoz.",
+  "ro": "Scopul psihoterapiei de grup este ca participanții să își poată experimenta propria funcționare, emoțiile și comportamentele într-un mediu sigur și susținător, comparativ cu cele ale celorlalți. Grupul reflectă societatea în miniatură și oferă oportunitatea de a primi feedback, de a practica auto-reflecția, abilitățile sociale și de a recunoaște și modifica tiparele relaționale. În cadrul procesului terapeutic, participanții pot învăța comunicarea eficientă, gestionarea conflictelor, aplicarea strategiilor de reducere a stresului și anxietății, și se poate consolida sentimentul de susținere emoțională, ceea ce contribuie la dezvoltarea personală și la schimbări durabile pe termen lung.",
+  "en": "The goal of group psychotherapy is to allow participants to experience their own functioning, emotions, and behaviors in a safe and supportive environment, in relation to others. The group mirrors society on a small scale and provides opportunities for feedback, self-reflection, practicing social skills, and recognizing and modifying relational patterns. During the therapeutic process, participants can learn effective communication, conflict management, stress- and anxiety‑reduction strategies, and strengthen their sense of emotional support, which contributes to personal growth and long‑term, sustainable change."
+  },
+
+  "service_group_duration": {
+  "hu": "90 perc",
+  "ro": "90 de minute",
+  "en": "90 minutes"
+  },
+
+  "service_group_price": {
+  "hu": "100 lej / fő / alkalom",
+  "ro": "100 lei / persoană / ședință",
+  "en": "100 lei / person / session"
+  },
+
+  "service_career_meta": {
+    "hu": "Karrier tanácsadás – Dr. Jánosi Dalma",
+    "ro": "Consiliere în carieră – Dr. Jánosi Dalma",
+    "en": "Career counselling – Dr. Dalma Jánosi"
+  },
+
+  "service_career_title": {
+    "hu": "Karrier tanácsadás",
+    "ro": "Consiliere în carieră",
+    "en": "Career counselling"
+  },
+
+  "service_career_p1": {
+    "hu": "A karrier tanácsadás segít tisztábban látni, merre érdemes továbblépned szakmailag...",
+    "ro": "Consilierea în carieră te ajută să vezi mai clar direcția profesională potrivită...",
+    "en": "Career counselling helps you gain clarity about your professional direction..."
+  },
+
+  "service_career_p2": {
+    "hu": "A folyamat során feltérképezzük az erősségeidet, érdeklődési területeidet...",
+    "ro": "În cadrul procesului explorăm punctele tale forte, interesele și motivațiile...",
+    "en": "During the process we explore your strengths, interests and motivations..."
+  },
+
+  "service_career_p3": {
+    "hu": "A cél, hogy olyan döntéseket tudj hozni, amelyek hosszú távon is összhangban vannak...",
+    "ro": "Scopul este să poți lua decizii care sunt în armonie cu valorile și personalitatea ta...",
+    "en": "The goal is to help you make decisions aligned with your values and personality..."
+  },
+
+  "service_career_duration": {
+    "hu": "50 perc",
+    "ro": "50 minute",
+    "en": "50 minutes"
+  },
+
+  "service_career_price": {
+    "hu": "XX.XXX Ft / alkalom",
+    "ro": "XX.XXX Ft / ședință",
+    "en": "XX.XXX Ft / session"
+  },
+
+  
+  "service_couples_meta": {
+    "hu": "Pár- és családterápia – Dr. Jánosi Dalma",
+    "ro": "Terapie de cuplu și familie – Dr. Jánosi Dalma",
+    "en": "Couple and family therapy – Dr. Dalma Jánosi"
+  },
+
+  "service_couples_title": {
+    "hu": "Család- és párterápia",
+    "ro": "Terapie de cuplu și familie",
+    "en": "Couple and Family Therapy"
+  },
+
+  "service_couples_p1": {
+    "hu": "Rendszerszemléletű terapeutaként a párt vagy a családot egymással kölcsönhatásban álló rendszerként szemlélem, ahol az egyéni nehézségek gyakran a kapcsolati működés tüneteiként jelennek meg. A terápiás folyamat során a hangsúly a kommunikációs minták, szerepek, határok és visszatérő konfliktusok feltérképezésén van, valamint azon erőforrások megerősítésén, amelyek segíthetik a kapcsolat újraszerveződését. A közös munka célja lehet a kapcsolat megerősítése és újradefiniálása, a megértés elmélyítése, a kapcsolati biztonság növelése és olyan változások elindítása, amelyek hosszú távon is támogatóbb, kiegyensúlyozottabb működést tesznek lehetővé. A terápia célja ugyanakkor az is lehet, hogy a felek tisztábban lássák, együtt folytatható-e a kapcsolat, illetve – amennyiben a különválás mellett döntenek – támogatást kapjanak abban, hogyan közöljék a válás tényét a gyermekekkel úgy, hogy az számukra a lehető legkevesebb érzelmi sérüléssel járjon. A folyamat során kiemelt figyelmet kap a gyermekek érzelmi biztonságának megőrzése és a szülői együttműködés erősítése a változó családi helyzetben.",
+    "ro": "Ca terapeut de familie sistemică, privesc cuplul sau familia ca un sistem aflat în interacțiune, în cadrul căruia dificultățile individuale se manifestă adesea ca simptome ale funcționării relaționale. În procesul terapeutic, accentul se pune pe identificarea tiparelor de comunicare, a rolurilor, a limitelor și a conflictelor recurente, precum și pe consolidarea resurselor care pot sprijini reorganizarea relației. Scopul procesului terapeutic poate fi întărirea și redefinirea relației, aprofundarea înțelegerii, creșterea siguranței relaționale și inițierea unor schimbări care să permită o funcționare mai echilibrată pe termen lung. În același timp, terapia poate avea ca obiectiv ca părțile implicate să înțeleagă mai clar dacă relația poate continua împreună sau – în cazul în care aleg separarea – să primească sprijin în modul de comunicare a divorțului către copii, astfel încât impactul emoțional asupra acestora să fie cât mai redus. Procesul acordă o atenție deosebită menținerii siguranței emoționale a copiilor și consolidării colaborării parentale în cadrul unei situații familiale în schimbare.",
+    "en": "As a systemic therapist, I view the couple or family as an interacting system, in which individual difficulties often appear as symptoms of relational functioning. In the therapeutic process, the focus is on mapping communication patterns, roles, boundaries, and recurring conflicts, as well as strengthening the resources that can support the reorganization of the relationship."
+  },
+
+  "service_couples_p2": { 
+    "hu": "", 
+    "ro": "", 
+    "en": "The goal of the therapeutic process may be to strengthen and redefine the relationship, deepen understanding, increase relational security, and initiate changes that allow for more supportive and balanced functioning in the long term. At the same time, therapy may aim to help the parties gain clarity on whether the relationship can continue together, or – if they decide to separate – to receive support in how to communicate the divorce to their children in a way that minimizes emotional harm. The process places special emphasis on maintaining the children’s emotional security and strengthening parental cooperation in the context of a changing family situation." 
+  },
+  
+  
+  "service_couples_duration": {
+    "hu": "90 perc/alkalom",
+    "ro": "90 de minute/ședință",
+    "en": "90 minutes/session"
+  },
+
+  "service_couples_price": {
+    "hu": "270 lej/alkalom",
+    "ro": "270 de lei/ședință",
+    "en": "270 lei/session"
+  }, 
+
+  
+  "service_individual_meta": {
+    "hu": "Egyéni pszichoterápia – Dr. Jánosi Dalma",
+    "ro": "Psihoterapie individuală – Dr. Jánosi Dalma",
+    "en": "Individual psychotherapy – Dr. Dalma Jánosi"
+  },
+
+  "service_individual_title": {
+    "hu": "Egyéni pszichoterápia",
+    "ro": "Psihoterapie individuală",
+    "en": "Individual psychotherapy"
+  },
+
+  "service_individual_p1": {
+    "hu": "Rendszerszemléletű családterápiában képződtem, ami azt jelenti, hogy az egyéni pszichoterápiás folyamat esetén is rendszerszemléletben gondolkodom. Ennek az értelmezési keretnek központi eleme az, hogy a megjelenő probléma, elakadás nem elszigetelten jelenik meg, hanem gyakorta a kapcsolati háló, a családi és tágabb szociális környezet összefüggésében értelmezhető. A közös munka során figyelembe vesszük azokat a mintázatokat, kölcsönhatásokat és erőforrásokat, amelyek hatással vannak a működésedre, és amelyek mentén a változás is elindulhat.",
+    "ro": "M-am format în psihoterapie familială sistemică, așadar și în cadrul procesului de psihoterapie individuală folosesc perspectiva sistemică. Un element central al acestui cadru de interpretare este faptul că problema sau blocajul care apare nu se manifestă izolat, ci poate fi înțeles, de cele mai multe ori, în contextul rețelei relaționale, al familiei și al mediului social mai larg. În cadrul procesului psihoterapeutic luăm în considerare tiparele, interacțiunile și resursele care influențează funcționarea ta și de-a lungul cărora se poate iniția schimbarea.",
+    "en": "I am trained in systemic family therapy, which means that I also approach individual psychotherapy from a systemic perspective. A central element of this framework is the understanding that presenting problems or blockages do not occur in isolation, but can often be understood within the context of relational networks, family dynamics, and the broader social environment. Throughout our work together, we take into account the patterns, interactions, and resources that influence your functioning and along which change can begin to unfold."
+  },
+
+  "service_individual_p2": {
+    "hu": "A terápiás folyamatban kognitív viselkedésterápiás elemeket is használok, például szorongás, stressz, obszeszív-kompulzív zavarok esetén, melyben előbb az a lényeg, hogy megtanuld kontrollálni a tüneteket és a belső feszültséget, majd fokozatosan megértsd azokat a gondolkodási mintákat és viselkedéseket, amelyek fenntartják a nehézségeket. A cél nem csupán a tünetek enyhítése, hanem az önreflexió erősítése, a rugalmasabb megküzdési stratégiák kialakítása és a mindennapi működésed javítása, a számodra értelmes és megélhető változás érdekében.",
+    "ro": "În procesul terapeutic folosesc și elemente de terapie cognitiv-comportamentală, de exemplu în cazul anxietății, stresului sau al tulburărilor obsesiv-compulsive, unde primul pas este învățarea controlului simptomelor, urmată de înțelegerea treptată a tiparelor de gândire și a comportamentelor care mențin dificultățile. Scopul nu este doar reducerea simptomelor, ci și consolidarea auto-reflecției, dezvoltarea unor strategii de coping mai flexibile și îmbunătățirea funcționării tale cotidiene, în vederea unei schimbări semnificative și trăite ca atare de tine.",
+    "en": "In the therapeutic process, I also use elements of cognitive-behavioral therapy, for example in cases of anxiety, stress, or obsessive-compulsive disorders. In these situations, the initial focus is on learning to manage symptoms and internal tension, followed by gradually understanding the thought patterns and behaviors that maintain the difficulties. The goal is not merely symptom reduction, but also the strengthening of self-reflection, the development of more flexible coping strategies, and the improvement of everyday functioning, in order to support meaningful and sustainable change for you."
+  },
+
+
+  "service_individual_duration": {
+    "hu": "50 perc/alkalom",
+    "ro": "50 de minute/ședință",
+    "en": "50 minutes/session"
+  },
+
+  "service_individual_price": {
+    "hu": "180 lej/alkalom",
+    "ro": "180 lei/ședință",
+    "en": "180 lei/session"
+  },
+
+  
+  "service_psych_meta": {
+    "hu": "Egyéni tanácsadás – Dr. Jánosi Dalma",
+    "ro": "Consilierea individuală – Dr. Jánosi Dalma",
+    "en": "Individual counseling – Dr. Dalma Jánosi"
+  },
+
+  "service_psych_title": {
+    "hu": "Egyéni tanácsadás",
+    "ro": "Consilierea individuală ",
+    "en": "Individual counseling "
+  },
+
+  "service_psych_p1": {
+    "hu": "Az egyéni konzultáció vagy egyéni tanácsadás általában egy rövid, pár alkalmas folyamat, melyben aktuális élethelyzeti nehézségen, érzelmen, döntéshelyzeten, akár gyermekneveléssel kapcsolatos problémán dolgozunk együtt. Célja, hogy tisztábban lásd magad, helyzeted és tudatosabb döntést hozhass. Egy biztonságos, ítéletmentes térre számíthatsz, amelyben szabadon megfogalmazhatod gondolataid, érzéseid. Az egyéni tanácsadás nem tanácsok osztogatásáról szól, hanem arról, hogy támogatást kapj saját megoldásaid megtalálásához, a számodra leginkább illeszkedő irány kijelöléséhez.",
+    "ro": "Consilierea individuală sau consultația individuală este, de regulă, un proces de scurtă durată, format din câteva ședințe, în cadrul căruia lucrăm împreună pe dificultăți actuale de viață, trăiri emoționale, situații decizionale sau chiar probleme legate de creșterea copiilor. Scopul acestui proces este să te ajute să te înțelegi mai clar pe tine și situația ta, pentru a putea lua decizii mai conștiente. Poți conta pe un spațiu sigur și lipsit de judecată, în care îți poți exprima liber gândurile și emoțiile. Consilierea individuală nu înseamnă oferirea de sfaturi, ci sprijin în descoperirea propriilor soluții și în conturarea direcției care ți se potrivește cel mai bine.",
+    "en": "PIndividual counseling is usually a short-term process consisting of a few sessions, in which we work together on current life challenges, emotional experiences, decision-making situations, or even issues related to parenting. Its goal is to help you gain a clearer understanding of yourself and your situation, enabling you to make more conscious decisions. You can expect a safe, non-judgmental space where you can freely express your thoughts and feelings. Individual counseling is not about giving advice, but about supporting you in finding your own solutions and identifying the direction that best suits you."
+  },
+
+
+  "service_psych_duration": {
+    "hu": "50 perc/alkalom",
+    "ro": "50 minute/ședință",
+    "en": "50 minutes/session"
+  },
+
+  "service_psych_price": {
+    "hu": "180 lej/alkalom",
+    "ro": "180 lei/ședință",
+    "en": "180 lei/session"
+  }
+}

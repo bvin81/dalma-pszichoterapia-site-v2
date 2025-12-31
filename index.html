@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="meta_title"></title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/typography.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-inner">
+
+    <nav class="nav-desktop nav-left">
+      <a href="#about" data-key="nav_about"></a>
+      <a href="#services" data-key="nav_services"></a>
+      <a href="blog.html" data-key="nav_blog"></a>
+      <a href="#contact" data-key="nav_contact"></a>
+    </nav>
+
+    <!-- NYELVVÁLTÓ -->
+    <div class="lang-switcher">
+      <button data-lang="hu">HU</button>
+      <button data-lang="ro">RO</button>
+      <button data-lang="en">EN</button>
+    </div>
+
+    <button class="nav-toggle" id="menuBtn">☰</button>
+  </div>
+
+  <nav class="nav-mobile" id="mobileMenu">
+    <a href="#about" data-key="nav_about"></a>
+    <a href="#services" data-key="nav_services"></a>
+    <a href="blog.html" data-key="nav_blog"></a>
+    <a href="#contact" data-key="nav_contact"></a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="about" class="hero">
+  <div class="container hero-custom">
+
+    <div class="hero-left">
+      <img src="images/profile.jpg" alt="Pszichoterapeuta portré" class="hero-profile">
+    </div>
+
+    <div class="hero-center">
+      <a href="#contact" class="btn-primary hero-main-btn" data-key="hero_button"></a>
+    </div>
+
+    <div class="hero-right">
+      <div class="slogan-box">
+        <p data-key="hero_slogan"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AFFIRMATION -->
+<section class="affirmation">
+  <p data-key="affirmation_text"></p>
+</section>
+
+<!-- SZOLGÁLTATÁSOK -->
+<section id="services" class="services">
+  <div class="container">
+    <h2 data-key="services_title"></h2>
+
+    <div class="grid-3">
+
+      <!-- 1 -->
+      <div class="service-card">
+        <img src="images/service-psychological.jpg" alt="">
+        <h3 data-key="service_psych_title"></h3>
+        <p data-key="service_psych_desc"></p>
+        <a href="service/psychological.html" class="btn-secondary" data-key="service_more"></a>
+      </div>
+
+      <!-- 2 -->
+      <div class="service-card">
+        <img src="images/service-individual.jpg" alt="">
+        <h3 data-key="service_individual_title"></h3>
+        <p data-key="service_individual_desc"></p>
+        <a href="service/individual.html" class="btn-secondary" data-key="service_more"></a>
+      </div>
+
+      <!-- 3 -->
+      <div class="service-card">
+        <img src="images/service-couples.jpg" alt="">
+        <h3 data-key="service_couples_title"></h3>
+        <p data-key="service_couples_desc"></p>
+        <a href="service/couples.html" class="btn-secondary" data-key="service_more"></a>
+      </div>
+
+      <!-- 4 -->
+      <div class="service-card">
+        <img src="images/service-assessment-adults.jpg" alt="">
+        <h3 data-key="service_assess_adults_title"></h3>
+        <p data-key="service_assess_adults_desc"></p>
+        <a href="service/assessment-adults.html" class="btn-secondary" data-key="service_more"></a>
+      </div>
+
+      <!-- 5 – Csoportterápia -->
+      <div class="service-card">
+        <img src="images/service-group.jpg" alt="">
+        <h3 data-key="service_group_title"></h3>
+        <p data-key="service_group_desc"></p>
+        <a href="service/group-therapy.html" class="btn-secondary" data-key="service_more"></a>
+      </div>
+
+
+      <!-- 6 -->
+      <div class="service-card">
+        <img src="images/service-career.jpg" alt="">
+        <h3 data-key="service_career_title"></h3>
+        <p data-key="service_career_desc"></p>
+        <a href="service/career.html" class="btn-secondary" data-key="service_more"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KAPCSOLAT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 data-key="contact_title"></h2>
+
+    <form id="contactForm" class="contact-form">
+
+      <div style="display:none;">
+        <label for="website">Ne töltsd ki ezt a mezőt</label>
+        <input type="text" id="website" name="website">
+      </div>
+
+      <div class="form-row two-cols">
+        <input type="text" name="lastname" data-key-placeholder="form_lastname" required>
+        <input type="text" name="firstname" data-key-placeholder="form_firstname" required>
+      </div>
+
+      <div class="form-row two-cols">
+        <input type="tel" name="phone" data-key-placeholder="form_phone">
+        <input type="email" name="email" data-key-placeholder="form_email" required>
+      </div>
+
+      <div class="form-row">
+        <textarea name="message" rows="5" data-key-placeholder="form_message" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <button type="submit" class="btn-primary form-submit" data-key="form_submit"></button>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <span data-key="footer_text"></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("_Rq7FAjiXz4lWprzY");
+  })();
+</script>
+
+</body>
+</html>
