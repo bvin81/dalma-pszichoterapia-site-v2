@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/images/blog1.jpg",
+    "image": "images/blog1.jpg",
     "title": {
       "hu": "Online vagy fizikai jelenléttel zajló terápiára jelentkezzek?",
       "ro": "Să aleg terapia online sau terapia cu prezență fizică?",
@@ -10,72 +10,66 @@
  
     "content": {
       "hu": [
-        "<p><strong>Foglalkozat a pszichoterápia gondolata, de nem tudsz dönteni online vagy fizikai jelenléttel zajló változat között? Tartasz attól, hogy az online terápia nem annyira hatékony? Esetleg nem Marosvásárhelyen vagy Szovátán élsz (a két település, ahol rendelek)?</p>",
+        "<p><strong>Foglalkozat a pszichoterápia gondolata, de nem tudsz dönteni online vagy fizikai jelenléttel zajló változat között? Tartasz attól, hogy az online terápia nem annyira hatékony? Esetleg nem Marosvásárhelyen vagy Szovátán élsz (a két település, ahol rendelek)?</strong></p>",
         "<p>Az online terápiák hatékonyságáról a koronavírus járvány óta több tanulmány is született (lásd bibliográfia), melyek alapján bizonyították, hogy az online térben zajló terápia legalább olyan hatékony, mint a kabinetben, fizikai részvétellel zajló. Mindkettőnek vannak azonban előnyei és hátrányai is. Az egyik talán legnyilvánvalóbb előnye az online terápiának, hogy nem kell ezért pluszba utazni, ki se kell mozdulni otthonunkból. Abban az esetben ha valaki nem Marosvásárhelyen vagy Szovátán él, de velem szeretne dolgozni, értelemszerűen az online terápia lesz az előnyösebb, bár még ilyen esetben is sokszor hibrid módban dolgozunk, az ülések egy részére a kliens eljön személyesen. Ez természetesen nem kötelező, de sokan élnek a lehetőséggel, ami mindig megtisztelő számomra. A külföldön élő klienseim is, amikor hazajönnek, sokszor egyeztetünk fizikai jelenléttel is pár alkalmat, mert sokszor ez valami újat, vagy akár más lendületet hoz a terápiás térbe.</p>",
         "<p>A távolságon és az utazás megspórolásán túl vannak rejtettebb előnyei is az online munkának: azt tapasztalom, hogy sokkal gyorsabban nyílnak meg a kliensek az online térben, a nehezebb témák hamarabb terítékre kerülnek. De szintén előnyös azon klienseim számára, akik annyira szoronganak, hogy nem szívesen mennek emberek közé, esetleg már nem szívesen hagyják el otthonukat sem. Ilyen esetben online térben kezdünk, s amikor már eléggé megerősödik a kliens, fizikai jelenléttel is folytathatjuk.</p>",
-        "<A fizikai jelenléttel zajló terápiának szintén számtalan előnye van, például gazdagabb nonverbális információt és eszközhasználatot tesz lehetővé, de ami ebben az esetben is döntő az az emberi kapcsolat, a találkozás.</p>",
-        "<p><strong>Kik azok akiket én mégsem fogadok online térben?</p>",
+        "<p>A fizikai jelenléttel zajló terápiának szintén számtalan előnye van, például gazdagabb nonverbális információt és eszközhasználatot tesz lehetővé, de ami ebben az esetben is döntő az az emberi kapcsolat, a találkozás.</p>",
+        "<p><strong>Kik azok akiket én mégsem fogadok online térben?</strong></p>",
         "<p>Alapvetően azokkal a kisgyermekes családokkal nem dolgozom online, amelyben a gyermek is aktívan részt vesz a folyamatban, vagy azokon az üléseken, amikor a gyermek jelenléte, hozzájárulása is lényeges. Minden más esetben érdemes az online-nal próbálkozni, ha nincs lehetőség a fizikai jelenlétű terápiára, vagy ha a kliens az online-t preferálja.</p>",
-        "<p>Miért? Mert úgy gondolom, hogy a fizikai és online tér nem egymást kizáró alternatívák, hanem kiegészítő keretek, amelyek más-más módon teszik láthatóvá és értelmezhetővé a családi rendszert, a különböző dinamikákat, mintázatokat, s hogy ki melyiket preferálja, az egyéni ízlés, lehetőség és a fizikai távolság keretein múlik. A hatékonyság, egyértelműen nem abban mutatkozik meg, hogy valaki online vagy fizikai jelenléttel dolgozik. </p>",
+        "<p>Miért? Mert úgy gondolom, hogy a fizikai és online tér nem egymást kizáró alternatívák, hanem kiegészítő keretek, amelyek más-más módon teszik láthatóvá és értelmezhetővé a családi rendszert, a különböző dinamikákat, mintázatokat, s hogy ki melyiket preferálja, az egyéni ízlés, lehetőség és a fizikai távolság keretein múlik. A hatékonyság, egyértelműen nem abban mutatkozik meg, hogy valaki online vagy fizikai jelenléttel dolgozik.</p>",
         "<h3>Bibliográfia</h3>",
         "<p>Borcsa, M. &amp;. (2021). Digital systemic practices in Europe: a survey before the Covid-19 pandemic. Journal of Family Therapy.</p>",
-        "<p>Burbach, F. R. (2022). ‘More collaborative and open’: As systemic psychotherapists become more familiar with videoconferencing, are the advantages of the medium becoming more apparent? Online Focus Group Study, UK.</p>",
+        "<p>Burbach, F. R. (2022). 'More collaborative and open': As systemic psychotherapists become more familiar with videoconferencing, are the advantages of the medium becoming more apparent? Online Focus Group Study, UK.</p>",
         "<p>De Boer, D. M. (2021). Meta-analysis/systematic review: videoconferencing in systemic family therapy—effectiveness and feasibility. Child &amp; Youth Care Forum.</p>",
         "<p>Eppler, C. (2021). Systemic teletherapists' meaningful experiences during the first months of the coronavirus pandemic. Journal of Marital and Family Therapy.</p>",
-        "<p>McKee, G. B. (2021). The COVID-19 Pandemic’s Influence on Family Systems Therapists’ Provision of Teletherapy. Family Process.</p>",
+        "<p>McKee, G. B. (2021). The COVID-19 Pandemic's Influence on Family Systems Therapists' Provision of Teletherapy. Family Process.</p>",
         "<p><em>Illusztráció – mesterséges intelligencia által generált kép</em></p>"
-
       ],
       "ro": [
-        "<p><strong>Te preocupă ideea de psihoterapie, dar nu poți decide dacă să alegi varianta online sau cea cu prezență fizică? Te temi că terapia online nu este la fel de eficientă? Sau poate nu locuiești în Târgu Mureș sau Sovata (cele două localități unde îmi desfășor activitatea)?</p>",
+        "<p><strong>Te preocupă ideea de psihoterapie, dar nu poți decide dacă să alegi varianta online sau cea cu prezență fizică? Te temi că terapia online nu este la fel de eficientă? Sau poate nu locuiești în Târgu Mureș sau Sovata (cele două localități unde îmi desfășor activitatea)?</strong></p>",
         "<p>Începând cu pandemia de coronavirus, au fost realizate numeroase studii (vezi bibliografia) privind eficiența terapiilor online, care au demonstrat că terapia desfășurată în mediul online este cel puțin la fel de eficientă ca cea realizată în cabinet, cu prezență fizică. Desigur, ambele forme au avantaje și dezavantaje.</p>",
         "<p>Unul dintre cele mai evidente avantaje ale terapiei online este faptul că nu necesită deplasare suplimentară și nici măcar părăsirea propriei locuințe. În cazul în care cineva nu locuiește în Târgu Mureș sau Sovata – cele două localități unde îmi desfășor activitatea –, dar dorește să lucreze cu mine, terapia online este, în mod firesc, o opțiune mai avantajoasă. Chiar și în aceste situații, lucrăm adesea într-un mod hibrid, unele ședințe având loc față în față. Desigur, acest lucru nu este obligatoriu, dar mulți clienți aleg această posibilitate, ceea ce pentru mine este întotdeauna o onoare. Și în cazul clienților mei care locuiesc în străinătate, atunci când revin în țară, stabilim adesea câteva ședințe cu prezență fizică, deoarece acestea pot aduce ceva nou sau un alt impuls în spațiul terapeutic.</p>",
         "<p>Dincolo de economisirea timpului și a deplasărilor, munca online are și avantaje mai puțin evidente: observ că, în mediul online, clienții se deschid mult mai rapid, iar subiectele dificile pot fi abordate mai devreme în proces. De asemenea, terapia online este benefică pentru acei clienți care se confruntă cu un nivel atât de ridicat de anxietate încât evită contactul cu alți oameni sau chiar ieșirea din casă. În astfel de cazuri, începem în mediul online, iar atunci când clientul se simte suficient de consolidat, treptat putem continua și cu prezență fizică.</p>",
         "<p>Terapia cu prezență fizică are, la rândul ei, numeroase avantaje, precum accesul la informații nonverbale mai bogate și la o utilizare mai variată a instrumentelor terapeutice. Totuși, ceea ce este decisiv este relația umană, întâlnirea directă.</p>",
-        "<p><strong>Pe cine nu primesc în mediul online?</p>",
+        "<p><strong>Pe cine nu primesc în mediul online?</strong></p>",
         "<p>În principiu, nu lucrez online cu familii cu copii mici atunci când copilul este implicat direct în proces sau în acele ședințe în care prezența copilului, contribuția lui este dorită. În toate celelalte cazuri, merită încercată terapia online atunci când terapia cu prezență fizică nu este posibilă sau nu este preferată.</p>",
         "<p>Consider că spațiul fizic și cel online nu sunt alternative care se exclud reciproc, ci cadre complementare, care fac vizibil și interpretabil sistemul familial, diferitele dinamici și tipare, în moduri diferite. Alegerea uneia sau alteia ține de preferințele individuale, de posibilități și de distanța fizică, deoarece eficiența clar nu depinde de formatul – online sau fizic - al terapiei.</p>",
         "<h3>Bibliografie</h3>",
         "<p>Borcsa, M. &amp;. (2021). Digital systemic practices in Europe: a survey before the Covid-19 pandemic. Journal of Family Therapy.</p>",
-        "<p>Burbach, F. R. (2022). ‘More collaborative and open’: As systemic psychotherapists become more familiar with videoconferencing, are the advantages of the medium becoming more apparent? Online Focus Group Study, UK.</p>",
+        "<p>Burbach, F. R. (2022). 'More collaborative and open': As systemic psychotherapists become more familiar with videoconferencing, are the advantages of the medium becoming more apparent? Online Focus Group Study, UK.</p>",
         "<p>De Boer, D. M. (2021). Meta-analysis/systematic review: videoconferencing in systemic family therapy—effectiveness and feasibility. Child &amp; Youth Care Forum.</p>",
         "<p>Eppler, C. (2021). Systemic teletherapists' meaningful experiences during the first months of the coronavirus pandemic. Journal of Marital and Family Therapy.</p>",
-        "<p>McKee, G. B. (2021). The COVID-19 Pandemic’s Influence on Family Systems Therapists’ Provision of Teletherapy. Family Process.</p>",
+        "<p>McKee, G. B. (2021). The COVID-19 Pandemic's Influence on Family Systems Therapists' Provision of Teletherapy. Family Process.</p>",
         "<p><em>Ilustrație – imagine generată de inteligența artificială</em></p>"
-      
       ],
       "en": [
-        "<p><strong>You may be considering psychotherapy but find it difficult to decide whether to choose the online format or therapy with physical presence. Are you worried that online therapy might not be as effective? Or perhaps you do not live in Târgu Mureș or Sovata, the two localities where I practice?</p>",
+        "<p><strong>You may be considering psychotherapy but find it difficult to decide whether to choose the online format or therapy with physical presence. Are you worried that online therapy might not be as effective? Or perhaps you do not live in Târgu Mureș or Sovata, the two localities where I practice?</strong></p>",
         "<p>Since the coronavirus pandemic, several studies (see bibliography) have been conducted on the effectiveness of online therapy, demonstrating that therapy carried out in an online setting is at least as effective as therapy conducted in a clinical office with physical presence. Naturally, both formats have their advantages and disadvantages.</p>",
-        "<p>One of the most obvious advantages of online therapy is that it does not require additional travel and does not even require leaving one’s home. If someone does not live in Târgu Mureș or Sovata—the two locations where I practice—but would still like to work with me, online therapy is clearly the more advantageous option. Even in such cases, however, we often work in a hybrid format, with some sessions taking place in person. This, of course, isn’t mandatory, but many clients who travel anyway to Romania choose this option, because they feel that physical presence provides an added value to their healing. My clients who live abroad also often schedule a few in-person sessions when they visit home, as these meetings can bring something new or a different momentum into the therapeutic space.</p>",
+        "<p>One of the most obvious advantages of online therapy is that it does not require additional travel and does not even require leaving one's home. If someone does not live in Târgu Mureș or Sovata—the two locations where I practice—but would still like to work with me, online therapy is clearly the more advantageous option. Even in such cases, however, we often work in a hybrid format, with some sessions taking place in person. This, of course, isn't mandatory, but many clients who travel anyway to Romania choose this option, because they feel that physical presence provides an added value to their healing. My clients who live abroad also often schedule a few in-person sessions when they visit home, as these meetings can bring something new or a different momentum into the therapeutic space.</p>",
         "<p>Beyond saving time and travel, online work also has more subtle advantages: I find that clients tend to open up much more quickly in the online environment, and more difficult topics emerge earlier in the process. Online therapy is also particularly beneficial for clients whose anxiety is so intense that they are reluctant to be around other people or even to leave their homes. In such cases, we begin working online, and once the client feels sufficiently strengthened, we may continue with in-person sessions.</p>",
         "<p>Therapy with physical presence also has numerous advantages, such as access to richer nonverbal information and a wider range of therapeutic tools. However, with physical presence the encounter itself, the human relationship may provide an added value.</p>",
-        "<p><strong>Who do I not see in online setting?</p>",
-        "<p>In principle, I do not work online with families with young children when the child is directly involved in the process or in sessions where the child’s presence is desired. In all other cases, it is worth trying online therapy if in-person therapy is not feasible.</p>",
+        "<p><strong>Who do I not see in online setting?</strong></p>",
+        "<p>In principle, I do not work online with families with young children when the child is directly involved in the process or in sessions where the child's presence is desired. In all other cases, it is worth trying online therapy if in-person therapy is not feasible.</p>",
         "<p>I believe that physical and online settings are not mutually exclusive alternatives, but complementary frameworks that make the family system, various dynamics, and patterns visible and interpretable in different ways. Which one a person prefers depends on individual preference, practical possibilities, and physical distance, as efficiency is clearly present in both formats.</p>",
         "<h3>Bibliography</h3>",
         "<p>Borcsa, M. &amp;. (2021). Digital systemic practices in Europe: a survey before the Covid-19 pandemic. Journal of Family Therapy.</p>",
-        "<p>Burbach, F. R. (2022). ‘More collaborative and open’: As systemic psychotherapists become more familiar with videoconferencing, are the advantages of the medium becoming more apparent? Online Focus Group Study, UK.</p>",
+        "<p>Burbach, F. R. (2022). 'More collaborative and open': As systemic psychotherapists become more familiar with videoconferencing, are the advantages of the medium becoming more apparent? Online Focus Group Study, UK.</p>",
         "<p>De Boer, D. M. (2021). Meta-analysis/systematic review: videoconferencing in systemic family therapy—effectiveness and feasibility. Child &amp; Youth Care Forum.</p>",
         "<p>Eppler, C. (2021). Systemic teletherapists' meaningful experiences during the first months of the coronavirus pandemic. Journal of Marital and Family Therapy.</p>",
-        "<p>McKee, G. B. (2021). The COVID-19 Pandemic’s Influence on Family Systems Therapists’ Provision of Teletherapy. Family Process.</p>",
+        "<p>McKee, G. B. (2021). The COVID-19 Pandemic's Influence on Family Systems Therapists' Provision of Teletherapy. Family Process.</p>",
         "<p><em>Illustration – image generated by artificial intelligence</em></p>"
       ]
     }
   },
 
-
   {
     "id": 2,
     "image": "images/blog2.jpg",
-
     "title": {
       "hu": "Amikor a szorongás beszűkíti a mindennapokat",
       "ro": "Când anxietatea îți îngustează viața de zi cu zi",
       "en": "When anxiety narrows your everyday life"
     },
-
-
     "content": {
       "hu": ["<p>A szorongás gyakran úgy jelenik meg, mint egy láthatatlan fal...</p>"],
       "ro": ["<p>Anxietatea apare adesea ca un zid invizibil...</p>"],
@@ -86,14 +80,11 @@
   {
     "id": 3,
     "image": "images/blog3.jpg",
-
     "title": {
       "hu": "Amikor a szorongás beszűkíti a mindennapokat",
       "ro": "Când anxietatea îți îngustează viața de zi cu zi",
       "en": "When anxiety narrows your everyday life"
     },
-
-
     "content": {
       "hu": ["<p>A szorongás gyakran úgy jelenik meg, mint egy láthatatlan fal...</p>"],
       "ro": ["<p>Anxietatea apare adesea ca un zid invizibil...</p>"],
