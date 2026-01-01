@@ -162,21 +162,21 @@ img {
   position: relative;
   z-index: 2;
   padding: 4rem 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+  justify-content: flex-end;        /* Gomb lentebb */
+  min-height: 100%;
+  gap: 2rem;
 }
 
-/* Fő gomb - középen */
+/* Fő gomb - középen, lent */
 .hero-main-btn {
   font-size: 1.2rem;
   padding: 1.2rem 3rem;
   box-shadow: 0 8px 25px rgba(129, 154, 136, 0.3);
   transition: all 0.3s ease;
-  grid-column: 1;
-  justify-self: center;
+  margin-bottom: 3rem;               /* Távolság az aljától */
 }
 
 .hero-main-btn:hover {
@@ -184,29 +184,33 @@ img {
   box-shadow: 0 12px 35px rgba(129, 154, 136, 0.4);
 }
 
-/* Szlogen doboz - jobbra */
+/* Szlogen doboz - átlátszó háttér, fehér szöveg */
 .slogan-box {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: transparent;           /* Nincs fehér háttér */
+  backdrop-filter: none;             /* Nincs blur */
   padding: 2rem 2.5rem;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: none;                  /* Nincs árnyék */
+  border: none;
   max-width: 600px;
-  grid-column: 1;
-  justify-self: center;
+  
+  /* Mobil: középen, fent */
+  margin-bottom: auto;
+  margin-top: 2rem;
 }
 
 .slogan-box p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;                 /* Nagyobb szöveg */
   line-height: 1.6;
-  color: var(--text-main);
+  color: white;                      /* Fehér szöveg */
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;                  /* Vastagabb betű */
   font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Árnyék az olvashatóságért */
+  text-align: center;
 }
 
-/* Tablet/Desktop nézet - két oszlop */
+/* Tablet/Desktop nézet - szlogen jobbra pozicionálva */
 @media (min-width: 768px) {
   .hero {
     min-height: 700px;
@@ -214,28 +218,30 @@ img {
   }
 
   .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    position: relative;
+    padding: 3rem 0;
   }
 
-  /* Gomb bal oszlop, középre igazítva */
+  /* Gomb középen, lent */
   .hero-main-btn {
-    grid-column: 1;
-    justify-self: center;
     font-size: 1.3rem;
     padding: 1.3rem 3.5rem;
+    margin-bottom: 4rem;
   }
 
-  /* Szlogen jobb oszlop */
+  /* Szlogen jobb oldal, fent */
   .slogan-box {
-    grid-column: 2;
-    justify-self: start;
+    position: absolute;
+    top: 3rem;
+    right: 5%;
     max-width: 500px;
+    margin: 0;
+    padding: 2rem;
   }
 
   .slogan-box p {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    text-align: left;
   }
 }
 
@@ -246,12 +252,18 @@ img {
   }
 
   .slogan-box {
-    padding: 2.5rem 3rem;
+    top: 4rem;
+    right: 8%;
     max-width: 550px;
+    padding: 2.5rem 3rem;
   }
 
   .slogan-box p {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+  }
+
+  .hero-main-btn {
+    margin-bottom: 5rem;
   }
 }
 
