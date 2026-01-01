@@ -156,6 +156,54 @@
     "en": "Effective therapy from the comfort of your home, via video conferencing platform."
   },
 
+  "service_sindelar_meta": {
+    "hu": "Tanulási zavar megelőzése – Dr. Jánosi Dalma",
+    "ro": "Prevenirea tulburărilor de învățare – Dr. Jánosi Dalma",
+    "en": "Learning disorder prevention – Dr. Dalma Jánosi"
+  },
+
+  "service_sindelar_title": {
+    "hu": "Tanulási zavar megelőzése",
+    "ro": "Prevenirea tulburărilor de învățare",
+    "en": "Learning disorder prevention"
+  },
+
+  "service_sindelar_p1": {
+    "hu": "Ha gyermekénél tanulási nehézség merül fel, érdemes felmérni, nincs-e valamilyen részképesség zavar vagy lemaradás a hátterében. Ehhez tudok segítséget nyújtani egyrészt a felmérésben, másrészt egy komplex fejlesztőprogram kijelölésében, melyet a gyermek otthon a szülővel minden nap gyakorolhat. A programot iskoláskorú gyermekeknek ajánlom, csak olyan gyermek számára, aki már jól ismeri a betűket (nagyjából második osztály második felétől).",
+    "ro": "<strong>Acest serviciu este disponibil exclusiv în limba maghiară.</strong><br><br>Dacă observați dificultăți de învățare la copilul dumneavoastră, este util să evaluați dacă în fundal există o tulburare de abilități specifice sau o întârziere în dezvoltare. Vă pot oferi ajutor atât în evaluare, cât și în stabilirea unui program complex de dezvoltare pe care copilul îl poate exersa acasă împreună cu părintele în fiecare zi.",
+    "en": "<strong>This service is only available in Hungarian.</strong><br><br>If your child is experiencing learning difficulties, it is worth assessing whether there is a specific skill disorder or developmental delay underlying the issue. I can provide assistance both in the assessment and in establishing a comprehensive development program that the child can practice at home with a parent every day."
+  },
+
+  "service_sindelar_p2": {
+    "hu": "Ha a gyermeke nehezen követi az órák menetét, nehezen megy a hangos olvasás, írás, számolás, nem, vagy alig érti meg az olvasott szöveget, a házi feladatok elvégzéséhez folyamatosan segítségre van szüksége, figyelme gyakran elkalandozik, érdemes elvégezni a felmérést. A játékos felmérést követően egy otthon végezhető, a gyermekre szabott feladatsort kell naponta elvégezni (napi 10 percben), majd kéthetente kontrollra jönni.",
+    "ro": "Programul se adresează copiilor de vârstă școlară care cunosc deja bine literele (aproximativ din a doua jumătate a clasei a doua). Programul este disponibil doar pentru copiii care vorbesc și învață în limba maghiară și necesită prezență fizică.",
+    "en": "The program is designed for school-age children who already know the letters well (approximately from the second half of second grade). The program is only available for children who speak and learn in Hungarian and requires physical presence."
+  },
+
+  "service_sindelar_p3": {
+    "hu": "A kontrollt követően ismét új feladatsort kap a gyermek. A program hatására nagyjából 4-6 hónap alatt jelentkezhetnek az első eredmények, de nyilván ez a gyakorlás mennyiségétől és minőségétől függ. <strong>A program csak magyar nyelven beszélő, magyarul tanuló gyermekek számára elérhető és csak fizikai jelenléttel.</strong>",
+    "ro": "Pentru mai multe informații și programări, vă rugăm să mă contactați.",
+    "en": "For more information and appointments, please contact me."
+  },
+
+  "service_sindelar_duration": {
+    "hu": "Felmérés: 90 perc | Kontroll: 50 perc",
+    "ro": "Evaluare: 90 minute | Control: 50 minute",
+    "en": "Assessment: 90 minutes | Follow-up: 50 minutes"
+  },
+
+  "service_sindelar_price": {
+    "hu": "Felmérés: 270 lej | Kontroll: 180 lej",
+    "ro": "Evaluare: 270 lei | Control: 180 lei",
+    "en": "Assessment: 270 lei | Follow-up: 180 lei"
+  },
+
+  "service_sindelar_desc": {
+    "hu": "Részképesség zavarok felismerése és otthoni fejlesztőprogram magyar nyelvű gyermekek számára.",
+    "ro": "Recunoașterea tulburărilor de abilități specifice și program de dezvoltare la domiciliu pentru copiii voritori de limba maghiară.",
+    "en": "Identification of specific skill disorders and home development program for Hungarian-speaking children."
+  },
+
   "service_summary_title": {
     "hu": "Összefoglaló",
     "ro": "Rezumat",
