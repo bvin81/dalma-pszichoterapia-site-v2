@@ -120,34 +120,40 @@
     "en": "Blog – Post"
   },
 
-  "service_assess_adults_meta": {
-    "hu": "Klinikai felmérés felnőtteknek – Dr. Jánosi Dalma",
-    "ro": "Evaluare clinică pentru adulți – Dr. Jánosi Dalma",
-    "en": "Clinical assessment for adults – Dr. Dalma Jánosi"
+  "service_online_meta": {
+    "hu": "Online terápia – Dr. Jánosi Dalma",
+    "ro": "Terapie online – Dr. Jánosi Dalma",
+    "en": "Online therapy – Dr. Dalma Jánosi"
   },
 
-  "service_assess_adults_title": {
-    "hu": "Klinikai felmérés felnőtteknek",
-    "ro": "Evaluare clinică pentru adulți",
-    "en": "Clinical assessment for adults"
+  "service_online_title": {
+    "hu": "Online terápia",
+    "ro": "Terapie online",
+    "en": "Online therapy"
   },
 
-  "service_assess_adults_p1": {
-    "hu": "A klinikai felmérés célja, hogy pontosabb képet kapjunk a jelenlegi nehézségekről...",
-    "ro": "Scopul evaluării clinice este de a obține o imagine mai clară asupra dificultăților...",
-    "en": "The purpose of the clinical assessment is to gain a clearer understanding of current difficulties..."
+  "service_online_p1": {
+    "hu": "Egyéni tanácsadást, egyéni pszichoterápiát vagy családterápiát egyaránt igénybe vehet online térben is vagy hibrid módban – időnként online, időnként fizikai jelenléttel.",
+    "ro": "Consilierea individuală, psihoterapia individuală sau terapia de familie pot fi accesate atât în format online, cât și în regim hibrid – uneori online, alteori cu prezență fizică.",
+    "en": "Individual counseling, individual psychotherapy, and family therapy are available both online and in a hybrid format – sometimes online, sometimes in person."
   },
 
-  "service_assess_adults_p2": {
-    "hu": "A felmérés nem minősít, nem címkéz, hanem irányt mutat...",
-    "ro": "Evaluarea nu etichetează și nu judecă, ci oferă direcție...",
-    "en": "The assessment does not label or judge; it provides direction..."
+  "service_online_duration": {
+    "hu": "50 perc/alkalom (egyéni), 90 perc/alkalom (családterápia)",
+    "ro": "50 de minute/ședință (individual) și 90 de minute/ședință (terapie de familie)",
+    "en": "50 minutes/session (individual), 90 minutes/session (family therapy)"
   },
 
-  "service_assess_adults_p3": {
-    "hu": "A visszajelzés során közösen áttekintjük az eredményeket...",
-    "ro": "În cadrul feedbackului analizăm împreună rezultatele...",
-    "en": "During the feedback session, we review the results together..."
+  "service_online_price": {
+    "hu": "180/alkalom (egyéni), 270 lej/alkalom (családterápia)",
+    "ro": "180 lei/ședință (individual), 270 lei/ședință (terapie de familie)",
+    "en": "180 RON/session (individual), 270 RON/session (family therapy)"
+  },
+
+  "service_online_desc": {
+    "hu": "Hatékony terápia otthonod kényelméből, videókonferencia platformon keresztül.",
+    "ro": "Terapie eficientă din confortul casei tale, prin platformă de videoconferință.",
+    "en": "Effective therapy from the comfort of your home, via video conferencing platform."
   },
 
   "service_summary_title": {
@@ -174,19 +180,6 @@
     "en": "Price:"
   },
 
-  "service_assess_adults_duration": {
-    "hu": "60–90 perc",
-    "ro": "60–90 minute",
-    "en": "60–90 minutes"
-  },
-
-  "service_assess_adults_price": {
-    "hu": "XX.XXX Ft / alkalom",
-    "ro": "XX.XXX Ft / ședință",
-    "en": "XX.XXX Ft / session"
-  },
-
-  
   "service_group_meta": {
     "hu": "Csoport pszichoterápia – Dr. Jánosi Dalma",
     "ro": "Psihoterapie de grup – Dr. Jánosi Dalma",
@@ -215,6 +208,12 @@
     "hu": "100 lej / fő / alkalom",
     "ro": "100 lei / persoană / ședință",
     "en": "100 lei / person / session"
+  },
+
+  "service_group_desc": {
+    "hu": "Támogató közösség önismeret fejlesztésére és kapcsolati minták feltárására.",
+    "ro": "Comunitate de sprijin pentru dezvoltarea autocunoașterii și explorarea tiparelor relaționale.",
+    "en": "Supportive community for self-awareness and exploring relational patterns."
   },
 
   "service_career_meta": {
@@ -259,7 +258,12 @@
     "en": "XX.XXX Ft / session"
   },
 
-  
+  "service_career_desc": {
+    "hu": "Támogatás szakmai irányválasztásban és karriertervezésben.",
+    "ro": "Sprijin în alegerea direcției profesionale și planificarea carierei.",
+    "en": "Support in professional direction and career planning."
+  },
+
   "service_couples_meta": {
     "hu": "Pár- és családterápia – Dr. Jánosi Dalma",
     "ro": "Terapie de cuplu și familie – Dr. Jánosi Dalma",
@@ -300,9 +304,14 @@
     "hu": "270 lej/alkalom",
     "ro": "270 de lei/ședință",
     "en": "270 lei/session"
-  }, 
+  },
 
-  
+  "service_couples_desc": {
+    "hu": "Rendszerszemléletű támogatás párok és családok számára.",
+    "ro": "Sprijin sistemic pentru cupluri și familii.",
+    "en": "Systemic support for couples and families."
+  },
+
   "service_individual_meta": {
     "hu": "Egyéni pszichoterápia – Dr. Jánosi Dalma",
     "ro": "Psihoterapie individuală – Dr. Jánosi Dalma",
@@ -345,7 +354,12 @@
     "en": "180 lei/session"
   },
 
-  
+  "service_individual_desc": {
+    "hu": "Rendszerszemléletű terápia egyéni nehézségek feldolgozására.",
+    "ro": "Terapie sistemică pentru procesarea dificultăților individuale.",
+    "en": "Systemic therapy for processing individual difficulties."
+  },
+
   "service_psych_meta": {
     "hu": "Egyéni tanácsadás – Dr. Jánosi Dalma",
     "ro": "Consilierea individuală – Dr. Jánosi Dalma",
@@ -392,35 +406,5 @@
     "hu": "Rövid folyamat aktuális élethelyzeti nehézségekhez, döntéshelyzetekhez.",
     "ro": "Proces scurt pentru dificultăți actuale și situații decizionale.",
     "en": "Short-term process for current life challenges and decision-making."
-  },
-
-  "service_individual_desc": {
-    "hu": "Rendszerszemléletű terápia egyéni nehézségek feldolgozására.",
-    "ro": "Terapie sistemică pentru procesarea dificultăților individuale.",
-    "en": "Systemic therapy for processing individual difficulties."
-  },
-
-  "service_couples_desc": {
-    "hu": "Rendszerszemléletű támogatás párok és családok számára.",
-    "ro": "Sprijin sistemic pentru cupluri și familii.",
-    "en": "Systemic support for couples and families."
-  },
-
-  "service_assess_adults_desc": {
-    "hu": "Részletes felmérés a jelenlegi nehézségek tisztázására.",
-    "ro": "Evaluare detaliată pentru clarificarea dificultăților actuale.",
-    "en": "Detailed assessment to clarify current difficulties."
-  },
-
-  "service_group_desc": {
-    "hu": "Támogató közösség önismeret fejlesztésére és kapcsolati minták feltárására.",
-    "ro": "Comunitate de sprijin pentru dezvoltarea autocunoașterii și explorarea tiparelor relaționale.",
-    "en": "Supportive community for self-awareness and exploring relational patterns."
-  },
-
-  "service_career_desc": {
-    "hu": "Támogatás szakmai irányválasztásban és karriertervezésben.",
-    "ro": "Sprijin în alegerea direcției profesionale și planificarea carierei.",
-    "en": "Support in professional direction and career planning."
   }
 }
