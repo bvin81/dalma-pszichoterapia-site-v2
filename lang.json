@@ -41,7 +41,7 @@
   "affirmation_text": {
     "hu": "Teljesen rendben van, ha segítséget kérsz. Nem kell mindent egyedül cipelned.",
     "ro": "Este perfect în regulă să ceri ajutor. Nu trebuie să duci totul singur.",
-    "en": "It is completely okay to ask for help. You don’t have to carry everything alone."
+    "en": "It is completely okay to ask for help. You don't have to carry everything alone."
   },
 
   "services_title": {
@@ -188,33 +188,33 @@
 
   
   "service_group_meta": {
-  "hu": "Csoport pszichoterápia – Dr. Jánosi Dalma",
-  "ro": "Psihoterapie de grup – Dr. Jánosi Dalma",
-  "en": "Group psychotherapy – Dr. Dalma Jánosi"
+    "hu": "Csoport pszichoterápia – Dr. Jánosi Dalma",
+    "ro": "Psihoterapie de grup – Dr. Jánosi Dalma",
+    "en": "Group psychotherapy – Dr. Dalma Jánosi"
   },
 
   "service_group_title": {
-  "hu": "Csoport pszichoterápia",
-  "ro": "Psihoterapie de grup",
-  "en": "Group psychotherapy"
+    "hu": "Csoport pszichoterápia",
+    "ro": "Psihoterapie de grup",
+    "en": "Group psychotherapy"
   },
 
   "service_group_p1": {
-  "hu": "A csoportos pszichoterápia célja, hogy a résztvevők egy támogató, biztonságos közegben tapasztalhassák meg saját működésüket, érzéseiket és viselkedésüket másokéhoz viszonyítva. A csoport leképezi kicsiben a társadalmat és lehetőséget ad a visszajelzésre, az önreflexióra, a szociális készségek gyakorlására, valamint a kapcsolati minták felismerésére és módosítására. A folyamat során a résztvevők megtanulhatják a hatékony kommunikációt, a konfliktuskezelést, a stressz- és szorongáscsökkentő stratégiák alkalmazását, és erősödhet az érzelmi támogatottság érzése, ami hozzájárul a személyes növekedéshez és a hosszú távú változásokhoz.",
-  "ro": "Scopul psihoterapiei de grup este ca participanții să își poată experimenta propria funcționare, emoțiile și comportamentele într-un mediu sigur și susținător, comparativ cu cele ale celorlalți. Grupul reflectă societatea în miniatură și oferă oportunitatea de a primi feedback, de a practica auto-reflecția, abilitățile sociale și de a recunoaște și modifica tiparele relaționale. În cadrul procesului terapeutic, participanții pot învăța comunicarea eficientă, gestionarea conflictelor, aplicarea strategiilor de reducere a stresului și anxietății, și se poate consolida sentimentul de susținere emoțională, ceea ce contribuie la dezvoltarea personală și la schimbări durabile pe termen lung.",
-  "en": "The goal of group psychotherapy is to allow participants to experience their own functioning, emotions, and behaviors in a safe and supportive environment, in relation to others. The group mirrors society on a small scale and provides opportunities for feedback, self-reflection, practicing social skills, and recognizing and modifying relational patterns. During the therapeutic process, participants can learn effective communication, conflict management, stress- and anxiety‑reduction strategies, and strengthen their sense of emotional support, which contributes to personal growth and long‑term, sustainable change."
+    "hu": "A csoportos pszichoterápia célja, hogy a résztvevők egy támogató, biztonságos közegben tapasztalhassák meg saját működésüket, érzéseiket és viselkedésüket másokéhoz viszonyítva. A csoport leképezi kicsiben a társadalmat és lehetőséget ad a visszajelzésre, az önreflexióra, a szociális készségek gyakorlására, valamint a kapcsolati minták felismerésére és módosítására. A folyamat során a résztvevők megtanulhatják a hatékony kommunikációt, a konfliktuskezelést, a stressz- és szorongáscsökkentő stratégiák alkalmazását, és erősödhet az érzelmi támogatottság érzése, ami hozzájárul a személyes növekedéshez és a hosszú távú változásokhoz.",
+    "ro": "Scopul psihoterapiei de grup este ca participanții să își poată experimenta propria funcționare, emoțiile și comportamentele într-un mediu sigur și susținător, comparativ cu cele ale celorlalți. Grupul reflectă societatea în miniatură și oferă oportunitatea de a primi feedback, de a practica auto-reflecția, abilitățile sociale și de a recunoaște și modifica tiparele relaționale. În cadrul procesului terapeutic, participanții pot învăța comunicarea eficientă, gestionarea conflictelor, aplicarea strategiilor de reducere a stresului și anxietății, și se poate consolida sentimentul de susținere emoțională, ceea ce contribuie la dezvoltarea personală și la schimbări durabile pe termen lung.",
+    "en": "The goal of group psychotherapy is to allow participants to experience their own functioning, emotions, and behaviors in a safe and supportive environment, in relation to others. The group mirrors society on a small scale and provides opportunities for feedback, self-reflection, practicing social skills, and recognizing and modifying relational patterns. During the therapeutic process, participants can learn effective communication, conflict management, stress- and anxiety‑reduction strategies, and strengthen their sense of emotional support, which contributes to personal growth and long‑term, sustainable change."
   },
 
   "service_group_duration": {
-  "hu": "90 perc",
-  "ro": "90 de minute",
-  "en": "90 minutes"
+    "hu": "90 perc",
+    "ro": "90 de minute",
+    "en": "90 minutes"
   },
 
   "service_group_price": {
-  "hu": "100 lej / fő / alkalom",
-  "ro": "100 lei / persoană / ședință",
-  "en": "100 lei / person / session"
+    "hu": "100 lej / fő / alkalom",
+    "ro": "100 lei / persoană / ședință",
+    "en": "100 lei / person / session"
   },
 
   "service_career_meta": {
@@ -281,9 +281,14 @@
   "service_couples_p2": { 
     "hu": "", 
     "ro": "", 
-    "en": "The goal of the therapeutic process may be to strengthen and redefine the relationship, deepen understanding, increase relational security, and initiate changes that allow for more supportive and balanced functioning in the long term. At the same time, therapy may aim to help the parties gain clarity on whether the relationship can continue together, or – if they decide to separate – to receive support in how to communicate the divorce to their children in a way that minimizes emotional harm. The process places special emphasis on maintaining the children’s emotional security and strengthening parental cooperation in the context of a changing family situation." 
+    "en": "The goal of the therapeutic process may be to strengthen and redefine the relationship, deepen understanding, increase relational security, and initiate changes that allow for more supportive and balanced functioning in the long term. At the same time, therapy may aim to help the parties gain clarity on whether the relationship can continue together, or – if they decide to separate – to receive support in how to communicate the divorce to their children in a way that minimizes emotional harm. The process places special emphasis on maintaining the children's emotional security and strengthening parental cooperation in the context of a changing family situation." 
   },
-  
+
+  "service_couples_p3": {
+    "hu": "",
+    "ro": "",
+    "en": ""
+  },
   
   "service_couples_duration": {
     "hu": "90 perc/alkalom",
@@ -322,6 +327,11 @@
     "en": "In the therapeutic process, I also use elements of cognitive-behavioral therapy, for example in cases of anxiety, stress, or obsessive-compulsive disorders. In these situations, the initial focus is on learning to manage symptoms and internal tension, followed by gradually understanding the thought patterns and behaviors that maintain the difficulties. The goal is not merely symptom reduction, but also the strengthening of self-reflection, the development of more flexible coping strategies, and the improvement of everyday functioning, in order to support meaningful and sustainable change for you."
   },
 
+  "service_individual_p3": {
+    "hu": "",
+    "ro": "",
+    "en": ""
+  },
 
   "service_individual_duration": {
     "hu": "50 perc/alkalom",
@@ -351,9 +361,20 @@
   "service_psych_p1": {
     "hu": "Az egyéni konzultáció vagy egyéni tanácsadás általában egy rövid, pár alkalmas folyamat, melyben aktuális élethelyzeti nehézségen, érzelmen, döntéshelyzeten, akár gyermekneveléssel kapcsolatos problémán dolgozunk együtt. Célja, hogy tisztábban lásd magad, helyzeted és tudatosabb döntést hozhass. Egy biztonságos, ítéletmentes térre számíthatsz, amelyben szabadon megfogalmazhatod gondolataid, érzéseid. Az egyéni tanácsadás nem tanácsok osztogatásáról szól, hanem arról, hogy támogatást kapj saját megoldásaid megtalálásához, a számodra leginkább illeszkedő irány kijelöléséhez.",
     "ro": "Consilierea individuală sau consultația individuală este, de regulă, un proces de scurtă durată, format din câteva ședințe, în cadrul căruia lucrăm împreună pe dificultăți actuale de viață, trăiri emoționale, situații decizionale sau chiar probleme legate de creșterea copiilor. Scopul acestui proces este să te ajute să te înțelegi mai clar pe tine și situația ta, pentru a putea lua decizii mai conștiente. Poți conta pe un spațiu sigur și lipsit de judecată, în care îți poți exprima liber gândurile și emoțiile. Consilierea individuală nu înseamnă oferirea de sfaturi, ci sprijin în descoperirea propriilor soluții și în conturarea direcției care ți se potrivește cel mai bine.",
-    "en": "PIndividual counseling is usually a short-term process consisting of a few sessions, in which we work together on current life challenges, emotional experiences, decision-making situations, or even issues related to parenting. Its goal is to help you gain a clearer understanding of yourself and your situation, enabling you to make more conscious decisions. You can expect a safe, non-judgmental space where you can freely express your thoughts and feelings. Individual counseling is not about giving advice, but about supporting you in finding your own solutions and identifying the direction that best suits you."
+    "en": "Individual counseling is usually a short-term process consisting of a few sessions, in which we work together on current life challenges, emotional experiences, decision-making situations, or even issues related to parenting. Its goal is to help you gain a clearer understanding of yourself and your situation, enabling you to make more conscious decisions. You can expect a safe, non-judgmental space where you can freely express your thoughts and feelings. Individual counseling is not about giving advice, but about supporting you in finding your own solutions and identifying the direction that best suits you."
   },
 
+  "service_psych_p2": {
+    "hu": "",
+    "ro": "",
+    "en": ""
+  },
+
+  "service_psych_p3": {
+    "hu": "",
+    "ro": "",
+    "en": ""
+  },
 
   "service_psych_duration": {
     "hu": "50 perc/alkalom",
@@ -365,41 +386,41 @@
     "hu": "180 lej/alkalom",
     "ro": "180 lei/ședință",
     "en": "180 lei/session"
-  }
+  },
 
   "service_psych_desc": {
-  "hu": "Rövid folyamat aktuális élethelyzeti nehézségekhez, döntéshelyzetekhez.",
-  "ro": "Proces scurt pentru dificultăți actuale și situații decizionale.",
-  "en": "Short-term process for current life challenges and decision-making."
-},
+    "hu": "Rövid folyamat aktuális élethelyzeti nehézségekhez, döntéshelyzetekhez.",
+    "ro": "Proces scurt pentru dificultăți actuale și situații decizionale.",
+    "en": "Short-term process for current life challenges and decision-making."
+  },
 
-"service_individual_desc": {
-  "hu": "Rendszerszemléletű terápia egyéni nehézségek feldolgozására.",
-  "ro": "Terapie sistemică pentru procesarea dificultăților individuale.",
-  "en": "Systemic therapy for processing individual difficulties."
-},
+  "service_individual_desc": {
+    "hu": "Rendszerszemléletű terápia egyéni nehézségek feldolgozására.",
+    "ro": "Terapie sistemică pentru procesarea dificultăților individuale.",
+    "en": "Systemic therapy for processing individual difficulties."
+  },
 
-"service_couples_desc": {
-  "hu": "Rendszerszemléletű támogatás párok és családok számára.",
-  "ro": "Sprijin sistemic pentru cupluri și familii.",
-  "en": "Systemic support for couples and families."
-},
+  "service_couples_desc": {
+    "hu": "Rendszerszemléletű támogatás párok és családok számára.",
+    "ro": "Sprijin sistemic pentru cupluri și familii.",
+    "en": "Systemic support for couples and families."
+  },
 
-"service_assess_adults_desc": {
-  "hu": "Részletes felmérés a jelenlegi nehézségek tisztázására.",
-  "ro": "Evaluare detaliată pentru clarificarea dificultăților actuale.",
-  "en": "Detailed assessment to clarify current difficulties."
-},
+  "service_assess_adults_desc": {
+    "hu": "Részletes felmérés a jelenlegi nehézségek tisztázására.",
+    "ro": "Evaluare detaliată pentru clarificarea dificultăților actuale.",
+    "en": "Detailed assessment to clarify current difficulties."
+  },
 
-"service_group_desc": {
-  "hu": "Támogató közösség önismeret fejlesztésére és kapcsolati minták feltárására.",
-  "ro": "Comunitate de sprijin pentru dezvoltarea autocunoașterii și explorarea tiparelor relaționale.",
-  "en": "Supportive community for self-awareness and exploring relational patterns."
-},
+  "service_group_desc": {
+    "hu": "Támogató közösség önismeret fejlesztésére és kapcsolati minták feltárására.",
+    "ro": "Comunitate de sprijin pentru dezvoltarea autocunoașterii și explorarea tiparelor relaționale.",
+    "en": "Supportive community for self-awareness and exploring relational patterns."
+  },
 
-"service_career_desc": {
-  "hu": "Támogatás szakmai irányválasztásban és karriertervezésben.",
-  "ro": "Sprijin în alegerea direcției profesionale și planificarea carierei.",
-  "en": "Support in professional direction and career planning."
-}
+  "service_career_desc": {
+    "hu": "Támogatás szakmai irányválasztásban és karriertervezésben.",
+    "ro": "Sprijin în alegerea direcției profesionale și planificarea carierei.",
+    "en": "Support in professional direction and career planning."
+  }
 }
