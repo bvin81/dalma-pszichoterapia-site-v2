@@ -174,12 +174,6 @@
     "en": "<strong>This service is only available in Hungarian.</strong>"
   },
 
-  "service_sindelar_p2": {
-    "hu": "",
-    "ro": "Programul se adresează copiilor de vârstă școlară care cunosc deja bine literele (aproximativ din a doua jumătate a clasei a doua). Programul este disponibil doar pentru copiii care vorbesc și învață în limba maghiară și necesită prezență fizică.",
-    "en": "The program is designed for school-age children who already know the letters well (approximately from the second half of second grade). The program is only available for children who speak and learn in Hungarian and requires physical presence."
-  },
-
   "service_sindelar_duration": {
     "hu": "Felmérés: 90 perc/alkalom | Kontroll: 50 perc/alkalom",
     "ro": "Evaluare: 90 minute/ședință| Control: 50 minute/ședință",
