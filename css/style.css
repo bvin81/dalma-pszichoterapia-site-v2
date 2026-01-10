@@ -140,6 +140,8 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+   background-attachment: scroll; /* alapértelmezett */
+   transition: background-position 0.1s ease-out; /* sima mozgás */
 }
 
 /* Sötétítő réteg a kép fölött */
@@ -182,6 +184,10 @@ img {
 .hero-main-btn:hover {
   transform: translateX(-50%) translateY(-2px);  /* Megtartja a középre igazítást */
   box-shadow: 0 12px 35px rgba(129, 154, 136, 0.4);
+}
+
+.hero.parallax {
+  background-position: center calc(50% + var(--scroll-progress, 0) * 20px) !important;
 }
 
 /* Szlogen doboz - átlátszó háttér, fehér szöveg, JOBB FENT (FÜGGETLEN) */
