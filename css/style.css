@@ -316,6 +316,74 @@ img {
   font-size: 1.1rem;
 }
 
+.read-more-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.read-more-link:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------
+   ABOUT OLDAL - Fotó (1/3) + Szöveg (2/3)
+--------------------------------------------------- */
+.about-section {
+  padding: 3rem 0;
+  background: var(--bg-main);
+}
+
+.about-content {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Mobil: egymás alatt */
+@media (max-width: 899px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop: 1:2 arány */
+@media (min-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-text h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 /* ---------------------------------------------------
    SZOLGÁLTATÁSOK GRID
 --------------------------------------------------- */
