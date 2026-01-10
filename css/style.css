@@ -4,21 +4,22 @@
    ===================================================== */
 
 :root {
-  --bg-main: #F5F7FA;
+  --bg-main: #F8FAFC;
   --bg-surface: #FFFFFF;
-  --bg-soft: #EDF2F7;
-  --text-main: #2D3748;
-  --text-muted: #718096;
-  --accent-main: #8FA59E;
-  --accent-dark: #6B8278;
-  --accent-light: #B8C9C3;
+  --bg-soft: #F1F5F9;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --accent-main: #7DD3C9; /* Könnyebb teal, jobb kontraszt */
+  --accent-dark: #0F766E;
+  --accent-light: #B8E6DE;
   --border-subtle: #E2E8F0;
-  --radius-card: 18px;
+  --radius-card: 20px;
   --radius-pill: 999px;
-  --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.03);
-  --shadow-medium: 0 12px 32px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.09);
+  --shadow-soft: 0 8px 24px rgba(0,0,0,0.04);
+  --shadow-medium: 0 12px 32px rgba(0,0,0,0.08);
+  --shadow-hover: 0 20px 48px rgba(0,0,0,0.12);
 }
+
 
 *, *::before, *::after {
   box-sizing: border-box;
