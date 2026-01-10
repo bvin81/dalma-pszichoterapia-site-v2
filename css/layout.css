@@ -19,9 +19,9 @@
   padding: var(--spacing-sm) 0;
 }
 
-/* Navigation - MOBILE-FIRST JAVÍTOTT */
+/* Navigation - MAIN.JS "is-open" KOMPATIBILIS */
 .nav-desktop {
-  display: none; /* Alap: rejtett (mobil-first) */
+  display: none; /* Alap: mobil-first rejtett */
 }
 
 .nav-left {
@@ -59,7 +59,7 @@
 
 /* Mobile Toggle */
 .nav-toggle {
-  display: block; /* Alap: látható (mobil) */
+  display: block; /* Alap: mobil látható */
   background: none;
   border: none;
   font-size: 1.8rem;
@@ -69,18 +69,23 @@
   transition: transform var(--transition-fast);
 }
 
-.nav-toggle:hover {
+.nav-toggle:hover,
+.nav-toggle.active {
   transform: scale(1.1);
 }
 
 /* Mobile Menu */
 .nav-mobile {
-  display: none; /* JS active class-szal jelenik meg */
+  display: none; /* Alap rejtett */
   flex-direction: column;
   padding: var(--spacing-sm);
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
+}
+
+.nav-mobile.is-open {  /* ✅ MAIN.JS KULCS Szabály! */
+  display: flex !important;
 }
 
 .nav-mobile a {
@@ -99,18 +104,19 @@
   color: var(--accent-main);
 }
 
-/* DESKTOP: nav-desktop látható, hamburger ELREJTETT */
+/* DESKTOP: CSAK NAV GOMBOK */
 @media (min-width: 900px) {
   .nav-desktop {
     display: flex !important;
   }
-  
   .nav-toggle {
-    display: none !important; /* EZ A KULCS! Desktopon rejtett */
+    display: none !important;  /* ☰ eltűnik */
   }
-  
   .nav-mobile {
-    display: none !important;
+    display: none !important;  /* Mobile menu mindig rejtett */
+  }
+  .nav-mobile.is-open {
+    display: none !important;  /* JS sem írja felül */
   }
 }
 
