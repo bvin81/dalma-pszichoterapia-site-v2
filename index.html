@@ -3,113 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="meta_title"></title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/typography.css">
+  <meta name="description" content="Dr. Jánosi Dalma - Pszichoterapeuta, klinikai pszichológus. Rendszerszemléletű családterápia, egyéni és párterápia Marosvásárhelyen és online.">
+  <meta name="keywords" content="pszichoterápia, családterápia, párterápia, online terápia, Marosvásárhely">
+  <meta name="author" content="Dr. Jánosi Dalma">
+  
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Dr. Jánosi Dalma - Pszichoterápia">
+  <meta property="og:description" content="Rendszerszemléletű családterápia, egyéni és párterápia">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com">
+  
+  <title data-key="meta_title">Pszichoterápia – Jánosi Dalma</title>
+  
+  <!-- Új modularizált CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
+
+<!-- Skip Link for Accessibility -->
+<a href="#main-content" class="skip-link">Ugrás a tartalomhoz</a>
 
 <!-- HEADER -->
 <header class="header">
   <div class="container header-inner">
 
     <nav class="nav-desktop nav-left">
-      <a href="about.html" data-key="nav_about"></a>
-      <a href="#services" data-key="nav_services"></a>
-      <a href="./blog.html" data-key="nav_blog"></a>
-      <a href="#contact" data-key="nav_contact"></a>
+      <a href="about.html" data-key="nav_about">Rólam</a>
+      <a href="#services" data-key="nav_services">Szolgáltatások</a>
+      <a href="./blog.html" data-key="nav_blog">Blog</a>
+      <a href="#contact" data-key="nav_contact">Kapcsolat</a>
     </nav>
 
     <!-- NYELVVÁLTÓ -->
     <div class="lang-switcher">
-      <button data-lang="hu">HU</button>
-      <button data-lang="ro">RO</button>
-      <button data-lang="en">EN</button>
+      <button data-lang="hu" aria-label="Magyar">HU</button>
+      <button data-lang="ro" aria-label="Română">RO</button>
+      <button data-lang="en" aria-label="English">EN</button>
     </div>
 
-    <button class="nav-toggle" id="menuBtn">☰</button>
+    <button class="nav-toggle" id="menuBtn" aria-label="Menü megnyitása" aria-expanded="false">☰</button>
   </div>
 
-  <nav class="nav-mobile" id="mobileMenu">
-    <a href="about.html" data-key="nav_about"></a>
-    <a href="#services" data-key="nav_services"></a>
-    <a href="blog.html" data-key="nav_blog"></a>
-    <a href="#contact" data-key="nav_contact"></a>
+  <nav class="nav-mobile" id="mobileMenu" aria-label="Mobil navigáció">
+    <a href="about.html" data-key="nav_about">Rólam</a>
+    <a href="#services" data-key="nav_services">Szolgáltatások</a>
+    <a href="blog.html" data-key="nav_blog">Blog</a>
+    <a href="#contact" data-key="nav_contact">Kapcsolat</a>
   </nav>
 </header>
 
 <!-- HERO - Teljes szélességű háttérkép -->
-<section id="about" class="hero">
+<section id="about" class="hero" style="background-image: url('images/profile.jpg');" role="banner">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
-    <a href="#contact" class="btn-primary hero-main-btn" data-key="hero_button"></a>
+    <a href="#contact" class="btn btn-primary btn-large hero-main-btn" data-key="hero_button">Dolgozni akarok magamon</a>
     <div class="slogan-box">
-      <p data-key="hero_slogan"></p>
+      <p data-key="hero_slogan">"A változás ott kezdődik, ahol teret adsz magadnak."</p>
     </div>
   </div>
 </section>
 
 <!-- AFFIRMATION - Rövid bemutatkozó + Tovább link -->
-<section class="affirmation">
-  <p data-key="affirmation_intro"></p>
-  <a href="about.html" class="read-more-link" data-key="read_more"></a>
+<section class="affirmation" id="main-content">
+  <div class="container">
+    <p data-key="affirmation_intro">
+      Jánosi Dalma vagyok, pszichoterapeuta, klinikai pszichológus, pedagógus. Hiszek abban, hogy a fejlődés lehetősége egy döntéssel kezdődik, a terápiás folyamatban pedig biztonságos, elfogadó térben kísérem klienseim saját döntéseik és belső változásaik útján.
+    </p>
+    <a href="about.html" class="read-more-link" data-key="read_more">Tovább</a>
+  </div>
 </section>
 
 <!-- SZOLGÁLTATÁSOK -->
 <section id="services" class="services">
   <div class="container">
-    <h2 data-key="services_title"></h2>
+    <h2 data-key="services_title">Szolgáltatások</h2>
 
     <div class="grid-3">
 
-      <!-- 1 -->
-      <div class="service-card">
-        <img src="images/service-psychological.jpg" alt="">
-        <h3 data-key="service_psych_title"></h3>
-        <p data-key="service_psych_desc"></p>
-        <a href="service/psychological.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
+      <!-- 1 - Egyéni tanácsadás -->
+      <article class="service-card card">
+        <img data-src="images/service-psychological.jpg" src="images/placeholder.jpg" alt="Egyéni tanácsadás" class="lazy">
+        <h3 data-key="service_psych_title">Egyéni tanácsadás</h3>
+        <p data-key="service_psych_desc">Rövid folyamat aktuális élethelyzeti nehézségekhez, döntéshelyzetekhez.</p>
+        <a href="service/psychological.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
+      </article>
 
-      <!-- 2 -->
-      <div class="service-card">
-        <img src="images/service-individual.jpg" alt="">
-        <h3 data-key="service_individual_title"></h3>
-        <p data-key="service_individual_desc"></p>
-        <a href="service/individual.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
+      <!-- 2 - Egyéni pszichoterápia -->
+      <article class="service-card card">
+        <img data-src="images/service-individual.jpg" src="images/placeholder.jpg" alt="Egyéni pszichoterápia" class="lazy">
+        <h3 data-key="service_individual_title">Egyéni pszichoterápia</h3>
+        <p data-key="service_individual_desc">Rendszerszemléletű terápia egyéni nehézségek feldolgozására.</p>
+        <a href="service/individual.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
+      </article>
 
-      <!-- 3 -->
-      <div class="service-card">
-        <img src="images/service-couples.jpg" alt="">
-        <h3 data-key="service_couples_title"></h3>
-        <p data-key="service_couples_desc"></p>
-        <a href="service/couples.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
+      <!-- 3 - Család- és párterápia -->
+      <article class="service-card card">
+        <img data-src="images/service-couples.jpg" src="images/placeholder.jpg" alt="Család- és párterápia" class="lazy">
+        <h3 data-key="service_couples_title">Család- és párterápia</h3>
+        <p data-key="service_couples_desc">Rendszerszemléletű támogatás párok és családok számára.</p>
+        <a href="service/couples.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
+      </article>
 
       <!-- 4 - Online terápia -->
-      <div class="service-card">
-        <img src="images/service-online.jpg" alt="">
-        <h3 data-key="service_online_title"></h3>
-        <p data-key="service_online_desc"></p>
-        <a href="service/online-therapy.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
+      <article class="service-card card">
+        <img data-src="images/service-online.jpg" src="images/placeholder.jpg" alt="Online terápia" class="lazy">
+        <h3 data-key="service_online_title">Online terápia</h3>
+        <p data-key="service_online_desc">Hatékony terápia otthonod kényelméből, videókonferencia platformon keresztül.</p>
+        <a href="service/online-therapy.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
+      </article>
 
-      <!-- 5 – Csoportterápia -->
-      <div class="service-card">
-        <img src="images/service-group.jpg" alt="">
-        <h3 data-key="service_group_title"></h3>
-        <p data-key="service_group_desc"></p>
-        <a href="service/group-therapy.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
+      <!-- 5 - Csoportterápia -->
+      <article class="service-card card">
+        <img data-src="images/service-group.jpg" src="images/placeholder.jpg" alt="Csoport pszichoterápia" class="lazy">
+        <h3 data-key="service_group_title">Csoport pszichoterápia</h3>
+        <p data-key="service_group_desc">Támogató közösség önismeret fejlesztésére és kapcsolati minták feltárására.</p>
+        <a href="service/group-therapy.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
+      </article>
 
       <!-- 6 - Tanulási zavar megelőzése -->
-      <div class="service-card">
-        <img src="images/service-sindelar.jpg" alt="">
-        <h3 data-key="service_sindelar_title"></h3>
-        <p data-key="service_sindelar_desc"></p>
-        <a href="service/sindelar-therapy.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
+      <article class="service-card card">
+        <img data-src="images/service-sindelar.jpg" src="images/placeholder.jpg" alt="Tanulási zavar megelőzése" class="lazy">
+        <h3 data-key="service_sindelar_title">Tanulási zavar megelőzése</h3>
+        <p data-key="service_sindelar_desc">Részképesség zavarok felismerése és otthoni fejlesztőprogram magyar nyelvű gyermekek számára.</p>
+        <a href="service/sindelar-therapy.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
+      </article>
 
     </div>
   </div>
@@ -118,31 +139,32 @@
 <!-- KAPCSOLAT -->
 <section id="contact" class="contact">
   <div class="container">
-    <h2 data-key="contact_title"></h2>
+    <h2 data-key="contact_title">Kapcsolat</h2>
 
     <form id="contactForm" class="contact-form">
 
-      <div style="display:none;">
+      <!-- Honeypot -->
+      <div style="display:none;" aria-hidden="true">
         <label for="website">Ne töltsd ki ezt a mezőt</label>
-        <input type="text" id="website" name="website">
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
       </div>
 
       <div class="form-row two-cols">
-        <input type="text" name="lastname" data-key-placeholder="form_lastname" required>
-        <input type="text" name="firstname" data-key-placeholder="form_firstname" required>
+        <input type="text" name="lastname" data-key-placeholder="form_lastname" required aria-label="Családnév">
+        <input type="text" name="firstname" data-key-placeholder="form_firstname" required aria-label="Keresztnév">
       </div>
 
       <div class="form-row two-cols">
-        <input type="tel" name="phone" data-key-placeholder="form_phone">
-        <input type="email" name="email" data-key-placeholder="form_email" required>
+        <input type="tel" name="phone" data-key-placeholder="form_phone" aria-label="Telefonszám">
+        <input type="email" name="email" data-key-placeholder="form_email" required aria-label="E-mail cím">
       </div>
 
       <div class="form-row">
-        <textarea name="message" rows="5" data-key-placeholder="form_message" required></textarea>
+        <textarea name="message" rows="5" data-key-placeholder="form_message" required aria-label="Üzenet"></textarea>
       </div>
 
       <div class="form-row">
-        <button type="submit" class="btn-primary form-submit" data-key="form_submit"></button>
+        <button type="submit" class="btn btn-primary form-submit" data-key="form_submit">Üzenet küldése</button>
       </div>
 
     </form>
@@ -153,10 +175,11 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <span data-key="footer_text"></span>
+    <span data-key="footer_text">© 2025 Jánosi Dalma – Minden jog fenntartva</span>
   </div>
 </footer>
 
+<!-- Scripts -->
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
