@@ -8,6 +8,7 @@
   z-index: 100;
   box-shadow: var(--shadow-soft);
 }
+
 .header-inner {
   display: flex;
   justify-content: space-between;
