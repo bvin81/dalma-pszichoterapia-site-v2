@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Blokkolás: érzékeny fájlok
+Disallow: /js/
+Disallow: /*.json$
+
+# Keresőmotor specifikus
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
