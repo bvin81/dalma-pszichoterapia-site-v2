@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="service_group_meta"></title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/typography.css">
+  <meta name="description" content="Csoport pszichoterápia - Támogató közösség önismeret fejlesztésére.">
+  <title data-key="service_group_meta">Csoport pszichoterápia – Dr. Jánosi Dalma</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 
 <body>
@@ -14,25 +15,33 @@
   <div class="container header-inner">
 
     <nav class="nav-desktop nav-left">
-      <a href="../index.html#about" data-key="nav_about"></a>
-      <a href="../index.html#services" data-key="nav_services"></a>
-      <a href="../blog.html" data-key="nav_blog"></a>
-      <a href="../index.html#contact" data-key="nav_contact"></a>
+      <a href="../index.html#about" data-key="nav_about">Rólam</a>
+      <a href="../index.html#services" data-key="nav_services">Szolgáltatások</a>
+      <a href="../blog.html" data-key="nav_blog">Blog</a>
+      <a href="../index.html#contact" data-key="nav_contact">Kapcsolat</a>
     </nav>
 
     <div class="lang-switcher">
-      <button data-lang="hu">HU</button>
-      <button data-lang="ro">RO</button>
-      <button data-lang="en">EN</button>
+      <button data-lang="hu" aria-label="Magyar">HU</button>
+      <button data-lang="ro" aria-label="Română">RO</button>
+      <button data-lang="en" aria-label="English">EN</button>
     </div>
 
+    <button class="nav-toggle" id="menuBtn" aria-label="Menü megnyitása">☰</button>
   </div>
+  
+  <nav class="nav-mobile" id="mobileMenu">
+    <a href="../index.html#about" data-key="nav_about">Rólam</a>
+    <a href="../index.html#services" data-key="nav_services">Szolgáltatások</a>
+    <a href="../blog.html" data-key="nav_blog">Blog</a>
+    <a href="../index.html#contact" data-key="nav_contact">Kapcsolat</a>
+  </nav>
 </header>
 
 <section class="service-detail">
   <div class="container">
 
-    <h1 data-key="service_group_title"></h1>
+    <h1 data-key="service_group_title">Csoport pszichoterápia</h1>
 
     <div class="two-columns">
 
@@ -41,28 +50,39 @@
       </div>
 
       <aside class="info-box">
-        <h3 data-key="service_summary_title"></h3>
+        <h3 data-key="service_summary_title">Összefoglaló</h3>
 
         <p>
-          <strong data-key="service_label_service"></strong>
-          <span data-key="service_group_title"></span>
+          <strong data-key="service_label_service">Szolgáltatás:</strong>
+          <span data-key="service_group_title">Csoport pszichoterápia</span>
         </p>
 
         <p>
-          <strong data-key="service_label_duration"></strong>
-          <span data-key="service_group_duration"></span>
+          <strong data-key="service_label_duration">Időtartam:</strong>
+          <span data-key="service_group_duration">90 perc</span>
         </p>
 
         <p>
-          <strong data-key="service_label_price"></strong>
-          <span data-key="service_group_price"></span>
+          <strong data-key="service_label_price">Díj:</strong>
+          <span data-key="service_group_price">100 lej / fő / alkalom</span>
         </p>
+
+        <div class="mt-4">
+          <a href="../index.html#contact" class="btn btn-primary w-100">Időpont foglalás</a>
+        </div>
+
       </aside>
 
     </div>
 
   </div>
 </section>
+
+<footer class="footer">
+  <div class="container">
+    <span data-key="footer_text">© 2025 Jánosi Dalma – Minden jog fenntartva</span>
+  </div>
+</footer>
 
 <script src="../js/main.js"></script>
 </body>
