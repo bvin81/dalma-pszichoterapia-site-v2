@@ -38,10 +38,28 @@
     "en": "\"Change begins where you give yourself space.\""
   },
 
+  "affirmation_intro": {
+    "hu": "Rendszerszemléletű családterapeuta vagyok, aki hisz abban, hogy az egyéni nehézségek gyakran kapcsolati összefüggésekben érthetők meg igazán.",
+    "ro": "Sunt terapeut de familie sistemic, care cred că dificultățile individuale pot fi înțelese adesea în context relațional.",
+    "en": "I am a systemic family therapist who believes that individual difficulties can often be truly understood in relational contexts."
+  },
+
+  "read_more": {
+    "hu": "Tovább",
+    "ro": "Mai mult",
+    "en": "Read more"
+  },
+
+  "about_page_title": {
+    "hu": "Rólam – Dr. Jánosi Dalma",
+    "ro": "Despre mine – Dr. Jánosi Dalma",
+    "en": "About me – Dr. Dalma Jánosi"
+  },
+
   "affirmation_text": {
     "hu": "Szakmai utamat pedagógiai, majd klinikai pszichológiai tanulmányok formálták, amelyek együtt alapozták meg a lelki folyamatok iránti érzékenységemet és a klinikai gondolkodásmódomat. Tudományos érdeklődésem a társas és kapcsolati összefüggések felé irányult, így szociológiából szereztem doktori fokozatot. Szakmai fejlődésemet rendszerszemléletű családterápiás képzéssel folytattam, amely ma is meghatározza a gondolkodásomat és a munkám kereteit. Hiszek abban, hogy az egyéni nehézségek gyakran kapcsolati és környezeti összefüggésekben érthetők meg igazán, ezért a közös munka során mindig figyelembe veszem az egyén családi, kapcsolati és társadalmi beágyazottságát. Munkámban fontosnak tartom a biztonságos, elfogadó légkör megteremtését, amelyben a klienseim saját tempójukban, támogatott módon indulhatnak el a változás felé.",
     "ro": "Parcursul meu profesional a fost modelat de studii pedagogice, urmate de studii în psihologie clinică, care au pus împreună bazele sensibilității mele față de procesele psihice și ale modului meu de gândire clinică. Interesul meu științific s-a îndreptat către relațiile sociale și dinamica relațională, motiv pentru care am obținut titlul de doctor în sociologie. Dezvoltarea mea profesională a continuat prin formarea în terapie de familie sistemică, care definește și astăzi modul meu de gândire și cadrul muncii mele. Cred că dificultățile individuale pot fi înțelese cu adevărat în context relațional și de mediu, de aceea, în procesul terapeutic, iau întotdeauna în considerare ancorarea familială, relațională și socială a persoanei. În practica mea, acord o importanță deosebită creării unui spațiu sigur și lipsit de prejudecăți, în care clienții mei pot porni, în ritmul lor, pe drumul schimbării.",
-    "en": "My professional path has been shaped by studies in pedagogy, followed by clinical psychology, which together laid the foundation for my sensitivity to psychological processes and my clinical way of thinking. My academic interests turned toward social and relational dynamics, leading me to earn a PhD in sociology. I continued my professional development with training in systemic family therapy, which defines my perspective and provides the framework of my everyday work. I believe that individual difficulties can often be truly understood within their relational and environmental contexts; therefore, in our work together, I always take into account the individual’s family, relational, and social embeddedness. In my practice, I place great emphasis on creating a safe and accepting environment in which my clients can move toward change at their own pace, with appropriate support."
+    "en": "My professional path has been shaped by studies in pedagogy, followed by clinical psychology, which together laid the foundation for my sensitivity to psychological processes and my clinical way of thinking. My academic interests turned toward social and relational dynamics, leading me to earn a PhD in sociology. I continued my professional development with training in systemic family therapy, which defines my perspective and provides the framework of my everyday work. I believe that individual difficulties can often be truly understood within their relational and environmental contexts; therefore, in our work together, I always take into account the individual's family, relational, and social embeddedness. In my practice, I place great emphasis on creating a safe and accepting environment in which my clients can move toward change at their own pace, with appropriate support."
   },
 
   "services_title": {
