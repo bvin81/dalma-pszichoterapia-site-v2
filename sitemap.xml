@@ -3,7 +3,7 @@
   
   <!-- Főoldal -->
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Rólam oldal -->
   <url>
-    <loc>https://yourdomain.com/about.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/about.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
   
   <!-- Blog lista -->
   <url>
-    <loc>https://yourdomain.com/blog.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/blog.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -27,42 +27,42 @@
   
   <!-- Szolgáltatások -->
   <url>
-    <loc>https://yourdomain.com/service/individual.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/service/individual.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/service/couples.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/service/couples.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/service/group-therapy.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/service/group-therapy.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/service/psychological.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/service/psychological.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/service/sindelar-therapy.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/service/sindelar-therapy.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/service/online-therapy.html</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/service/online-therapy.html</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -70,21 +70,21 @@
   
   <!-- Blog posztok -->
   <url>
-    <loc>https://yourdomain.com/blog-post.html?id=1</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/blog-post.html?id=1</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/blog-post.html?id=2</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/blog-post.html?id=2</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://yourdomain.com/blog-post.html?id=3</loc>
+    <loc>https://github.com/bvin81/dalma-pszichoterapia-site-v2/blog-post.html?id=3</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
