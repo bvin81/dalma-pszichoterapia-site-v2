@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Jánosi Dalma blogja - Gondolatok, útmutatók és nézőpontok a lelki egyensúly felé vezető úton.">
   <title data-key="blog_meta_title">Blog – Jánosi Dalma</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
@@ -23,12 +24,12 @@
 
     <!-- NYELVVÁLTÓ -->
     <div class="lang-switcher">
-      <button data-lang="hu">HU</button>
-      <button data-lang="ro">RO</button>
-      <button data-lang="en">EN</button>
+      <button data-lang="hu" aria-label="Magyar">HU</button>
+      <button data-lang="ro" aria-label="Română">RO</button>
+      <button data-lang="en" aria-label="English">EN</button>
     </div>
 
-    <button class="nav-toggle" id="menuBtn">☰</button>
+    <button class="nav-toggle" id="menuBtn" aria-label="Menü megnyitása">☰</button>
   </div>
 
   <nav class="nav-mobile" id="mobileMenu">
@@ -49,10 +50,16 @@
   </div>
 </section>
 
-<!-- BLOG GRID -->
+<!-- BLOG GRID WITH SEARCH AND FILTER -->
 <section class="blog-list">
   <div class="container">
-    <div class="blog-grid" id="blogContainer"></div>
+    
+    <!-- Keresés és kategória szűrő dinamikusan adódik hozzá a JS-ből -->
+    
+    <!-- Blog Grid Container -->
+    <div class="blog-grid" id="blogContainer">
+      <!-- Blog cards will be inserted here by JavaScript -->
+    </div>
   </div>
 </section>
 
@@ -64,36 +71,6 @@
 </footer>
 
 <script src="js/main.js"></script>
-
-<script>
-// BLOG LISTA BETÖLTÉSE NYELV FÜGGVÉNYÉBEN
-function loadBlogList() {
-  if (!document.getElementById("blogContainer")) return;
-
-  fetch("blog-posts.json")
-    .then(res => res.json())
-    .then(posts => {
-      const container = document.getElementById("blogContainer");
-      container.innerHTML = "";
-
-      posts.forEach(post => {
-        container.innerHTML += `
-          <a href="blog-post.html?id=${post.id}" class="blog-card">
-            <div class="blog-card-image">
-              <img src="${post.image}" alt="">
-            </div>
-            <div class="blog-card-content">
-              <h3>${post.title[currentLang]}</h3>
-            </div>
-          </a>
-        `;
-      });
-    });
-}
-
-// Indításkor betöltjük
-loadBlogList();
-</script>
 
 </body>
 </html>
