@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="about_page_title"></title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/typography.css">
+  <meta name="description" content="Dr. Jánosi Dalma bemutatkozása - pszichoterapeuta, klinikai pszichológus, pedagógus">
+  <title data-key="about_page_title">Rólam – Dr. Jánosi Dalma</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
@@ -15,45 +16,51 @@
   <div class="container header-inner">
 
     <nav class="nav-desktop nav-left">
-      <a href="index.html" data-key="nav_home"></a>
-      <a href="index.html#services" data-key="nav_services"></a>
-      <a href="blog.html" data-key="nav_blog"></a>
-      <a href="index.html#contact" data-key="nav_contact"></a>
+      <a href="index.html" data-key="nav_home">Főoldal</a>
+      <a href="index.html#services" data-key="nav_services">Szolgáltatások</a>
+      <a href="blog.html" data-key="nav_blog">Blog</a>
+      <a href="index.html#contact" data-key="nav_contact">Kapcsolat</a>
     </nav>
 
     <!-- NYELVVÁLTÓ -->
     <div class="lang-switcher">
-      <button data-lang="hu">HU</button>
-      <button data-lang="ro">RO</button>
-      <button data-lang="en">EN</button>
+      <button data-lang="hu" aria-label="Magyar">HU</button>
+      <button data-lang="ro" aria-label="Română">RO</button>
+      <button data-lang="en" aria-label="English">EN</button>
     </div>
 
-    <button class="nav-toggle" id="menuBtn">☰</button>
+    <button class="nav-toggle" id="menuBtn" aria-label="Menü megnyitása">☰</button>
   </div>
 
   <nav class="nav-mobile" id="mobileMenu">
-    <a href="index.html" data-key="nav_home"></a>
-    <a href="index.html#services" data-key="nav_services"></a>
-    <a href="blog.html" data-key="nav_blog"></a>
-    <a href="index.html#contact" data-key="nav_contact"></a>
+    <a href="index.html" data-key="nav_home">Főoldal</a>
+    <a href="index.html#services" data-key="nav_services">Szolgáltatások</a>
+    <a href="blog.html" data-key="nav_blog">Blog</a>
+    <a href="index.html#contact" data-key="nav_contact">Kapcsolat</a>
   </nav>
 </header>
 
 <!-- ABOUT CONTENT - 1:2 arány (fotó : szöveg) -->
 <section class="about-section">
   <div class="container">
-    <div class="about-content">
+    <div class="about-content fade-in">
       
       <!-- BAL OLDAL: Fotó (1/3) -->
       <div class="about-image">
-        <img src="images/profile-about.jpg" alt="Dr. Jánosi Dalma">
+        <img data-src="images/profile-about.jpg" 
+             src="images/placeholder.jpg" 
+             alt="Dr. Jánosi Dalma" 
+             class="lazy">
       </div>
 
       <!-- JOBB OLDAL: Szöveg (2/3) -->
-      <div class="about-text">
-        <h1 data-key="about_heading"></h1>
-        <p data-key="affirmation_text"></p>
-      </div>
+      <article class="about-text">
+        <h1 data-key="about_heading">Rólam</h1>
+        <p data-key="affirmation_text">
+          Jánosi Dalma vagyok, pszichoterapeuta, klinikai pszichológus, pedagógus. Hiszek abban, hogy a fejlődés lehetősége egy döntéssel kezdődik, a terápiás folyamatban pedig biztonságos, elfogadó térben kísérem klienseim saját döntéseik és belső változásaik útján.<br><br>
+          A pedagógia egyetem elvégzése után több területen is dolgoztam, miközben a segítő szakmában is továbbtanultam és folyamatosan képeztem magam. Ezek az évek nem eltávolítottak, hanem közelebb vittek ahhoz, hogy mélyebben megértsem az emberi működés sokféleségét, az útkeresést és az újrakezdés lehetőségét...
+        </p>
+      </article>
 
     </div>
   </div>
@@ -62,7 +69,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <span data-key="footer_text"></span>
+    <span data-key="footer_text">© 2025 Jánosi Dalma – Minden jog fenntartva</span>
   </div>
 </footer>
 
