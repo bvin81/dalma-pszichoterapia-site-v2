@@ -1,7 +1,7 @@
 /* =====================================================
-   STYLE-5.CSS - PARALLAX VERZIÓ
-   Jnosi Dalma pszichoterápia oldal
-   2026.01.10 - parallax hozzáadva
+   STYLE-6.CSS - VIZUÁLISAN GAZDAGABB VERZIÓ
+   Jánosi Dalma pszichoterápia oldal
+   2026.01.10 - komplex vizuális frissítés
    ===================================================== */
 
 /* ---------------------------------------------------
@@ -15,10 +15,13 @@
   --text-muted: #5C5F63;
   --accent-main: #819A88;
   --accent-soft: #A1B4A6;
+  --accent-light: #C5D4CA;
   --border-subtle: #D4D7D0;
   --radius-card: 16px;
   --radius-pill: 999px;
   --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 /* ---------------------------------------------------
@@ -28,12 +31,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--bg-main);
   color: var(--text-main);
   font-family: Inter, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -49,14 +57,64 @@ img {
 }
 
 /* ---------------------------------------------------
+   SCROLL ANIMÁCIÓK
+   --------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Késleltetett animációk */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+/* ---------------------------------------------------
    HEADER
    --------------------------------------------------- */
 .header {
-  background: var(--bg-main);
+  background: rgba(247, 245, 242, 0.95);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
   z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header-inner {
@@ -66,7 +124,7 @@ img {
   padding: 1rem 0;
 }
 
-/* Menü balra rendezve */
+/* Menú balra rendezve */
 .nav-left {
   display: flex;
   gap: 1.5rem;
@@ -76,10 +134,50 @@ img {
   text-decoration: none;
   color: var(--text-main);
   font-size: 0.95rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-main);
+  transition: width 0.3s ease;
 }
 
 .nav-desktop a:hover {
   color: var(--accent-main);
+}
+
+.nav-desktop a:hover::after {
+  width: 100%;
+}
+
+/* Nyelvváltó */
+.lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-switcher button {
+  background: none;
+  border: 2px solid transparent;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  color: var(--text-main);
+}
+
+.lang-switcher button:hover {
+  border-color: var(--accent-light);
+  background: rgba(129, 154, 136, 0.1);
 }
 
 /* Mobil menü */
@@ -90,6 +188,11 @@ img {
   border: none;
   font-size: 1.8rem;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle:hover {
+  transform: scale(1.1);
 }
 
 .nav-mobile {
@@ -105,6 +208,12 @@ img {
   border-bottom: 1px solid var(--border-subtle);
   text-decoration: none;
   color: var(--text-main);
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.nav-mobile a:hover {
+  color: var(--accent-main);
+  padding-left: 0.5rem;
 }
 
 @media (min-width: 900px) {
@@ -128,8 +237,6 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
-  /* PARALLAX ALAP */
   background-attachment: scroll;
   transition: background-position 0.1s ease-out;
 }
@@ -138,7 +245,7 @@ img {
   background-position: center calc(50% + var(--scroll-progress, 0) * 40px) !important;
 }
 
-/* Státusz réteg a kép fölött */
+/* Overlay réteg */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -146,12 +253,12 @@ img {
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, 
-    rgba(34, 35, 38, 0.4) 0%, 
-    rgba(129, 154, 136, 0.3) 100%);
+    rgba(34, 35, 38, 0.45) 0%, 
+    rgba(129, 154, 136, 0.35) 100%);
   z-index: 1;
 }
 
-/* Tartalom konténer - független pozicionálás */
+/* Tartalom konténer */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -160,35 +267,56 @@ img {
   min-height: 600px;
 }
 
-/* Fő gomb - középen, lent FÜGGETLEN POZÍCIÓ */
+/* Fő gomb - pulsing animáció */
 .hero-main-btn {
   position: absolute;
   left: 50%;
-  bottom: 15%; /* Lent, de nem az aljánál */
-  transform: translateX(-50%); /* Pontosan középre */
+  bottom: 15%;
+  transform: translateX(-50%);
   font-size: 1.2rem;
   padding: 1.2rem 3rem;
   box-shadow: 0 8px 25px rgba(129, 154, 136, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(129, 154, 136, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(129, 154, 136, 0.5);
+  }
 }
 
 .hero-main-btn:hover {
-  transform: translateX(-50%) translateY(-2px); /* Megtartja a középre igazítást */
-  box-shadow: 0 12px 35px rgba(129, 154, 136, 0.4);
+  transform: translateX(-50%) translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 45px rgba(129, 154, 136, 0.5);
 }
 
-/* Szlogen doboz - áttetsző háttér, fehér szöveg, JOBB FENT FÜGGETLEN */
+/* Szlogen doboz - glassmorphism effekt */
 .slogan-box {
   position: absolute;
-  top: 20%; /* Fent */
-  right: 8%; /* Jobbra */
-  background: transparent;
-  backdrop-filter: none;
+  top: 20%;
+  right: 8%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 2rem 2.5rem;
   border-radius: 20px;
-  box-shadow: none;
-  border: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 600px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .slogan-box p {
@@ -198,33 +326,24 @@ img {
   margin: 0;
   font-weight: 600;
   font-family: Poppins, sans-serif;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  text-align: right; /* Jobbra igazított szöveg */
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+  text-align: right;
 }
 
-/* Tablet/Desktop nézet - finomhangolás */
+/* Responsive hero */
 @media (min-width: 768px) {
-  .hero { min-height: 700px; background-position: center; }
+  .hero { min-height: 700px; }
   .hero-content { min-height: 700px; }
-  
-  /* Szlogen jobbra fent, tágasabban */
   .slogan-box { top: 15%; right: 10%; max-width: 500px; padding: 2rem; }
   .slogan-box p { font-size: 2rem; }
-  
-  /* Gomb középen, lejjebb */
   .hero-main-btn { bottom: 12%; font-size: 1.3rem; padding: 1.3rem 3.5rem; }
 }
 
-/* Nagy képernyő - még jobban tágasan */
 @media (min-width: 1200px) {
   .hero { min-height: 750px; }
   .hero-content { min-height: 750px; }
-  
-  /* Szlogen még jobban jobbra fent */
   .slogan-box { top: 12%; right: 12%; max-width: 550px; padding: 2.5rem 3rem; }
   .slogan-box p { font-size: 2.2rem; }
-  
-  /* Gomb nagyobb */
   .hero-main-btn { bottom: 10%; font-size: 1.4rem; padding: 1.4rem 4rem; }
 }
 
@@ -237,38 +356,87 @@ img {
   text-decoration: none;
   font-size: 0.95rem;
   display: inline-block;
-  transition: 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before,
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-primary {
-  background: var(--accent-main);
+  background: linear-gradient(135deg, var(--accent-main) 0%, var(--accent-soft) 100%);
   color: white;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(129, 154, 136, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(129, 154, 136, 0.4);
 }
 
 .btn-secondary {
-  background: var(--accent-main); /* Zöld háttér */
+  background: linear-gradient(135deg, var(--accent-main) 0%, var(--accent-soft) 100%);
   color: white;
   border: none;
+  box-shadow: 0 4px 15px rgba(129, 154, 136, 0.25);
 }
 
 .btn-secondary:hover {
-  background: var(--accent-soft); /* Világosabb zöld hover-re */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(129, 154, 136, 0.35);
 }
 
 /* ---------------------------------------------------
    AFFIRMATION
    --------------------------------------------------- */
 .affirmation {
-  background: var(--bg-beige);
-  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #EFE3D5 0%, #E8DCC9 100%);
+  padding: 3rem 1rem;
   text-align: center;
   font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.affirmation::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(129, 154, 136, 0.05) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.affirmation p {
+  position: relative;
+  z-index: 1;
 }
 
 .read-more-link {
@@ -277,12 +445,17 @@ img {
   color: var(--accent-main);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 .read-more-link:hover {
   color: var(--accent-soft);
-  text-decoration: underline;
+  border-bottom-color: var(--accent-soft);
+  transform: translateX(5px);
 }
 
 /* ---------------------------------------------------
@@ -299,21 +472,42 @@ img {
   align-items: start;
 }
 
-/* Mobil: egymás alatt */
 @media (max-width: 899px) {
   .about-content { grid-template-columns: 1fr; }
   .about-image { max-width: 400px; margin: 0 auto; }
 }
 
-/* Desktop: 1/3 - 2/3 arány */
 @media (min-width: 900px) {
   .about-content { grid-template-columns: 1fr 2fr; }
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: 10px;
+  bottom: 10px;
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-soft) 100%);
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 .about-image img {
   width: 100%;
   border-radius: 16px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-strong);
 }
 
 .about-text h1 {
@@ -321,6 +515,19 @@ img {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: var(--text-main);
+  position: relative;
+  display: inline-block;
+}
+
+.about-text h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-light) 100%);
+  border-radius: 2px;
 }
 
 .about-text p {
@@ -338,6 +545,28 @@ img {
   padding: 3rem 0;
 }
 
+.services h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-light) 100%);
+  border-radius: 2px;
+}
+
 .grid-3 {
   display: grid;
   gap: 2rem;
@@ -348,23 +577,66 @@ img {
 }
 
 .service-card {
-  background: var(--bg-beige);
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-card);
-  padding: 1rem;
+  padding: 0;
   box-shadow: var(--shadow-soft);
-  transition: 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-light) 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 .service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--accent-light);
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+.service-card > div {
+  padding: 1.5rem;
 }
 
 .service-card h3 {
   font-family: Poppins, sans-serif;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  color: var(--text-main);
+}
+
+.service-card p {
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .service-detail p {
@@ -372,8 +644,45 @@ img {
 }
 
 /* ---------------------------------------------------
-   BLOG KÁRTYÁK jó elrendezés
+   BLOG KÁRTYÁK
    --------------------------------------------------- */
+.blog-header {
+  background: linear-gradient(135deg, #EFE3D5 0%, #E8DCC9 100%);
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(129, 154, 136, 0.08) 0%, transparent 70%);
+  animation: rotate 25s linear infinite;
+}
+
+.blog-header h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-subtitle {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.blog-list {
+  padding: 3rem 0;
+}
+
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -384,27 +693,76 @@ img {
   box-shadow: var(--shadow-soft);
   text-decoration: none;
   color: inherit;
-  transition: 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-light) 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover::before {
+  transform: scaleX(1);
 }
 
 .blog-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--accent-light);
 }
 
 .blog-card-image {
   height: 220px;
   overflow: hidden;
+  position: relative;
+}
+
+.blog-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.blog-card:hover .blog-card-image::after {
+  opacity: 1;
 }
 
 .blog-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: 0;
+}
+
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.15);
 }
 
 .blog-card-content {
-  padding: 1rem 1.2rem;
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.blog-card-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-card-content h3 {
+  color: var(--accent-main);
 }
 
 .blog-grid {
@@ -414,48 +772,122 @@ img {
   margin-top: 2rem;
 }
 
+/* Blog post stílusok */
+.blog-post-header {
+  background: linear-gradient(135deg, #EFE3D5 0%, #E8DCC9 100%);
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-post-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(129, 154, 136, 0.05) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.blog-post-header h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.blog-post-image {
+  width: 100%;
+  border-radius: 16px;
+  margin: 1.5rem 0 2rem;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-post-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-strong);
+}
+
 /* ---------------------------------------------------
    KAPCSOLAT
    --------------------------------------------------- */
 .contact {
   padding: 3rem 0;
+  background: var(--bg-main);
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-light) 100%);
+  border-radius: 2px;
 }
 
 .contact-form {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 18px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+  box-shadow: var(--shadow-medium);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  transition: box-shadow 0.3s ease;
 }
 
-/* Sorok */
+.contact-form:hover {
+  box-shadow: var(--shadow-strong);
+}
+
 .form-row {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Két oszlopos sor */
 .two-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-/* Mezők */
 .contact-form input, 
 .contact-form textarea {
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1.2rem;
   border-radius: 10px;
-  border: 1px solid var(--border-subtle);
+  border: 2px solid var(--border-subtle);
   font-size: 1rem;
   background: white;
   width: 100%;
   font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-main);
+  box-shadow: 0 0 0 4px rgba(129, 154, 136, 0.1);
+  transform: translateY(-2px);
 }
 
 .contact-form input::placeholder,
@@ -464,15 +896,14 @@ img {
   opacity: 0.8;
 }
 
-/* Gomb teljes szélességben */
 .form-submit {
   width: 100%;
-  padding: 0.9rem 1rem;
-  font-size: 1.05rem;
+  padding: 1rem 1rem;
+  font-size: 1.1rem;
   text-align: center;
+  font-weight: 600;
 }
 
-/* Mobil nézet: minden egymás alatt */
 @media (max-width: 700px) {
   .two-cols { grid-template-columns: 1fr; }
 }
@@ -485,25 +916,86 @@ img {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+  background: var(--bg-beige);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* ---------------------------------------------------
-   SZOLGÁLTATÁS RÉSZLETEZŐ OLDAL 2/3 - 1/3 layout
+   SZOLGÁLTATÁS RÉSZLETEZŐ OLDAL
    --------------------------------------------------- */
+.service-detail {
+  padding: 3rem 0;
+}
+
+.service-detail h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.service-detail h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-light) 100%);
+  border-radius: 2px;
+}
+
 .two-columns {
   display: grid;
   gap: 2rem;
 }
 
 @media (min-width: 900px) {
-  .two-columns { grid-template-columns: 2fr 1fr; } /* 2/3 - 1/3 arány */
+  .two-columns { grid-template-columns: 2fr 1fr; }
 }
 
 .info-box {
-  background: var(--bg-beige);
+  background: linear-gradient(135deg, #EFE3D5 0%, #E8DCC9 100%);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 100px;
+  transition: box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.info-box h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.info-box h3::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-main);
+  border-radius: 2px;
+}
+
+.info-box p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.info-box strong {
+  color: var(--accent-main);
+  font-weight: 600;
 }
 
 /* ---------------------------------------------------
@@ -514,75 +1006,106 @@ img {
 }
 
 .blog-post .container {
-  max-width: 750px; /* optimális olvasható szélesség */
+  max-width: 750px;
 }
 
-.blog-post h1 {
-  font-family: Poppins, sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.3;
-}
-
-.blog-post-image {
-  width: 100%;
-  border-radius: 16px;
-  margin: 1.5rem 0 2rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.blog-post p {
+.blog-post-content p {
   font-size: 1.15rem;
-  line-height: 1.75;
-  margin-bottom: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
   color: var(--text-main);
   text-align: justify;
-  text-justify: inter-word; /* szebb szakaszok */
+  text-justify: inter-word;
 }
 
-.blog-post h2 {
+.blog-post-content h2 {
   font-family: Poppins, sans-serif;
   font-size: 1.6rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
 }
 
-.blog-post h3 {
+.blog-post-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-main);
+  border-radius: 2px;
+}
+
+.blog-post-content h3 {
   font-family: Poppins, sans-serif;
   font-size: 1.3rem;
   margin-top: 2rem;
   margin-bottom: 0.8rem;
 }
 
-.blog-post ul, .blog-post ol {
+.blog-post-content ul, 
+.blog-post-content ol {
   margin: 1rem 0 1.5rem 1.5rem;
   line-height: 1.7;
 }
 
-.blog-post li {
+.blog-post-content li {
   margin-bottom: 0.6rem;
 }
 
-.blog-post blockquote {
+.blog-post-content blockquote {
   margin: 2rem 0;
-  padding: 1.2rem 1.5rem;
-  background: var(--bg-beige);
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #EFE3D5 0%, #E8DCC9 100%);
   border-left: 4px solid var(--accent-main);
   border-radius: 12px;
   font-style: italic;
   color: var(--text-main);
+  box-shadow: var(--shadow-soft);
 }
 
-.blog-post a {
+.blog-post-content a {
   color: var(--accent-main);
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
-.blog-post a:hover {
+.blog-post-content a:hover {
   color: var(--accent-soft);
+  border-bottom-color: var(--accent-soft);
 }
 
-.blog-post-content p {
-  text-align: justify;
-  text-justify: inter-word;
+/* ---------------------------------------------------
+   PRELOADER (opcionális)
+   --------------------------------------------------- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--accent-light);
+  border-top-color: var(--accent-main);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
