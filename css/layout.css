@@ -13,6 +13,7 @@
   gap: 4rem;
   align-items: start;
 }
+
 @media (min-width: 900px) { .about-content { grid-template-columns: 1fr 2fr; } }
 
 .services { background: var(--bg-surface); padding: 5rem 0; }
