@@ -1,0 +1,26 @@
+{
+  "name": "dalma-pszichoterapia",
+  "version": "2.0.0",
+  "description": "Dr. Jánosi Dalma professzionális pszichoterápia website",
+  "main": "index.html",
+  "scripts": {
+    "minify-css": "csso css/main.css -o css/main.min.css",
+    "minify-js": "terser js/main.js -o js/main.min.js -c -m",
+    "minify": "npm run minify-css && npm run minify-js",
+    "serve": "python -m http.server 8000",
+    "watch": "browser-sync start --server --files '**/*.html, **/*.css, **/*.js'"
+  },
+  "keywords": [
+    "psychotherapy",
+    "therapy",
+    "mental-health",
+    "counseling"
+  ],
+  "author": "Dr. Jánosi Dalma",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "csso-cli": "^4.0.2",
+    "terser": "^5.16.0",
+    "browser-sync": "^2.29.0"
+  }
+}
