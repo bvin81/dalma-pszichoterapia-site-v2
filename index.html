@@ -1,170 +1,199 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="meta.title">title</title>
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- typography.css törölve -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="metatitle">Pszichoterápia Jnosi Dalma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <!-- Google Fonts Inter betűtípus -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Pszichoterápia, klinikai pszichológia, családterápia Marosvásárhelyen és online. Jnosi Dalma - biztonságos tér a változáshoz.">
 </head>
-
 <body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- Nav desktop -->
+                <nav class="nav-desktop">
+                    <nav class="nav-left">
+                        <a href="#about" data-key="navabout">Rólam</a>
+                        <a href="#services" data-key="navservices">Szolgáltatások</a>
+                        <a href="blog.html" data-key="navblog">Blog</a>
+                        <a href="#contact" data-key="navcontact">Kapcsolat</a>
+                    </nav>
+                </nav>
+                
+                <!-- Nyelv váltó -->
+                <div class="lang-switcher">
+                    <button data-lang="hu">HU</button>
+                    <button data-lang="ro">RO</button>
+                    <button data-lang="en">EN</button>
+                </div>
+                
+                <!-- Mobil menü gomb -->
+                <button class="nav-toggle" id="menuBtn">☰</button>
+            </div>
+        </div>
+        
+        <!-- Mobil menü -->
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="#about" data-key="navabout">Rólam</a>
+            <a href="#services" data-key="navservices">Szolgáltatások</a>
+            <a href="blog.html" data-key="navblog">Blog</a>
+            <a href="#contact" data-key="navcontact">Kapcsolat</a>
+        </nav>
+    </header>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header-inner">
+    <!-- HERO - Nagyobb, minimalista -->
+    <section class="hero" style="background-image: url('images/profile.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <!-- Slogan jobb oldalon -->
+            <div class="slogan-box">
+                <p data-key="heroslogan">A változás ott kezdődik, ahol teret adsz magadnak.</p>
+            </div>
+            
+            <!-- Fő CTA gomb -->
+            <a href="#services" class="hero-main-btn" data-key="herobutton">Dolgozni akarok magamon</a>
+        </div>
+    </section>
 
-    <nav class="nav-desktop nav-left">
-      <a href="about.html" data-key="nav_about"></a>
-      <a href="#services" data-key="nav_services"></a>
-      <a href="./blog.html" data-key="nav_blog"></a>
-      <a href="#contact" data-key="nav_contact"></a>
-    </nav>
+    <!-- Affirmation szekció - nagyobb tér -->
+    <section class="affirmation section-padding">
+        <div class="container">
+            <p data-key="affirmationintro">
+                Jnosi Dalma vagyok, pszichoterapeuta, klinikai pszichológus, pedagógus. 
+                Hiszek abban, hogy a fejlődés lehetősége egy döntéssel kezdődik, a terápiás folyamatban pedig biztonságos, elfogad térében kísérem klienseim saját döntéseik és belső változásaik felé.
+            </p>
+            <a href="about.html" class="read-more-link" data-key="readmore">Tovább</a>
+        </div>
+    </section>
 
-    <!-- NYELVVÁLTÓ -->
-    <div class="lang-switcher">
-      <button data-lang="hu">HU</button>
-      <button data-lang="ro">RO</button>
-      <button data-lang="en">EN</button>
-    </div>
+    <!-- About szekció - Grid layout -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/profile-close.jpg" alt="Jnosi Dalma pszichoterapeuta" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h1 data-key="aboutheading">Rólam</h1>
+                    <p>
+                        <strong data-key="aboutpagetitle">Dr. Jnosi Dalma</strong><br><br>
+                        Több éves tapasztalat után kezdtem pszichoterápiás képzésbe. 
+                        Számomra a pszichoterápia olyan, mint a fényképezés: néha teleobjektívvel fókuszálunk a részletekre, máskor széleslátószögben tekintünk az életútra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <button class="nav-toggle" id="menuBtn">☰</button>
-  </div>
+    <!-- Szolgáltatások - Grid 3 oszlop -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 data-key="servicestitle">Szolgáltatások</h2>
+            <div class="grid-3">
+                <!-- Egyéni pszichoterápia -->
+                <div class="service-card">
+                    <img src="images/service-individual.jpg" alt="Egyéni pszichoterápia" loading="lazy">
+                    <div>
+                        <h3 data-key="serviceindividualtitle">Egyéni pszichoterápia</h3>
+                        <p data-key="serviceindividualdesc">Rendszerszemléletű terápia egyéni nehézségek feldolgozására.</p>
+                        <a href="services-individual.html" class="btn-primary" data-key="servicemore">Bővebben</a>
+                    </div>
+                </div>
 
-  <nav class="nav-mobile" id="mobileMenu">
-    <a href="about.html" data-key="nav_about"></a>
-    <a href="#services" data-key="nav_services"></a>
-    <a href="blog.html" data-key="nav_blog"></a>
-    <a href="#contact" data-key="nav_contact"></a>
-  </nav>
-</header>
+                <!-- Pár- és családterápia -->
+                <div class="service-card">
+                    <img src="images/service-couples.jpg" alt="Pár- és családterápia" loading="lazy">
+                    <div>
+                        <h3 data-key="servicecouplestitle">Család- és párterápia</h3>
+                        <p data-key="servicecouplesdesc">Rendszerszemléletű támogatás párok és családok számára.</p>
+                        <a href="couples.html" class="btn-primary" data-key="servicemore">Bővebben</a>
+                    </div>
+                </div>
 
-<!-- HERO - Teljes szélességű háttérkép -->
-<section id="about" class="hero">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <a href="#contact" class="btn-primary hero-main-btn" data-key="hero_button"></a>
-    <div class="slogan-box">
-      <p data-key="hero_slogan"></p>
-    </div>
-  </div>
-</section>
+                <!-- Csoport pszichoterápia -->
+                <div class="service-card">
+                    <img src="images/service-group.jpg" alt="Csoport pszichoterápia" loading="lazy">
+                    <div>
+                        <h3 data-key="servicegrouptitle">Csoport pszichoterápia</h3>
+                        <p data-key="servicegroupdesc">Támogató közösség önismeret fejlesztésre.</p>
+                        <a href="services-group.html" class="btn-primary" data-key="servicemore">Bővebben</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- AFFIRMATION - Rövid bemutatkozó + Tovább link -->
-<section class="affirmation">
-  <p data-key="affirmation_intro"></p>
-  <a href="about.html" class="read-more-link" data-key="read_more"></a>
-</section>
+    <!-- Blog teaser -->
+    <section class="blog-list section-padding">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 data-key="blogtitle">Blog</h2>
+                <p class="blog-subtitle" data-key="blogsubtitle">
+                    Gondolatok, útmutatók és finom nézőpontok a lelki egyensúly felé vezető úton.
+                </p>
+                <a href="blog.html" class="btn-primary">Olvasd a blogot</a>
+            </div>
+        </div>
+    </section>
 
-<!-- SZOLGÁLTATÁSOK -->
-<section id="services" class="services">
-  <div class="container">
-    <h2 data-key="services_title"></h2>
+    <!-- Kapcsolat -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 data-key="contacttitle">Kapcsolat</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="two-cols">
+                        <input type="text" data-key="formlastname" placeholder="Családnév *" required>
+                        <input type="text" data-key="formfirstname" placeholder="Keresztnév *" required>
+                    </div>
+                    <input type="tel" data-key="formphone" placeholder="Telefonszám (opcionális)">
+                    <input type="email" data-key="formemail" placeholder="E-mail *" required>
+                    <textarea data-key="formmessage" rows="6" placeholder="Üzenet *" required></textarea>
+                    <!-- Honeypot spam ellen -->
+                    <input type="text" style="display:none" name="website">
+                </div>
+                <button type="submit" class="form-submit btn-primary" data-key="formsubmit">Üzenet küldése</button>
+            </form>
+        </div>
+    </section>
 
-    <div class="grid-3">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span data-key="footertext">&copy; 2026 Jnosi Dalma. Minden jog fenntartva.</span>
+        </div>
+    </footer>
 
-      <!-- 1 -->
-      <div class="service-card">
-        <img src="images/service-psychological.jpg" alt="">
-        <h3 data-key="service_psych_title"></h3>
-        <p data-key="service_psych_desc"></p>
-        <a href="service/psychological.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
-
-      <!-- 2 -->
-      <div class="service-card">
-        <img src="images/service-individual.jpg" alt="">
-        <h3 data-key="service_individual_title"></h3>
-        <p data-key="service_individual_desc"></p>
-        <a href="service/individual.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
-
-      <!-- 3 -->
-      <div class="service-card">
-        <img src="images/service-couples.jpg" alt="">
-        <h3 data-key="service_couples_title"></h3>
-        <p data-key="service_couples_desc"></p>
-        <a href="service/couples.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
-
-      <!-- 4 - Online terápia -->
-      <div class="service-card">
-        <img src="images/service-online.jpg" alt="">
-        <h3 data-key="service_online_title"></h3>
-        <p data-key="service_online_desc"></p>
-        <a href="service/online-therapy.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
-
-      <!-- 5 – Csoportterápia -->
-      <div class="service-card">
-        <img src="images/service-group.jpg" alt="">
-        <h3 data-key="service_group_title"></h3>
-        <p data-key="service_group_desc"></p>
-        <a href="service/group-therapy.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
-
-      <!-- 6 - Tanulási zavar megelőzése -->
-      <div class="service-card">
-        <img src="images/service-sindelar.jpg" alt="">
-        <h3 data-key="service_sindelar_title"></h3>
-        <p data-key="service_sindelar_desc"></p>
-        <a href="service/sindelar-therapy.html" class="btn-secondary" data-key="service_more"></a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- KAPCSOLAT -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2 data-key="contact_title"></h2>
-
-    <form id="contactForm" class="contact-form">
-
-      <div style="display:none;">
-        <label for="website">Ne töltsd ki ezt a mezőt</label>
-        <input type="text" id="website" name="website">
-      </div>
-
-      <div class="form-row two-cols">
-        <input type="text" name="lastname" data-key-placeholder="form_lastname" required>
-        <input type="text" name="firstname" data-key-placeholder="form_firstname" required>
-      </div>
-
-      <div class="form-row two-cols">
-        <input type="tel" name="phone" data-key-placeholder="form_phone">
-        <input type="email" name="email" data-key-placeholder="form_email" required>
-      </div>
-
-      <div class="form-row">
-        <textarea name="message" rows="5" data-key-placeholder="form_message" required></textarea>
-      </div>
-
-      <div class="form-row">
-        <button type="submit" class="btn-primary form-submit" data-key="form_submit"></button>
-      </div>
-
-    </form>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <span data-key="footer_text"></span>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("_Rq7FAjiXz4lWprzY");
-  })();
-</script>
-
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="main.js"></script>
+    
+    <!-- Dark mode toggle gomb (2. lépéshez) -->
+    <script>
+        // Lazy load observer
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                if (img.dataset.src) img.src = img.dataset.src;
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
 </html>
