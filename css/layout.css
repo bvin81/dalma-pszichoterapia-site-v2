@@ -1,6 +1,6 @@
 /* LAYOUT.CSS - Elrendezés és struktúra
    Jnosi Dalma - Pszichoterápia Website
-   2026.01.10 - Javított responsive navigation [file:32] */
+   2026.01.10 - TELJESEN JAVÍTOTT RESPONSIVE NAV [file:32] */
 
 .header {
   background: var(--bg-main);
@@ -19,9 +19,9 @@
   padding: var(--spacing-sm) 0;
 }
 
-/* Navigation - JAVÍTOTT RESPONSIVE */
+/* Navigation - MOBILE-FIRST JAVÍTOTT */
 .nav-desktop {
-  display: flex; /* Alap: látható desktopon */
+  display: none; /* Alap: rejtett (mobil-first) */
 }
 
 .nav-left {
@@ -59,7 +59,7 @@
 
 /* Mobile Toggle */
 .nav-toggle {
-  display: block; /* Alap: látható mobilon */
+  display: block; /* Alap: látható (mobil) */
   background: none;
   border: none;
   font-size: 1.8rem;
@@ -75,7 +75,7 @@
 
 /* Mobile Menu */
 .nav-mobile {
-  display: none;
+  display: none; /* JS active class-szal jelenik meg */
   flex-direction: column;
   padding: var(--spacing-sm);
   background: var(--bg-surface);
@@ -99,14 +99,18 @@
   color: var(--accent-main);
 }
 
-/* RESPONSIVE BREAKPOINT - JAVÍTOTT */
-@media (max-width: 899px) {
+/* DESKTOP: nav-desktop látható, hamburger ELREJTETT */
+@media (min-width: 900px) {
   .nav-desktop {
-    display: none !important; /* Csak hamburger látható */
+    display: flex !important;
   }
   
   .nav-toggle {
-    display: block;
+    display: none !important; /* EZ A KULCS! Desktopon rejtett */
+  }
+  
+  .nav-mobile {
+    display: none !important;
   }
 }
 
