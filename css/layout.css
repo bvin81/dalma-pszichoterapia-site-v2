@@ -188,7 +188,8 @@
 }
 
 .hero-main-btn:hover {
-  transform: translateX(-50%) translateY(-3px);
+  transform: translateX(-50%) translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(129, 154, 136, 0.5) !important;
 }
 
 .slogan-box {
