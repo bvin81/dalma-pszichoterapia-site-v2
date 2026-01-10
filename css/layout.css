@@ -19,104 +19,51 @@
   padding: var(--spacing-sm) 0;
 }
 
-/* Navigation - MAIN.JS "is-open" KOMPATIBILIS */
-.nav-desktop {
-  display: none; /* Alap: mobil-first rejtett */
-}
+/* --- MOBIL ELSŐDLEGES (Alaphelyzet: 900px alatt) --- */
 
-.nav-left {
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-.nav-desktop a {
-  color: var(--text-main);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: color var(--transition-fast);
-}
-
-.nav-desktop a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent-main);
-  transition: width var(--transition-smooth);
-}
-
-.nav-desktop a:hover {
-  color: var(--accent-main);
-}
-
-.nav-desktop a:hover::after {
-  width: 100%;
-}
-
-/* Mobile Toggle */
+/* Csak a hamburger látszik */
 .nav-toggle {
-  display: block; /* Alap: mobil látható */
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--text-main);
-  padding: 0.5rem;
-  transition: transform var(--transition-fast);
+  display: block !important; 
 }
 
-.nav-toggle:hover,
-.nav-toggle.active {
-  transform: scale(1.1);
+/* A vízszintes menü teljesen elrejtve */
+.nav-desktop {
+  display: none !important;
 }
 
-/* Mobile Menu */
+/* A mobil menü alaphelyzete */
 .nav-mobile {
-  display: none; /* Alap rejtett */
+  display: none; /* JS (is-open) kapcsolja majd */
   flex-direction: column;
-  padding: var(--spacing-sm);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background: var(--bg-surface);
-  border-bottom: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
+  z-index: 1000;
 }
 
-.nav-mobile.is-open {  /* ✅ MAIN.JS KULCS Szabály! */
+.nav-mobile.is-open {
   display: flex !important;
 }
 
-.nav-mobile a {
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--border-subtle);
-  color: var(--text-main);
-  transition: all var(--transition-fast);
-}
+/* --- ASZTALI NÉZET (900px felett) --- */
 
-.nav-mobile a:last-child {
-  border-bottom: none;
-}
-
-.nav-mobile a:hover {
-  padding-left: var(--spacing-xs);
-  color: var(--accent-main);
-}
-
-/* DESKTOP: CSAK NAV GOMBOK */
 @media (min-width: 900px) {
+  /* Hamburger elrejtése */
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Desktop menü megjelenítése */
   .nav-desktop {
     display: flex !important;
+    gap: var(--spacing-md);
   }
-  .nav-toggle {
-    display: none !important;  /* ☰ eltűnik */
-  }
+
+  /* Mobil menü kényszerített elrejtése (akkor is, ha nyitva maradt) */
   .nav-mobile {
-    display: none !important;  /* Mobile menu mindig rejtett */
-  }
-  .nav-mobile.is-open {
-    display: none !important;  /* JS sem írja felül */
+    display: none !important;
   }
 }
 
