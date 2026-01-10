@@ -1,25 +1,20 @@
-/* Fő style.css - Importok + kiegészítők */
-@import url('base.css');
-@import url('components.css');
-@import url('layout.css');
-@import url('fonts.css');  /* Meglévő */
+/* css/style.css - Fő import fájl */
+@import url('./base.css');
+@import url('./components.css');
+@import url('./layout.css');
+@import url('./typography.css');
+@import url('./fonts.css');
 
+/* Dark mode */
 :root {
-  /* Dark mode támogatás előkészítve */
   --bg-main-dark: #0f172a;
   --text-main-dark: #f1f5f9;
 }
 
-
 body.dark {
-  --bg-main: #0f172a;
+  --bg-main: var(--bg-main-dark);
   --bg-surface: #1e293b;
-  --text-main: #f1f5f9;
+  --text-main: var(--text-main-dark);
   --text-muted: #94a3b8;
   --border-subtle: #334155;
-}
-
-/* Lazy load observer animáció */
-img[loading="lazy"] {
-  transition: opacity 0.5s;
 }
