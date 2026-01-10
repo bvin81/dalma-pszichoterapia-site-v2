@@ -1,0 +1,42 @@
+/* Layout - Szekciók, grid-ek */
+.section-padding { padding: 5rem 0; }  /* Nagyobb térközök */
+
+.affirmation {
+  background: linear-gradient(135deg, var(--bg-soft) 0%, #f0fdf4 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 2px solid var(--accent-light);
+}
+.about-section { padding: 5rem 0; }
+.about-content {
+  display: grid;
+  gap: 4rem;
+  align-items: start;
+}
+@media (min-width: 900px) { .about-content { grid-template-columns: 1fr 2fr; } }
+
+.services { background: var(--bg-surface); padding: 5rem 0; }
+.grid-3 {
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 900px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.contact-form {
+  background: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-row { display: flex; flex-direction: column; gap: 1.5rem; }
+.two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 700px) { .two-cols { grid-template-columns: 1fr; } }
+
+.footer {
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+}
