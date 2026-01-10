@@ -129,17 +129,17 @@ img {
    Gomb középen, szlogen jobbra
 --------------------------------------------------- */
 .hero {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  background-image: url('../images/profile.jpg');
-  background-size: cover;
-  background-position: left center;  /* Mobil: bal oldal fix */
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+   position: relative;
+   width: 100%;
+   min-height: 600px;
+   background-image: url('../images/profile.jpg');
+   background-size: cover;
+   background-position: left center;  /* Mobil: bal oldal fix */
+   background-repeat: no-repeat;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
    background-attachment: scroll; /* alapértelmezett */
    transition: background-position 0.1s ease-out; /* sima mozgás */
 }
