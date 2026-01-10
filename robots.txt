@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://github.com/bvin81/dalma-pszichoterapia-site-v2/sitemap.xml
 
 # Blokkolás: érzékeny fájlok
 Disallow: /js/
