@@ -17,6 +17,7 @@
   --shadow-hover: 0 12px 32px rgba(0,0,0,0.12);
 }
 
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
