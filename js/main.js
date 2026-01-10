@@ -1,7 +1,7 @@
 // =====================================================
-// MAIN.JS - KOMPLEX VIZUÁLIS VERZIÓ
-// Jánosi Dalma pszichoterápia oldal
-// 2026.01.10 - scroll animációk és interaktív elemek
+// MAIN.JS - ÚJ VERZIÓ PARALLAX HATÁSSAL
+// Jnosi Dalma pszichoterápia oldal
+// 2026.01.10 - parallax hozzáadva
 // =====================================================
 
 // ---------------------------------------------------
@@ -18,7 +18,7 @@ if (menuBtn) {
 }
 
 // ---------------------------------------------------
-// NYELVVÁLTÓ - cookie alapú
+// NYELVVÁLTÓ - sessionStorage helyett cookie
 // ---------------------------------------------------
 function getCurrentLang() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -63,12 +63,14 @@ document.querySelectorAll('.lang-switcher button').forEach(btn => {
 });
 
 // ---------------------------------------------------
-// GITHUB PAGES FIX - Automatikus base path
+// GITHUB PAGES FIX - Automatikus base path detektálás
 // ---------------------------------------------------
 function getBasePath() {
   const path = window.location.pathname;
   
+  // GitHub Pages detektálás (pl. dalma-pszichoterapia-site/index.html → dalma-pszichoterapia-site)
   if (path.includes('service')) {
+    // service almappában: keresd meg a repo nevet
     const parts = path.split('/').filter(p => p);
     const repoIndex = parts.findIndex(p => p !== '');
     if (repoIndex > 0 && parts[repoIndex] !== 'service') {
@@ -78,14 +80,16 @@ function getBasePath() {
   }
   
   const parts = path.split('/').filter(p => p !== '');
+  // GitHub Pages repo-name/index.html vagy localhost index.html
   if (parts.length === 1 && parts[0] !== 'index.html' && parts[0] !== 'blog.html') {
     return '/' + parts[0];
   }
+  // localhost vagy root
   return '.';
 }
 
 // ---------------------------------------------------
-// STATIKUS SZÖVEGEK BETÖLTÉSE
+// STATIKUS SZÖVEGEK BETÖLTÉSE lang.json - CACHE-ELVE JAVÍTVA
 // ---------------------------------------------------
 let cachedTranslations = null;
 
@@ -98,17 +102,21 @@ function loadStaticText() {
   const basePath = getBasePath();
   const langPath = `${basePath}/lang.json`;
   
+  console.log('Betöltés:', langPath); // DEBUG
+  
   fetch(langPath)
     .then(res => {
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       return res.json();
     })
     .then(data => {
+      console.log('lang.json betöltve:', data); // DEBUG
       cachedTranslations = data;
       updateDOM(data);
     })
     .catch(error => {
       console.error('Hiba a lang.json betöltésekor:', error);
+      console.error('Probléma: tvonal', langPath);
     });
 }
 
@@ -129,7 +137,7 @@ function updateDOM(data) {
 }
 
 // ---------------------------------------------------
-// BLOG LISTA BETÖLTÉSE
+// BLOG LISTA BETÖLTÉSE (blog.html)
 // ---------------------------------------------------
 function loadBlogList() {
   const container = document.getElementById('blogContainer');
@@ -138,14 +146,17 @@ function loadBlogList() {
   const basePath = getBasePath();
   const blogPath = `${basePath}/blog-posts.json`;
   
+  console.log('Blog lista betöltés:', blogPath); // DEBUG
+  
   fetch(blogPath)
     .then(res => {
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       return res.json();
     })
     .then(posts => {
+      console.log('Blog posts betöltve:', posts.length, 'poszt'); // DEBUG
       container.innerHTML = '';
-      posts.forEach((post, index) => {
+      posts.forEach(post => {
         const title = post.title[currentLang] || post.title || 'Untitled';
         const postLink = `${basePath}/blog-post.html?id=${post.id}&lang=${currentLang}`;
         const imageSrc = post.image.startsWith('http') || post.image.startsWith('/') 
@@ -153,7 +164,7 @@ function loadBlogList() {
           : `${basePath}/${post.image}`;
         
         const card = `
-          <a href="${postLink}" class="blog-card fade-in delay-${(index % 6) + 1}">
+          <a href="${postLink}" class="blog-card">
             <div class="blog-card-image">
               <img src="${imageSrc}" alt="${title}" 
                    onerror="this.src='${basePath}/images/placeholder.jpg'">
@@ -165,11 +176,6 @@ function loadBlogList() {
         `;
         container.innerHTML += card;
       });
-      
-      // Scroll animáció trigger
-      setTimeout(() => {
-        observeElements();
-      }, 100);
     })
     .catch(error => {
       console.error('Hiba a blog-posts.json betöltésekor:', error);
@@ -178,7 +184,7 @@ function loadBlogList() {
 }
 
 // ---------------------------------------------------
-// BLOG BEJEGYZÉS BETÖLTÉSE
+// BLOG BEJEGYZÉS BETÖLTÉSE (blog-post.html)
 // ---------------------------------------------------
 function loadBlogPost() {
   const postTitle = document.getElementById('postTitle');
@@ -191,12 +197,15 @@ function loadBlogPost() {
   const id = params.get('id');
   
   if (!id) {
+    console.error('Nincs ID paraméter az URL-ben!');
     postContent.innerHTML = '<p style="text-align:center;color:#999;">Nincs megadva blogposzt azonosító.</p>';
     return;
   }
   
   const basePath = getBasePath();
   const blogPath = `${basePath}/blog-posts.json`;
+  
+  console.log('Blog poszt betöltés:', blogPath, 'ID:', id); // DEBUG
   
   fetch(blogPath)
     .then(res => {
@@ -206,9 +215,12 @@ function loadBlogPost() {
     .then(posts => {
       const post = posts.find(p => p.id == id);
       if (!post) {
+        console.error('Nem található a bejegyzés:', id);
         postContent.innerHTML = '<p style="text-align:center;color:#999;">A keresett blogposzt nem található.</p>';
         return;
       }
+      
+      console.log('Blog poszt megtalálva:', post.id); // DEBUG
       
       const title = post.title[currentLang] || post.title || 'Untitled';
       const imageSrc = post.image.startsWith('http') || post.image.startsWith('/') 
@@ -243,7 +255,7 @@ if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    if (this.website && this.website.value !== '') {
+    if (this.website.value !== '') {
       console.warn('Spam gyanú: honeypot mező kitöltve.');
       return;
     }
@@ -277,7 +289,7 @@ if (contactForm) {
 }
 
 // ---------------------------------------------------
-// HERO PARALLAX HATÁS
+// ÚJ: HERO PARALLAX HATÁS
 // ---------------------------------------------------
 let parallaxTicking = false;
 
@@ -286,7 +298,7 @@ function updateHeroParallax() {
   if (!hero) return;
   
   const rect = hero.getBoundingClientRect();
-  const scrollProgress = -(rect.top / window.innerHeight) * 0.5;
+  const scrollProgress = -(rect.top / window.innerHeight) * 0.5; // -0.5-től 0-ig
   hero.style.setProperty('--scroll-progress', scrollProgress);
   hero.classList.add('parallax');
 }
@@ -304,174 +316,11 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ---------------------------------------------------
-// SCROLL ANIMÁCIÓK - INTERSECTION OBSERVER
-// ---------------------------------------------------
-function observeElements() {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-  
-  // Service kártyák animációja
-  document.querySelectorAll('.service-card').forEach((card, index) => {
-    card.classList.add('fade-in');
-    card.classList.add(`delay-${(index % 6) + 1}`);
-    observer.observe(card);
-  });
-  
-  // Blog kártyák animációja
-  document.querySelectorAll('.blog-card').forEach((card) => {
-    observer.observe(card);
-  });
-  
-  // About section animáció
-  const aboutImage = document.querySelector('.about-image');
-  const aboutText = document.querySelector('.about-text');
-  
-  if (aboutImage) {
-    aboutImage.classList.add('slide-in-left');
-    observer.observe(aboutImage);
-  }
-  
-  if (aboutText) {
-    aboutText.classList.add('slide-in-right');
-    observer.observe(aboutText);
-  }
-  
-  // Kapcsolat form animáció
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.classList.add('fade-in');
-    observer.observe(contactForm);
-  }
-  
-  // Service detail animációk
-  const serviceLeft = document.querySelector('.two-columns .left');
-  const infoBox = document.querySelector('.info-box');
-  
-  if (serviceLeft) {
-    serviceLeft.classList.add('fade-in');
-    observer.observe(serviceLeft);
-  }
-  
-  if (infoBox) {
-    infoBox.classList.add('fade-in', 'delay-2');
-    observer.observe(infoBox);
-  }
-}
-
-// ---------------------------------------------------
-// HEADER SCROLL EFFEKT
-// ---------------------------------------------------
-let lastScroll = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  
-  if (currentScroll > 100) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-  
-  lastScroll = currentScroll;
-}, { passive: true });
-
-// ---------------------------------------------------
-// SMOOTH SCROLL NAVIGÁCIÓ
-// ---------------------------------------------------
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    
-    // Skip empty anchors
-    if (href === '#' || href === '#!') return;
-    
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      
-      const headerHeight = header ? header.offsetHeight : 0;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-      
-      // Mobil menü bezárása
-      if (mobileMenu && mobileMenu.style.display === 'flex') {
-        mobileMenu.style.display = 'none';
-      }
-    }
-  });
-});
-
-// ---------------------------------------------------
-// IMAGE LAZY LOADING ENHANCEMENT
-// ---------------------------------------------------
-function enhanceImageLoading() {
-  const images = document.querySelectorAll('img[src]');
-  
-  images.forEach(img => {
-    img.addEventListener('load', function() {
-      this.style.opacity = '0';
-      setTimeout(() => {
-        this.style.transition = 'opacity 0.5s ease';
-        this.style.opacity = '1';
-      }, 50);
-    });
-  });
-}
-
-// ---------------------------------------------------
-// PRELOADER (opcionális)
-// ---------------------------------------------------
-function initPreloader() {
-  const preloader = document.querySelector('.preloader');
-  
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.classList.add('hidden');
-        setTimeout(() => {
-          preloader.remove();
-        }, 500);
-      }, 500);
-    });
-  }
-}
-
-// ---------------------------------------------------
-// SERVICE CARD IMAGE OVERFLOW FIX
-// ---------------------------------------------------
-function setupServiceCards() {
-  document.querySelectorAll('.service-card').forEach(card => {
-    const img = card.querySelector('img');
-    if (img) {
-      const wrapper = document.createElement('div');
-      wrapper.style.overflow = 'hidden';
-      wrapper.style.borderRadius = '16px 16px 0 0';
-      img.parentNode.insertBefore(wrapper, img);
-      wrapper.appendChild(img);
-    }
-  });
-}
-
-// ---------------------------------------------------
-// OLDAL BETÖLTÉSEKOR
+// OLDAL BETÖLTÉSEKOR FUTTATANDÓ
 // ---------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Oldal betöltve, base path:', getBasePath()); // DEBUG
+  
   loadStaticText();
   
   if (document.getElementById('blogContainer')) loadBlogList();
@@ -479,36 +328,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Parallax inicializálás
   setTimeout(updateHeroParallax, 100);
-  
-  // Scroll animációk indítása
-  setTimeout(() => {
-    observeElements();
-  }, 300);
-  
-  // Service cards setup
-  setupServiceCards();
-  
-  // Image loading enhancement
-  enhanceImageLoading();
-  
-  // Preloader
-  initPreloader();
 });
 
-// Performance optimization - debounce scroll
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Add resize handler
-window.addEventListener('resize', debounce(() => {
-  updateHeroParallax();
-}, 250));
+// EmailJS init (marad a HTML-ben)
