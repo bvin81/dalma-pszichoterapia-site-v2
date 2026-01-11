@@ -1,10 +1,135 @@
 /* ===================================================
-   ENHANCED MAIN.JS
+   OPTIMALIZED MAIN.JS - Performance Enhanced
    Jánosi Dalma - Pszichoterápia Website
+   Version 2.0 - 2026.01.11
    =================================================== */
 
 /* ---------------------------------------------------
-   MOBIL MENÜ
+   PERFORMANCE UTILITIES
+--------------------------------------------------- */
+
+// Debounce function for scroll events
+const debounce = (func, wait) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
+// RequestAnimationFrame throttle for scroll
+const rafThrottle = (callback) => {
+  let requestId = null;
+  let lastArgs;
+
+  const later = (context) => () => {
+    requestId = null;
+    callback.apply(context, lastArgs);
+  };
+
+  const throttled = function (...args) {
+    lastArgs = args;
+    if (requestId === null) {
+      requestId = requestAnimationFrame(later(this));
+    }
+  };
+
+  throttled.cancel = () => {
+    cancelAnimationFrame(requestId);
+    requestId = null;
+  };
+
+  return throttled;
+};
+
+/* ---------------------------------------------------
+   GLOBAL STATE
+--------------------------------------------------- */
+let cachedTranslations = null;
+let currentLang = getCurrentLang();
+let allPosts = [];
+let currentCategory = 'all';
+
+/* ---------------------------------------------------
+   LANGUAGE MANAGEMENT
+--------------------------------------------------- */
+
+function getCurrentLang() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+  
+  if (urlLang && ['hu', 'ro', 'en'].includes(urlLang)) {
+    return urlLang;
+  }
+  
+  // Try localStorage (non-blocking)
+  try {
+    const stored = localStorage.getItem('lang');
+    if (stored && ['hu', 'ro', 'en'].includes(stored)) {
+      return stored;
+    }
+  } catch (e) {
+    console.warn('LocalStorage not available:', e);
+  }
+  
+  return 'hu';
+}
+
+function setLangCookie(lang) {
+  const expires = new Date();
+  expires.setFullYear(expires.getFullYear() + 1);
+  document.cookie = `lang=${lang};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+  
+  // Also set localStorage for faster access
+  try {
+    localStorage.setItem('lang', lang);
+  } catch (e) {
+    console.warn('LocalStorage not available:', e);
+  }
+}
+
+/* ---------------------------------------------------
+   LANGUAGE SWITCHER - Event Delegation
+--------------------------------------------------- */
+const langSwitcher = document.querySelector(".lang-switcher");
+if (langSwitcher) {
+  // Set active state
+  const activeBtn = langSwitcher.querySelector(`[data-lang="${currentLang}"]`);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  // Event delegation instead of individual listeners
+  langSwitcher.addEventListener("click", (e) => {
+    const btn = e.target.closest('[data-lang]');
+    if (!btn) return;
+    
+    const newLang = btn.dataset.lang;
+    if (newLang === currentLang) return;
+    
+    currentLang = newLang;
+    setLangCookie(currentLang);
+    
+    // Update active state
+    langSwitcher.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Update content
+    loadStaticText();
+    
+    if (document.getElementById("blogContainer")) {
+      loadBlogList();
+    }
+    if (document.getElementById("postTitle")) {
+      loadBlogPost();
+    }
+  });
+}
+
+/* ---------------------------------------------------
+   MOBILE MENU - Optimized
 --------------------------------------------------- */
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -14,26 +139,26 @@ if (menuBtn && mobileMenu) {
     const isVisible = mobileMenu.style.display === "flex";
     mobileMenu.style.display = isVisible ? "none" : "flex";
     menuBtn.classList.toggle("active");
+    menuBtn.setAttribute('aria-expanded', !isVisible);
   });
 
-  // Bezárás kattintásra
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
+  // Event delegation for menu links
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target.tagName === 'A') {
       mobileMenu.style.display = "none";
       menuBtn.classList.remove("active");
-    });
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
 /* ---------------------------------------------------
-   DARK MODE TOGGLE
+   DARK MODE - Optimized with Cache
 --------------------------------------------------- */
 function initDarkMode() {
-  // Ellenőrizzük a mentett témát
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
 
-  // Toggle gomb létrehozása
   const toggleBtn = document.createElement('button');
   toggleBtn.className = 'theme-toggle';
   toggleBtn.setAttribute('aria-label', 'Témaváltás');
@@ -50,7 +175,6 @@ function initDarkMode() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
-    // Ikon csere
     toggleBtn.innerHTML = newTheme === 'dark'
       ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zm0 20c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zM23 12c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zM5 12c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm13.7 6.3c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-1.4 1.4zM6.7 7.7c-.4.4-1 .4-1.4 0L3.9 6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4zm11 0c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0L15 7.7c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.3 1.4zm-11 9.6c.4.4.4 1 0 1.4l-1.4 1.4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0z"/></svg>'
       : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
@@ -58,7 +182,7 @@ function initDarkMode() {
 }
 
 /* ---------------------------------------------------
-   SCROLL TO TOP BUTTON
+   SCROLL TO TOP - RAF Throttled
 --------------------------------------------------- */
 function initScrollToTop() {
   const scrollBtn = document.createElement('button');
@@ -67,7 +191,8 @@ function initScrollToTop() {
   scrollBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8l-6 6 1.4 1.4 4.6-4.6 4.6 4.6L18 14z"/></svg>';
   document.body.appendChild(scrollBtn);
 
-  window.addEventListener('scroll', () => {
+  // RAF throttled scroll handler
+  const handleScroll = rafThrottle(() => {
     if (window.pageYOffset > 300) {
       scrollBtn.classList.add('visible');
     } else {
@@ -75,88 +200,45 @@ function initScrollToTop() {
     }
   });
 
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
   scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
 /* ---------------------------------------------------
-   LAZY LOADING KÉPEKHEZ
+   LAZY LOADING - Native + Fallback
 --------------------------------------------------- */
 function initLazyLoading() {
-  const images = document.querySelectorAll('img[data-src]');
-  
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.add('loaded');
-        img.removeAttribute('data-src');
-        observer.unobserve(img);
-      }
+  // Use native lazy loading when supported
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
     });
-  }, {
-    rootMargin: '50px'
-  });
-
-  images.forEach(img => imageObserver.observe(img));
-}
-
-/* ---------------------------------------------------
-   NYELVVÁLTÓ - Cookie-val
---------------------------------------------------- */
-function getCurrentLang() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlLang = urlParams.get('lang');
-  
-  if (urlLang && ['hu', 'ro', 'en'].includes(urlLang)) {
-    return urlLang;
-  }
-  
-  const cookies = document.cookie.split(';');
-  for (let cookie of cookies) {
-    const [name, value] = cookie.trim().split('=');
-    if (name === 'lang') {
-      return value;
-    }
-  }
-  
-  return 'hu';
-}
-
-let currentLang = getCurrentLang();
-
-function setLangCookie(lang) {
-  const expires = new Date();
-  expires.setFullYear(expires.getFullYear() + 1);
-  document.cookie = `lang=${lang};expires=${expires.toUTCString()};path=/`;
-}
-
-document.querySelectorAll(".lang-switcher button").forEach(btn => {
-  if (btn.dataset.lang === currentLang) {
-    btn.classList.add('active');
-  }
-  
-  btn.addEventListener("click", () => {
-    currentLang = btn.dataset.lang;
-    setLangCookie(currentLang);
-    
-    document.querySelectorAll(".lang-switcher button").forEach(b => {
-      b.classList.remove('active');
+  } else {
+    // Fallback to IntersectionObserver
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.add('loaded');
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px'
     });
-    btn.classList.add('active');
 
-    loadStaticText();
-    
-    if (document.getElementById("blogContainer")) {
-      loadBlogList();
-    }
-    if (document.getElementById("postTitle")) {
-      loadBlogPost();
-    }
-  });
-});
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+}
 
 /* ---------------------------------------------------
    BASE PATH DETECTION
@@ -184,10 +266,8 @@ function getBasePath() {
 }
 
 /* ---------------------------------------------------
-   STATIKUS SZÖVEGEK BETÖLTÉSE
+   STATIC TEXT LOADING - Optimized Cache
 --------------------------------------------------- */
-let cachedTranslations = null;
-
 function loadStaticText() {
   if (cachedTranslations) {
     updateDOM(cachedTranslations);
@@ -207,11 +287,14 @@ function loadStaticText() {
       updateDOM(data);
     })
     .catch(error => {
-      console.error("❌ Hiba a lang.json betöltésekor:", error);
+      console.error("❌ Error loading lang.json:", error);
     });
 }
 
 function updateDOM(data) {
+  // Batch DOM updates
+  const fragment = document.createDocumentFragment();
+  
   document.querySelectorAll("[data-key]").forEach(el => {
     const key = el.dataset.key;
     if (data[key] && data[key][currentLang]) {
@@ -228,11 +311,8 @@ function updateDOM(data) {
 }
 
 /* ---------------------------------------------------
-   BLOG LISTA BETÖLTÉSE + KERESÉS + KATEGÓRIÁK
+   BLOG LIST - Optimized Rendering
 --------------------------------------------------- */
-let allPosts = [];
-let currentCategory = 'all';
-
 function loadBlogList() {
   const container = document.getElementById("blogContainer");
   if (!container) return;
@@ -252,7 +332,7 @@ function loadBlogList() {
       initCategoryFilter();
     })
     .catch(error => {
-      console.error("❌ Hiba a blog-posts.json betöltésekor:", error);
+      console.error("❌ Error loading blog posts:", error);
       container.innerHTML = '<p class="no-results">Nem sikerült betölteni a blogposztokat.</p>';
     });
 }
@@ -268,39 +348,39 @@ function renderBlogPosts(posts) {
     return;
   }
 
-  container.innerHTML = "";
+  // Use DocumentFragment for better performance
+  const fragment = document.createDocumentFragment();
   
   posts.forEach(post => {
-    const title = post.title && post.title[currentLang] 
-      ? post.title[currentLang] 
-      : 'Untitled';
-    
+    const title = post.title?.[currentLang] || 'Untitled';
     const postLink = basePath + `blog-post.html?id=${post.id}&lang=${currentLang}`;
     const imageSrc = post.image.startsWith('/') ? post.image : basePath + post.image;
-    
     const categoryBadge = post.category 
       ? `<span class="badge badge-category">${post.category[currentLang] || post.category.hu}</span>`
       : '';
     
-    container.innerHTML += `
-      <a href="${postLink}" class="blog-card card fade-in">
-        <div class="blog-card-image card-image">
-          <img data-src="${imageSrc}" src="${basePath}images/placeholder.jpg" alt="${title}" class="lazy">
-        </div>
-        <div class="blog-card-content card-content">
-          ${categoryBadge}
-          <h3>${title}</h3>
-        </div>
-      </a>
+    const card = document.createElement('a');
+    card.href = postLink;
+    card.className = 'blog-card card fade-in';
+    card.innerHTML = `
+      <div class="blog-card-image card-image">
+        <img src="${imageSrc}" alt="${title}" loading="lazy">
+      </div>
+      <div class="blog-card-content card-content">
+        ${categoryBadge}
+        <h3>${title}</h3>
+      </div>
     `;
+    
+    fragment.appendChild(card);
   });
 
-  // Lazy loading inicializálás az új képekhez
-  initLazyLoading();
+  container.innerHTML = '';
+  container.appendChild(fragment);
 }
 
 /* ---------------------------------------------------
-   BLOG KERESÉS
+   BLOG SEARCH - Debounced
 --------------------------------------------------- */
 function initBlogSearch() {
   const searchContainer = document.querySelector('.blog-list .container');
@@ -318,25 +398,24 @@ function initBlogSearch() {
   searchContainer.insertBefore(searchBar, document.getElementById('blogContainer'));
 
   const searchInput = document.getElementById('blogSearch');
-  let debounceTimer;
+  
+  // Debounced search
+  const debouncedSearch = debounce((query) => {
+    filterPosts(query.toLowerCase(), currentCategory);
+  }, 300);
 
   searchInput.addEventListener('input', (e) => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      const query = e.target.value.toLowerCase();
-      filterPosts(query, currentCategory);
-    }, 300);
+    debouncedSearch(e.target.value);
   });
 }
 
 /* ---------------------------------------------------
-   KATEGÓRIA SZŰRŐ
+   CATEGORY FILTER
 --------------------------------------------------- */
 function initCategoryFilter() {
   const searchContainer = document.querySelector('.blog-list .container');
   if (!searchContainer || document.getElementById('categoryFilter')) return;
 
-  // Kategóriák kinyerése a posztokból
   const categories = ['all', ...new Set(allPosts.map(post => post.category?.en).filter(Boolean))];
   
   const filterBar = document.createElement('div');
@@ -351,22 +430,25 @@ function initCategoryFilter() {
     'personal-growth': { hu: 'Személyes fejlődés', ro: 'Dezvoltare personală', en: 'Personal Growth' }
   };
 
+  // Event delegation on filterBar
   categories.forEach(cat => {
     const btn = document.createElement('button');
     btn.className = cat === 'all' ? 'category-btn active' : 'category-btn';
     btn.textContent = categoryNames[cat]?.[currentLang] || cat;
     btn.dataset.category = cat;
-    
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentCategory = cat;
-      
-      const searchQuery = document.getElementById('blogSearch')?.value.toLowerCase() || '';
-      filterPosts(searchQuery, cat);
-    });
-    
     filterBar.appendChild(btn);
+  });
+
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.category-btn');
+    if (!btn) return;
+
+    filterBar.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCategory = btn.dataset.category;
+    
+    const searchQuery = document.getElementById('blogSearch')?.value.toLowerCase() || '';
+    filterPosts(searchQuery, currentCategory);
   });
 
   const blogContainer = document.getElementById('blogContainer');
@@ -376,12 +458,10 @@ function initCategoryFilter() {
 function filterPosts(query, category) {
   let filtered = allPosts;
 
-  // Kategória szűrés
   if (category !== 'all') {
     filtered = filtered.filter(post => post.category?.en === category);
   }
 
-  // Keresés
   if (query) {
     filtered = filtered.filter(post => {
       const title = (post.title?.[currentLang] || '').toLowerCase();
@@ -394,7 +474,7 @@ function filterPosts(query, category) {
 }
 
 /* ---------------------------------------------------
-   BLOG BEJEGYZÉS BETÖLTÉSE + KAPCSOLÓDÓ POSZTOK
+   BLOG POST LOADING
 --------------------------------------------------- */
 function loadBlogPost() {
   const postTitle = document.getElementById("postTitle");
@@ -407,7 +487,7 @@ function loadBlogPost() {
   const id = params.get("id");
   
   if (!id) {
-    console.error("❌ Nincs ID paraméter az URL-ben!");
+    console.error("❌ No ID parameter in URL!");
     postContent.innerHTML = '<p class="no-results">Nincs megadva blogposzt azonosító.</p>';
     return;
   }
@@ -424,51 +504,45 @@ function loadBlogPost() {
       const post = posts.find(p => p.id == id);
       
       if (!post) {
-        console.error("❌ Nem található a bejegyzés:", id);
+        console.error("❌ Post not found:", id);
         postContent.innerHTML = '<p class="no-results">A keresett blogposzt nem található.</p>';
         return;
       }
 
-      const title = post.title && post.title[currentLang] 
-        ? post.title[currentLang] 
-        : 'Untitled';
-      postTitle.innerHTML = title;
+      const title = post.title?.[currentLang] || 'Untitled';
+      postTitle.textContent = title;
 
       const imageSrc = post.image.startsWith('/') ? post.image : basePath + post.image;
-      postImage.setAttribute('data-src', imageSrc);
-      postImage.src = basePath + 'images/placeholder.jpg';
+      postImage.src = imageSrc;
       postImage.alt = title;
-      postImage.classList.add('lazy');
 
-      postContent.innerHTML = "";
-      if (post.content && post.content[currentLang]) {
-        post.content[currentLang].forEach(block => {
-          postContent.innerHTML += block;
-        });
+      if (post.content?.[currentLang]) {
+        // Use DocumentFragment
+        const fragment = document.createDocumentFragment();
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = post.content[currentLang].join('');
+        fragment.appendChild(tempDiv);
+        postContent.innerHTML = '';
+        postContent.appendChild(fragment);
       } else {
         postContent.innerHTML = '<p class="no-results">Nincs elérhető tartalom ezen a nyelven.</p>';
       }
 
-      // Kapcsolódó posztok
       renderRelatedPosts(posts, post, basePath);
-
-      // Lazy loading
-      initLazyLoading();
     })
     .catch(error => {
-      console.error("❌ Hiba a blogposzt betöltésekor:", error);
+      console.error("❌ Error loading blog post:", error);
       postContent.innerHTML = '<p class="no-results">Nem sikerült betölteni a blogposztot.</p>';
     });
 }
 
 /* ---------------------------------------------------
-   KAPCSOLÓDÓ POSZTOK
+   RELATED POSTS
 --------------------------------------------------- */
 function renderRelatedPosts(allPosts, currentPost, basePath) {
   const postContent = document.getElementById("postContent");
   if (!postContent) return;
 
-  // Ugyanabból a kategóriából, de ne az aktuális poszt
   const related = allPosts
     .filter(p => 
       p.id !== currentPost.id && 
@@ -480,45 +554,74 @@ function renderRelatedPosts(allPosts, currentPost, basePath) {
 
   const relatedSection = document.createElement('div');
   relatedSection.className = 'related-posts';
-  relatedSection.innerHTML = `
-    <h3>Kapcsolódó cikkek</h3>
-    <div class="related-posts-grid">
-      ${related.map(post => {
-        const title = post.title?.[currentLang] || 'Untitled';
-        const imageSrc = post.image.startsWith('/') ? post.image : basePath + post.image;
-        const postLink = basePath + `blog-post.html?id=${post.id}&lang=${currentLang}`;
-        
-        return `
-          <a href="${postLink}" class="blog-card card">
-            <div class="blog-card-image card-image">
-              <img data-src="${imageSrc}" src="${basePath}images/placeholder.jpg" alt="${title}" class="lazy">
-            </div>
-            <div class="blog-card-content card-content">
-              <h3 class="fs-base">${title}</h3>
-            </div>
-          </a>
-        `;
-      }).join('')}
-    </div>
-  `;
+  
+  const title = document.createElement('h3');
+  title.textContent = 'Kapcsolódó cikkek';
+  relatedSection.appendChild(title);
 
+  const grid = document.createElement('div');
+  grid.className = 'related-posts-grid';
+
+  related.forEach(post => {
+    const postTitle = post.title?.[currentLang] || 'Untitled';
+    const imageSrc = post.image.startsWith('/') ? post.image : basePath + post.image;
+    const postLink = basePath + `blog-post.html?id=${post.id}&lang=${currentLang}`;
+    
+    const card = document.createElement('a');
+    card.href = postLink;
+    card.className = 'blog-card card';
+    card.innerHTML = `
+      <div class="blog-card-image card-image">
+        <img src="${imageSrc}" alt="${postTitle}" loading="lazy">
+      </div>
+      <div class="blog-card-content card-content">
+        <h3 class="fs-base">${postTitle}</h3>
+      </div>
+    `;
+    
+    grid.appendChild(card);
+  });
+
+  relatedSection.appendChild(grid);
   postContent.appendChild(relatedSection);
 }
 
-
-
 /* ---------------------------------------------------
-   KAPCSOLAT ŰRLAP
+   CONTACT FORM - Lazy Load EmailJS
 --------------------------------------------------- */
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
+  let emailJSLoaded = false;
+
+  // Load EmailJS only when form is focused
+  const loadEmailJS = () => {
+    if (emailJSLoaded) return;
+    
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    script.onload = () => {
+      emailjs.init("_Rq7FAjiXz4lWprzY");
+      emailJSLoaded = true;
+    };
+    document.head.appendChild(script);
+  };
+
+  // Load on first interaction
+  contactForm.addEventListener('focus', loadEmailJS, { once: true, capture: true });
+
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Honeypot ellenőrzés
     if (this.website.value !== "") {
-      console.warn("⚠️ Spam gyanú: honeypot mező kitöltve.");
+      console.warn("⚠️ Spam detected: honeypot filled.");
+      return;
+    }
+
+    if (!emailJSLoaded) {
+      alert("Kérlek várj egy pillanatot...");
+      loadEmailJS();
+      setTimeout(() => contactForm.requestSubmit(), 1000);
       return;
     }
 
@@ -541,7 +644,7 @@ if (contactForm) {
     })
     .catch((err) => {
       alert("Hiba történt az üzenet küldésekor. Kérlek próbáld újra!");
-      console.error("❌ EmailJS hiba:", err);
+      console.error("❌ EmailJS error:", err);
     })
     .finally(() => {
       submitBtn.textContent = originalText;
@@ -551,18 +654,18 @@ if (contactForm) {
 }
 
 /* ---------------------------------------------------
-   OLDAL BETÖLTÉSEKOR
+   PAGE INITIALIZATION
 --------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("🚀 Oldal betöltve, base path:", getBasePath());
+  console.log("🚀 Page loaded, base path:", getBasePath());
   
-  // Alapvető funkciók inicializálása
+  // Core functionality
   initDarkMode();
   initScrollToTop();
   initLazyLoading();
   loadStaticText();
 
-  // Blog specifikus
+  // Page-specific
   if (document.getElementById("blogContainer")) {
     loadBlogList();
   }
@@ -571,22 +674,24 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBlogPost();
   }
 
-  // Smooth reveal animációk
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+  // Intersection Observer for fade-in animations
+  if ('IntersectionObserver' in window) {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card, .service-card, section').forEach(el => {
+      observer.observe(el);
     });
-  }, observerOptions);
-
-  document.querySelectorAll('.card, .service-card, section').forEach(el => {
-    observer.observe(el);
-  });
+  }
 });
