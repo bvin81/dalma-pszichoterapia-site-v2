@@ -7,19 +7,57 @@
   <meta name="keywords" content="pszichoterápia, családterápia, párterápia, online terápia, Marosvásárhely">
   <meta name="author" content="Dr. Jánosi Dalma">
   
+  <!-- Resource Hints for Performance -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preload" href="lang.json" as="fetch" crossorigin>
+  
   <!-- Open Graph meta tags -->
   <meta property="og:title" content="Dr. Jánosi Dalma - Pszichoterápia">
   <meta property="og:description" content="Rendszerszemléletű családterápia, egyéni és párterápia">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:image" content="images/og-image.jpg">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#819A88">
   
   <title data-key="meta_title">Pszichoterápia – Jánosi Dalma</title>
   
-  <!-- Új modularizált CSS -->
+  <!-- Critical CSS Inline (if needed) -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    :root {
+      --bg-main: #F7F5F2;
+      --text-main: #222326;
+      --accent-main: #819A88;
+    }
+    body { 
+      margin: 0; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      background: var(--bg-main);
+      z-index: 1020;
+    }
+  </style>
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/main.css">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 
 <body>
@@ -92,7 +130,7 @@
 
       <!-- 1 - Egyéni tanácsadás -->
       <article class="service-card card">
-        <img data-src="images/service-psychological.jpg" src="images/placeholder.jpg" alt="Egyéni tanácsadás" class="lazy">
+        <img src="images/service-psychological.jpg" alt="Egyéni tanácsadás" loading="lazy" width="400" height="200">
         <h3 data-key="service_psych_title">Egyéni tanácsadás</h3>
         <p data-key="service_psych_desc">Rövid folyamat aktuális élethelyzeti nehézségekhez, döntéshelyzetekhez.</p>
         <a href="service/psychological.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -100,7 +138,7 @@
 
       <!-- 2 - Egyéni pszichoterápia -->
       <article class="service-card card">
-        <img data-src="images/service-individual.jpg" src="images/placeholder.jpg" alt="Egyéni pszichoterápia" class="lazy">
+        <img src="images/service-individual.jpg" alt="Egyéni pszichoterápia" loading="lazy" width="400" height="200">
         <h3 data-key="service_individual_title">Egyéni pszichoterápia</h3>
         <p data-key="service_individual_desc">Rendszerszemléletű terápia egyéni nehézségek feldolgozására.</p>
         <a href="service/individual.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -108,7 +146,7 @@
 
       <!-- 3 - Család- és párterápia -->
       <article class="service-card card">
-        <img data-src="images/service-couples.jpg" src="images/placeholder.jpg" alt="Család- és párterápia" class="lazy">
+        <img src="images/service-couples.jpg" alt="Család- és párterápia" loading="lazy" width="400" height="200">
         <h3 data-key="service_couples_title">Család- és párterápia</h3>
         <p data-key="service_couples_desc">Rendszerszemléletű támogatás párok és családok számára.</p>
         <a href="service/couples.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -116,7 +154,7 @@
 
       <!-- 4 - Online terápia -->
       <article class="service-card card">
-        <img data-src="images/service-online.jpg" src="images/placeholder.jpg" alt="Online terápia" class="lazy">
+        <img src="images/service-online.jpg" alt="Online terápia" loading="lazy" width="400" height="200">
         <h3 data-key="service_online_title">Online terápia</h3>
         <p data-key="service_online_desc">Hatékony terápia otthonod kényelméből, videókonferencia platformon keresztül.</p>
         <a href="service/online-therapy.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -124,7 +162,7 @@
 
       <!-- 5 - Csoportterápia -->
       <article class="service-card card">
-        <img data-src="images/service-group.jpg" src="images/placeholder.jpg" alt="Csoport pszichoterápia" class="lazy">
+        <img src="images/service-group.jpg" alt="Csoport pszichoterápia" loading="lazy" width="400" height="200">
         <h3 data-key="service_group_title">Csoport pszichoterápia</h3>
         <p data-key="service_group_desc">Támogató közösség önismeret fejlesztésére és kapcsolati minták feltárására.</p>
         <a href="service/group-therapy.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -132,7 +170,7 @@
 
       <!-- 6 - Tanulási zavar megelőzése -->
       <article class="service-card card">
-        <img data-src="images/service-sindelar.jpg" src="images/placeholder.jpg" alt="Tanulási zavar megelőzése" class="lazy">
+        <img src="images/service-sindelar.jpg" alt="Tanulási zavar megelőzése" loading="lazy" width="400" height="200">
         <h3 data-key="service_sindelar_title">Tanulási zavar megelőzése</h3>
         <p data-key="service_sindelar_desc">Részképesség zavarok felismerése és otthoni fejlesztőprogram magyar nyelvű gyermekek számára.</p>
         <a href="service/sindelar-therapy.html" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -185,14 +223,8 @@
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("_Rq7FAjiXz4lWprzY");
-  })();
-</script>
+<!-- Scripts - Async/Defer for Performance -->
+<script src="js/main.js" defer></script>
 
 </body>
 </html>
