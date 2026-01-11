@@ -236,6 +236,49 @@ textarea::placeholder {
   fill: white;
 }
 
+/* Hamburger Menu Icon */
+.nav-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  background: rgba(129, 154, 136, 0.1);
+}
+
+.hamburger-icon {
+  fill: none;
+  stroke: var(--text-main);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: transform var(--transition-smooth);
+}
+
+.hamburger-icon .line {
+  transition: all var(--transition-smooth);
+  transform-origin: center;
+}
+
+/* Active state - X icon animation */
+.nav-toggle.active .line-1 {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.active .line-2 {
+  opacity: 0;
+}
+
+.nav-toggle.active .line-3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 /* Badge/Tag */
 .badge {
   display: inline-block;
