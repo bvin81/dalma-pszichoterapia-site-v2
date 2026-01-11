@@ -1,6 +1,4 @@
-/* LAYOUT.CSS - Elrendezés és struktúra
-   Jnosi Dalma - Pszichoterápia Website
-   2026.01.10 - TELJESEN JAVÍTOTT RESPONSIVE NAV [file:32] */
+/* LAYOUT.CSS - Elrendezés és struktúra - UPDATED NAV COLORS */
 
 .header {
   background: var(--bg-main);
@@ -19,21 +17,35 @@
   padding: var(--spacing-sm) 0;
 }
 
-/* --- MOBIL ELSŐDLEGES (Alaphelyzet: 900px alatt) --- */
+/* --- NAVIGÁCIÓ - EGYSÉGES SZÍNEKKEL --- */
 
-/* Csak a hamburger látszik */
-.nav-toggle {
-  display: block !important; 
-}
-
-/* A vízszintes menü teljesen elrejtve */
+/* Desktop navigáció */
 .nav-desktop {
-  display: none !important;
+  display: none;
 }
 
-/* A mobil menü alaphelyzete */
+.nav-desktop a {
+  color: var(--text-muted);           /* UGYANAZ mint a nyelvválasztó */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.nav-desktop a:hover {
+  color: var(--accent-main);          /* UGYANAZ mint a nyelvválasztó hover */
+  background: rgba(129, 154, 136, 0.1);
+}
+
+/* Mobil navigáció */
+.nav-toggle {
+  display: block !important;
+}
+
 .nav-mobile {
-  display: none; /* JS (is-open) kapcsolja majd */
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 100%;
@@ -41,33 +53,45 @@
   width: 100%;
   background: var(--bg-surface);
   z-index: 1000;
+  padding: var(--spacing-md);
 }
 
 .nav-mobile.is-open {
   display: flex !important;
 }
 
-/* --- ASZTALI NÉZET (900px felett) --- */
+.nav-mobile a {
+  color: var(--text-muted);           /* UGYANAZ mint a nyelvválasztó */
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
 
+.nav-mobile a:hover {
+  color: var(--accent-main);          /* UGYANAZ mint a nyelvválasztó hover */
+  background: rgba(129, 154, 136, 0.1);
+}
+
+/* --- ASZTALI NÉZET (900px felett) --- */
 @media (min-width: 900px) {
-  /* Hamburger elrejtése */
   .nav-toggle {
     display: none !important;
   }
 
-  /* Desktop menü megjelenítése */
   .nav-desktop {
     display: flex !important;
     gap: var(--spacing-md);
   }
 
-  /* Mobil menü kényszerített elrejtése (akkor is, ha nyitva maradt) */
   .nav-mobile {
     display: none !important;
   }
 }
 
-/* Language Switcher */
+/* Language Switcher - REFERENCIA SZÍNEK */
 .lang-switcher {
   display: flex;
   gap: 0.5rem;
@@ -77,7 +101,7 @@
 .lang-switcher button {
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: var(--text-muted);           /* Alapértelmezett szín */
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
@@ -87,12 +111,12 @@
 }
 
 .lang-switcher button:hover {
-  color: var(--accent-main);
+  color: var(--accent-main);          /* Hover szín */
   background: rgba(129, 154, 136, 0.1);
 }
 
 .lang-switcher button.active {
-  color: var(--accent-main);
+  color: var(--accent-main);          /* Aktív szín */
   font-weight: 700;
 }
 
@@ -228,7 +252,7 @@ section {
 }
 
 .read-more-link::after {
-  content: '';
+  content: '→';
   margin-left: 0.5rem;
   transition: margin-left var(--transition-fast);
 }
