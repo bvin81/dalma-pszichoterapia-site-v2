@@ -188,3 +188,58 @@ html {
     text-align: center;
   }
 }
+
+/* =================================================================
+   SZOLGÁLTATÁS OLDALAK KIEGÉSZÍTÉSEK
+   (Hozzáadandó a main.css végéhez, ha még nincs benne)
+   ================================================================= */
+
+/* Szolgáltatás oldal padding */
+.service-detail {
+  padding: 3rem 0;
+}
+
+.service-detail h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Bal oldali szöveges tartalom formázása */
+.left p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Info-box h3 stílus */
+.info-box h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-box strong {
+  color: var(--accent-main);
+  font-weight: 600;
+}
+
+/* Mobilon info-box felül */
+@media (max-width: 899px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-box {
+    order: -1;
+  }
+}
