@@ -114,6 +114,13 @@
     "ro": "© 2025 Jánosi Dalma – Toate drepturile rezervate",
     "en": "© 2025 Dalma Jánosi – All rights reserved"
   },
+
+  "footer_dev": {
+  "hu": "Fejlesztette: Biró Vince",
+  "ro": "Dezvoltat de: Biró Vince",
+  "en": "Developed by Vince Biró"
+  },
+  
   "blog_meta_title": {
     "hu": "Blog – Jánosi Dalma",
     "ro": "Blog – Dalma Jánosi",
