@@ -243,3 +243,29 @@ html {
     order: -1;
   }
 }
+
+/* =================================================================
+   FOOTER FEJLESZTŐI LINK
+   ================================================================= */
+
+.footer-credit {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.footer-credit:hover {
+  opacity: 1;
+}
+
+.footer-credit a {
+  color: var(--text-muted, #5C5F63);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-credit a:hover {
+  color: var(--accent-main, #819A88);
+  text-decoration: underline;
+}
