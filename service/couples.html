@@ -3,87 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Család- és párterápia - Dr. Jánosi Dalma">
-  <title data-key="service_couples_meta">Család- és párterápia – Dr. Jánosi Dalma</title>
+  <title data-key="service_couples_meta"></title>
   <link rel="stylesheet" href="../css/main.css">
   <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="container header-inner">
 
     <nav class="nav-desktop nav-left">
-      <a href="../index.html" data-key="nav_home"></a>
+      <a href="../index.html#about" data-key="nav_about"></a>
       <a href="../index.html#services" data-key="nav_services"></a>
       <a href="../blog.html" data-key="nav_blog"></a>
       <a href="../index.html#contact" data-key="nav_contact"></a>
     </nav>
 
-    <!-- NYELVVÁLTÓ -->
     <div class="lang-switcher">
-      <button data-lang="hu" aria-label="Magyar">HU</button>
-      <button data-lang="ro" aria-label="Română">RO</button>
-      <button data-lang="en" aria-label="English">EN</button>
-    
+      <button data-lang="hu">HU</button>
+      <button data-lang="ro">RO</button>
+      <button data-lang="en">EN</button>
+    </div>
 
-    <button class="nav-toggle" id="menuBtn" aria-label="Menü megnyitása">
-      <svg class="hamburger-icon" viewBox="0 0 24 24" width="28" height="28">
-        <path class="line line-1" d="M3 6h18"/>
-        <path class="line line-2" d="M3 12h18"/>
-        <path class="line line-3" d="M3 18h18"/>
-      </svg>
-    </button>
-  
-
-  <nav class="nav-mobile" id="mobileMenu">
-    <a href="../index.html" data-key="nav_home"></a>
-    <a href="../index.html#services" data-key="nav_services"></a>
-    <a href="../blog.html" data-key="nav_blog"></a>
-    <a href="../index.html#contact" data-key="nav_contact"></a>
-  </nav>
+  </div>
 </header>
 
-<!-- SERVICE CONTENT -->
-<section class="about-section">
+<section class="service-detail">
   <div class="container">
-    <div class="about-content fade-in">
-      
-      <!-- BAL OLDAL: Kép -->
-      <div class="about-image">
-        <img data-src="../images/service-couples.jpg" 
-             src="../images/placeholder.jpg" 
-             alt="Család- és párterápia" 
-             class="lazy">
-      
 
-      <!-- JOBB OLDAL: Tartalom -->
-      <article class="about-text">
-        <h1 data-key="service_couples_title">Család- és párterápia</h1>
+    <h1 data-key="service_couples_title"></h1>
+
+    <div class="two-columns">
+
+      <div class="left">
         <p data-key="service_couples_p1"></p>
-        
-          <p style="margin-top: 2rem;"><strong>Időtartam:</strong> <span data-key="service_couples_duration">90 perc/alkalom</span></p>
-          <p><strong>Ár:</strong> <span data-key="service_couples_price">270 lej/alkalom</span></p>
-        
-        
-        <a href="../index.html#contact" class="btn btn-primary" data-key="contact_title"></a>
-      </article>
+      </div>
 
-    
-  
+      <aside class="info-box">
+        <h3 data-key="service_summary_title"></h3>
+
+        <p>
+          <strong data-key="service_label_service"></strong>
+          <span data-key="service_couples_title"></span>
+        </p>
+
+        <p>
+          <strong data-key="service_label_duration"></strong>
+          <span data-key="service_couples_duration"></span>
+        </p>
+
+        <p>
+          <strong data-key="service_label_price"></strong>
+          <span data-key="service_couples_price"></span>
+        </p>
+
+      </aside>
+
+    </div>
+
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <span data-key="footer_text"></span>
-  
-  </div>
-</footer>
-
 <script src="../js/main.js"></script>
-
 </body>
 </html>
