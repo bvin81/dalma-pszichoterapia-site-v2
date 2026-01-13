@@ -26,7 +26,21 @@
       <button data-lang="en">EN</button>
     </div>
 
+    <button class="nav-toggle" id="menuBtn" aria-label="Menü megnyitása" aria-expanded="false">
+      <svg class="hamburger-icon" viewBox="0 0 24 24" width="28" height="28">
+        <path class="line line-1" d="M3 6h18"/>
+        <path class="line line-2" d="M3 12h18"/>
+        <path class="line line-3" d="M3 18h18"/>
+      </svg>
+    </button>
   </div>
+
+  <nav class="nav-mobile" id="mobileMenu" aria-label="Mobil navigáció">
+    <a href="../index.html#about" data-key="nav_home"></a>
+    <a href="../index.html#services" data-key="nav_services"></a>
+    <a href="../blog.html" data-key="nav_blog"></a>
+    <a href="../index.html#contact" data-key="nav_contact"></a>
+  </nav>
 </header>
 
 <section class="service-detail">
@@ -64,6 +78,16 @@
 
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <span data-key="footer_text">© 2025 Jánosi Dalma – Minden jog fenntartva</span>
+    <div class="footer-credit">
+      <a href="mailto:birovince@yahoo.com" data-key="footer_dev"></a>
+    </div>
+  </div>
+</footer>
 
 <script src="../js/main.js"></script>
 </body>
