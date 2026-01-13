@@ -238,10 +238,6 @@ html {
   .two-columns {
     grid-template-columns: 1fr;
   }
-  
-  .info-box {
-    order: -1;
-  }
 }
 
 /* =================================================================
