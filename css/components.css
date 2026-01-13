@@ -140,6 +140,7 @@
   padding: var(--spacing-md);
   position: sticky;
   top: 100px;
+  text-align: left; 
 }
 
 .info-box h3 {
@@ -150,6 +151,7 @@
 .info-box p {
   margin-bottom: var(--spacing-sm);
   font-size: var(--font-size-sm);
+  text-align: left;
 }
 
 .info-box strong {
