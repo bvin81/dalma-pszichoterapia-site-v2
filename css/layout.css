@@ -415,6 +415,7 @@ section {
 
 .blog-post-content {
   margin: 0 auto;
+  max-width: 800px;
   padding-bottom: var(--spacing-xl);
 }
 
