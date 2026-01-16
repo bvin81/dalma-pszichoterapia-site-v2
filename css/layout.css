@@ -385,15 +385,23 @@ section {
 }
 
 .blog-post-content {
-  /* max-width eltávolítva - ugyanolyan széles, mint a kép */
   margin: 0 auto;
   padding-bottom: var(--spacing-xl);
 }
 
+/* Szöveges hasáb szűkítése */
+.blog-post-content article {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blog tipográfia */
 .blog-post-content p {
   font-size: var(--font-size-lg);
   line-height: 1.8;
   text-align: justify;
+  hyphens: auto;
   margin-bottom: var(--spacing-md);
 }
 
