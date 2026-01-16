@@ -152,6 +152,9 @@
   width: 100%;
   height: 100%;
   min-height: 350px;
+  max-width: 1200px;  /* Mobil/Laptop: standard szélesség */
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
 }
 
 .hero-main-btn {
@@ -190,7 +193,39 @@
 }
 
 /* Hero Responsive */
-@media (min-width: 768px) {
+
+/* MOBIL (< 768px) - Kis képernyők */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 300px;
+    max-height: 45vh;
+    height: 45vh;
+  }
+  
+  .hero-content {
+    min-height: 300px;
+  }
+  
+  .slogan-box {
+    top: 25%;
+    right: 5%;
+    left: 5%;
+    max-width: none;
+    padding: 1.5rem;
+  }
+  
+  .slogan-box p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-main-btn {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+/* LAPTOP (768px - 1599px) - Közepes képernyők */
+@media (min-width: 768px) and (max-width: 1599px) {
   .hero {
     min-height: 400px;
     max-height: 55vh;
@@ -199,6 +234,7 @@
   
   .hero-content {
     min-height: 400px;
+    max-width: 1200px;  /* Laptop: standard szélesség */
   }
   
   .slogan-box {
@@ -218,11 +254,16 @@
   }
 }
 
-@media (min-width: 1200px) {
+/* NAGYKÉPERNYŐ (1600px+) - Nagy monitorok */
+@media (min-width: 1600px) {
   .hero {
     min-height: 450px;
     max-height: 60vh;
     height: 60vh;
+  }
+  
+  .hero-content {
+    max-width: 1600px;  /* Nagyképernyő: szélesebb tartalom */
   }
   
   .slogan-box {
@@ -233,6 +274,13 @@
   
   .slogan-box p {
     font-size: 2rem;
+  }
+}
+
+/* 4K+ MONITOROK (2560px+) - Extra nagy képernyők */
+@media (min-width: 2560px) {
+  .hero-content {
+    max-width: 1800px;  /* 4K+: maximum szélesség */
   }
 }
 
@@ -437,28 +485,5 @@ section {
 @media (max-width: 768px) {
   section {
     padding: var(--spacing-lg) 0;
-  }
-  
-  .hero {
-    min-height: 300px;
-    max-height: 45vh;
-    height: 45vh;
-  }
-  
-  .slogan-box {
-    top: 25%;
-    right: 5%;
-    left: 5%;
-    max-width: none;
-    padding: 1.5rem;
-  }
-  
-  .slogan-box p {
-    font-size: 1.2rem;
-  }
-  
-  .hero-main-btn {
-    font-size: 1rem;
-    padding: 0.9rem 1.8rem;
   }
 }
