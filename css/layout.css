@@ -1,12 +1,4 @@
-/* =========================================================
-   LAYOUT.CSS – REFAKTORÁLT VÁLTOZAT
-   Funkcionalitás: változatlan
-   Cél: redundancia csökkentése, egyszerűbb karbantarthatóság
-   ========================================================= */
-
-/* =====================
-   HEADER / NAVIGATION
-   ===================== */
+/* LAYOUT.CSS - Elrendezés és struktúra - UPDATED NAV COLORS */
 
 .header {
   background: var(--bg-main);
@@ -25,35 +17,29 @@
   padding: var(--spacing-sm) 0;
 }
 
-/* --- Shared nav / language styles --- */
-.nav-desktop a,
-.nav-mobile a,
-.lang-switcher button {
-  color: var(--text-muted);
-  font-weight: 500;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-}
+/* --- NAVIGÁCIÓ - EGYSÉGES SZÍNEKKEL --- */
 
-.nav-desktop a:hover,
-.nav-mobile a:hover,
-.lang-switcher button:hover {
-  color: var(--accent-main);
-  background: rgba(129, 154, 136, 0.1);
-}
-
-/* Desktop navigation */
+/* Desktop navigáció */
 .nav-desktop {
   display: none;
 }
 
 .nav-desktop a {
+  color: var(--text-muted);           /* UGYANAZ mint a nyelvválasztó */
   font-size: 0.9rem;
+  font-weight: 500;
   text-decoration: none;
   padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
 }
 
-/* Mobile navigation */
+.nav-desktop a:hover {
+  color: var(--accent-main);          /* UGYANAZ mint a nyelvválasztó hover */
+  background: rgba(129, 154, 136, 0.1);
+}
+
+/* Mobil navigáció */
 .nav-toggle {
   display: block !important;
 }
@@ -75,12 +61,21 @@
 }
 
 .nav-mobile a {
+  color: var(--text-muted);           /* UGYANAZ mint a nyelvválasztó */
   font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
   padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
 }
 
-/* Desktop breakpoint */
+.nav-mobile a:hover {
+  color: var(--accent-main);          /* UGYANAZ mint a nyelvválasztó hover */
+  background: rgba(129, 154, 136, 0.1);
+}
+
+/* --- ASZTALI NÉZET (900px felett) --- */
 @media (min-width: 900px) {
   .nav-toggle {
     display: none !important;
@@ -96,7 +91,7 @@
   }
 }
 
-/* Language switcher */
+/* Language Switcher - REFERENCIA SZÍNEK */
 .lang-switcher {
   display: flex;
   gap: 0.5rem;
@@ -106,24 +101,32 @@
 .lang-switcher button {
   background: none;
   border: none;
+  color: var(--text-muted);           /* Alapértelmezett szín */
   font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
   padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.lang-switcher button:hover {
+  color: var(--accent-main);          /* Hover szín */
+  background: rgba(129, 154, 136, 0.1);
 }
 
 .lang-switcher button.active {
-  color: var(--accent-main);
+  color: var(--accent-main);          /* Aktív szín */
   font-weight: 700;
 }
 
-/* =====================
-   HERO SECTION
-   ===================== */
-
+/* Hero Section */
 .hero {
   position: relative;
   width: 100%;
-  height: clamp(300px, 50vh, 600px);
+  min-height: 350px;
+  max-height: 50vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +138,10 @@
 
 .hero-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(135deg, rgba(34, 35, 38, 0.5) 0%, rgba(129, 154, 136, 0.3) 100%);
   z-index: 1;
 }
@@ -145,7 +151,8 @@
   z-index: 2;
   width: 100%;
   height: 100%;
-  max-width: clamp(1200px, 90vw, 1800px);
+  min-height: 350px;
+  max-width: 1200px;  /* Mobil/Laptop: standard szélesség */
   margin: 0 auto;
   padding: 0 var(--spacing-sm);
 }
@@ -161,8 +168,8 @@
 }
 
 .hero-main-btn:hover {
-  transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 12px 35px rgba(129, 154, 136, 0.5);
+  transform: translateX(-50%) translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(129, 154, 136, 0.5) !important;
 }
 
 .slogan-box {
@@ -171,10 +178,11 @@
   right: 8%;
   max-width: 600px;
   padding: 2rem 2.5rem;
+  animation: fadeIn 1s ease-in;
 }
 
 .slogan-box p {
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: 1.6rem;
   line-height: 1.6;
   color: white;
   margin: 0;
@@ -184,65 +192,174 @@
   text-align: right;
 }
 
+/* Hero Responsive */
+
+/* MOBIL (< 768px) - Kis képernyők */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 300px;
+    max-height: 45vh;
+    height: 45vh;
+  }
+  
+  .hero-content {
+    min-height: 300px;
+  }
+  
   .slogan-box {
     top: 25%;
-    left: 5%;
     right: 5%;
+    left: 5%;
     max-width: none;
     padding: 1.5rem;
   }
-
+  
+  .slogan-box p {
+    font-size: 1.2rem;
+  }
+  
   .hero-main-btn {
     font-size: 1rem;
     padding: 0.9rem 1.8rem;
   }
 }
 
-/* =====================
-   SECTIONS / GRID
-   ===================== */
+/* LAPTOP (768px - 1599px) - Közepes képernyők */
+@media (min-width: 768px) and (max-width: 1599px) {
+  .hero {
+    min-height: 400px;
+    max-height: 55vh;
+    height: 55vh;
+  }
+  
+  .hero-content {
+    min-height: 400px;
+    max-width: 1200px;  /* Laptop: standard szélesség */
+  }
+  
+  .slogan-box {
+    top: 20%;
+    right: 10%;
+    max-width: 450px;
+  }
+  
+  .slogan-box p {
+    font-size: 1.8rem;
+  }
+  
+  .hero-main-btn {
+    bottom: 15%;
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+  }
+}
 
+/* NAGYKÉPERNYŐ (1600px+) - Nagy monitorok */
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 450px;
+    max-height: 60vh;
+    height: 60vh;
+  }
+  
+  .hero-content {
+    max-width: 1600px;  /* Nagyképernyő: szélesebb tartalom */
+  }
+  
+  .slogan-box {
+    top: 18%;
+    right: 12%;
+    max-width: 500px;
+  }
+  
+  .slogan-box p {
+    font-size: 2rem;
+  }
+}
+
+/* 4K+ MONITOROK (2560px+) - Extra nagy képernyők */
+@media (min-width: 2560px) {
+  .hero-content {
+    max-width: 1800px;  /* 4K+: maximum szélesség */
+  }
+}
+
+/* Sections */
 section {
   padding: var(--spacing-xl) 0;
 }
 
-@media (max-width: 768px) {
-  section {
-    padding: var(--spacing-lg) 0;
-  }
+.affirmation {
+  background: var(--bg-beige);
+  padding: var(--spacing-lg) var(--spacing-sm);
+  text-align: center;
+  font-size: var(--font-size-lg);
 }
 
-.grid-2,
+.read-more-link {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  color: var(--accent-main);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.read-more-link::after {
+  content: '→';
+  margin-left: 0.5rem;
+  transition: margin-left var(--transition-fast);
+}
+
+.read-more-link:hover {
+  color: var(--accent-hover);
+}
+
+.read-more-link:hover::after {
+  margin-left: 0.75rem;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+}
+
 .grid-3 {
   display: grid;
   gap: var(--spacing-lg);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* 4 oszlop nagy képernyőkön (1600px+) */
+@media (min-width: 1600px) {
+  .grid-3 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .two-columns {
   display: grid;
   gap: var(--spacing-lg);
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
   .two-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
   }
 }
 
-/* =====================
-   BLOG
-   ===================== */
-
+/* Blog Layout */
 .blog-header {
   background: var(--bg-beige);
   padding: var(--spacing-xl) 0;
@@ -264,31 +381,20 @@ section {
 }
 
 .blog-post-header {
-  padding: 0;
-}
-
-.blog-post-header h1 {
-  text-align: center;
-  padding: var(--spacing-lg) 0;
-  margin: 0 auto;
-  max-width: 900px;
-  font-size: 1.7rem;
-  line-height: 1.25;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
 }
 
 .blog-post-content {
+  /* max-width eltávolítva - ugyanolyan széles, mint a kép */
   margin: 0 auto;
-  max-width: 900px;
   padding-bottom: var(--spacing-xl);
 }
 
-/* Unified long-text typography */
-.content-text p {
+.blog-post-content p {
   font-size: var(--font-size-lg);
-  line-height: 1.9;
-  letter-spacing: 0.02em;
+  line-height: 1.8;
   text-align: justify;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .blog-post-content h2,
@@ -297,27 +403,24 @@ section {
   margin-bottom: var(--spacing-sm);
 }
 
-@media (max-width: 768px) {
-  .blog-post-header h1 {
-    font-size: 1.6rem;
-    padding: var(--spacing-md) 0;
-  }
+.blog-post-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  margin: var(--spacing-lg) 0;
+  box-shadow: var(--shadow-soft);
 }
 
-/* =====================
-   ABOUT / SERVICES
-   ===================== */
+/* About Layout */
+.about-section {
+  padding: var(--spacing-xl) 0;
+}
 
 .about-content {
   display: grid;
   gap: var(--spacing-lg);
   align-items: start;
-}
-
-@media (min-width: 900px) {
-  .about-content {
-    grid-template-columns: 1fr 2fr;
-  }
 }
 
 .about-image {
@@ -331,13 +434,32 @@ section {
   box-shadow: var(--shadow-soft);
 }
 
+.about-text p {
+  font-size: var(--font-size-lg);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+@media (min-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Service Detail */
 .service-detail {
   padding: var(--spacing-xl) 0;
 }
 
-/* =====================
-   CONTACT / FOOTER
-   ===================== */
+.service-detail p {
+  text-align: justify;
+  line-height: 1.75;
+}
+
+/* Contact Section */
+.contact {
+  padding: var(--spacing-xl) 0;
+}
 
 .contact-form {
   background: var(--bg-surface);
@@ -349,6 +471,7 @@ section {
   margin: 0 auto;
 }
 
+/* Footer */
 .footer {
   padding: var(--spacing-lg) 0;
   text-align: center;
@@ -356,4 +479,11 @@ section {
   font-size: var(--font-size-sm);
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-beige);
+}
+
+/* Globális responsive finomhangolás */
+@media (max-width: 768px) {
+  section {
+    padding: var(--spacing-lg) 0;
+  }
 }
