@@ -408,8 +408,9 @@ section {
   text-align: center;
   padding: var(--spacing-lg) 0;
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.2rem; /* Csökkentve 2.5rem-ről */
   color: var(--text-main);
+  line-height: 1.2;
 }
 
 .blog-post-content {
@@ -448,7 +449,7 @@ section {
   }
   
   .blog-post-header h1 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     padding: var(--spacing-md) 0;
   }
 }
@@ -460,7 +461,7 @@ section {
   }
   
   .blog-post-header h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 }
 
