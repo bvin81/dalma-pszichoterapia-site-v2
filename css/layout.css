@@ -382,6 +382,7 @@ section {
 
 .blog-post-header {
   padding: var(--spacing-xl) 0 var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
 }
 
 .blog-post-header h1 {
