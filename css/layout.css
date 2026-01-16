@@ -385,7 +385,7 @@ section {
 }
 
 .blog-post-content {
-  max-width: 800px;
+  /* max-width eltávolítva - ugyanolyan széles, mint a kép */
   margin: 0 auto;
   padding-bottom: var(--spacing-xl);
 }
