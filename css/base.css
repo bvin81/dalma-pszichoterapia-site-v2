@@ -168,6 +168,32 @@ img[data-src].loaded {
   padding: 0 var(--spacing-sm);
 }
 
+/* Nagyobb képernyők - fokozatos container növelés */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1800px;
+  }
+  
+  /* Nagyobb betűméretek 4K+ felbontáson */
+  :root {
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.375rem;
+    --font-size-xl: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.75rem; }
