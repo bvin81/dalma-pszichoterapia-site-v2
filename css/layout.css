@@ -384,6 +384,14 @@ section {
   padding: var(--spacing-xl) 0 var(--spacing-lg);
 }
 
+.blog-post-header h1 {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1.4rem, 2.3vw, 1.6rem);
+  line-height: 1.25;
+}
+
 .blog-post-content {
   margin: 0 auto;
   padding-bottom: var(--spacing-xl);
